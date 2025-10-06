@@ -1,53 +1,35 @@
-"use client"
+'use client';
+import Link from 'next/link';
 
-import * as React from "react"
-import Link from "next/link"
-
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-
-const navStyler = "text-white bg-cyan-600 hover:bg-cyan-600 hover:text-gray-600 transition-all duration-300"
 export function NavigationBar() {
   return (
-    <NavigationMenu viewport={false} className="max-w-screen-md mx-auto bg-cyan-600 mt-4 rounded-sm">
-      <NavigationMenuList>
-      <NavigationMenuItem>
-          <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} ${navStyler}`}>
-            <Link href="/docs">Home</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} ${navStyler}`}>
-            <Link href="/docs">Products</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+    <nav>
+      <ul className="flex gap-4">
+        <li>
+          <Link href="/">Home</Link>
+        </li>
 
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} ${navStyler}`}>
-            <Link href="/docs">About</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+        <li>
+          <Link href="/products">Products</Link>
+        </li>
 
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} ${navStyler}`}>
-            <Link href="/docs">News</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} ${navStyler}`}>
-            <Link href="/docs">Contact</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+        <li>
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+        </li>
 
-      </NavigationMenuList>
-    </NavigationMenu>
-  )
+        <li>
+          <li>
+            <Link href="/news">News</Link>
+          </li>
+        </li>
+        <li>
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
+        </li>
+      </ul>
+    </nav>
+  );
 }
-
