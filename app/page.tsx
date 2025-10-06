@@ -19,6 +19,7 @@ export default function Home() {
             alt="File icon"
             width={16}
             height={16}
+            loading="eager"
           />
           Learn
         </a>
@@ -34,6 +35,7 @@ export default function Home() {
             alt="Window icon"
             width={16}
             height={16}
+            loading="eager"
           />
           Examples
         </a>
@@ -49,6 +51,7 @@ export default function Home() {
             alt="Globe icon"
             width={16}
             height={16}
+            loading="eager"
           />
           Go to nextjs.org →
         </a>

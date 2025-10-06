@@ -14,20 +14,15 @@ export function NavigationBar() {
         </li>
 
         <li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
+          <Link href="/about">About</Link>
         </li>
 
         <li>
-          <li>
-            <Link href="/news">News</Link>
-          </li>
+          <Link href="/news">News</Link>
         </li>
+        
         <li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
+          <Link href="/contact">Contact</Link>
         </li>
       </ul>
     </nav>
