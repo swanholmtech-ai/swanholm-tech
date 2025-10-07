@@ -26,14 +26,7 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="mt-10">
-        <Image
-          src="/hero-image.svg"
-          alt="Swanholm Tech Hero"
-          width={400}
-          height={250}
-          className="mx-auto"
-          priority
-        />
+       
       </div>
     </section>
   );
