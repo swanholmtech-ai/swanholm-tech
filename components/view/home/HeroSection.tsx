@@ -11,10 +11,12 @@ export default function HeroSection() {
         </p>
         </div>
       </div>
-      <div className="flex-1 bg-cyan-950">
-        <Image src="assets/images/svgs/vest.svg" alt="Vest" 
-        width={500}
-        height={500}
+      <div className="flex-2 bg-cyan-950 flex items-center justify-center">
+        <Image
+          src="assets/images/svgs/vest.svg"
+          alt="Vest"
+          width={300}
+          height={300}
         />
       </div>
     </section>
