@@ -5,7 +5,7 @@ export default function HeroSection() {
     <section className="w-full h-[100dvh] flex border-2 border-gray-300 rounded-md bg-slate-100">
       <div className="flex-3">
         <div className="px-12 pt-40 h-full">
-          <h4 className="text-5xl font-bold h-fit overflow-y-hidden">What if your Vest could think?</h4>
+          <h4 className="text-5xl font-bold h-fit overflow-y-hidden text-amber-700">What if your Vest could think?</h4>
           <p className="text-lg pt-8">
             Swanholm Tech is a technology company that provides technology solutions to businesses.
           </p>
