@@ -6,9 +6,9 @@ export default function HeroSection() {
       <div className="flex-3 bg-slate-100">
         <div className="px-12 pt-40 h-full">
           <h4 className="text-5xl font-bold h-fit overflow-y-hidden">What if your Vest could think?</h4>
-        <p className="text-lg pt-8">
-          Swanholm Tech is a technology company that provides technology solutions to businesses.
-        </p>
+          <p className="text-lg pt-8">
+            Swanholm Tech is a technology company that provides technology solutions to businesses.
+          </p>
         </div>
       </div>
       <div className="flex-2 bg-cyan-950 flex items-center justify-center">
@@ -17,6 +17,7 @@ export default function HeroSection() {
           alt="Vest"
           width={300}
           height={300}
+          priority={true}
         />
       </div>
     </section>
