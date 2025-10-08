@@ -3,7 +3,7 @@ import HomeView from "@/components/view/HomeView";
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="max-w-7xl mx-auto">
         <HomeView />
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
