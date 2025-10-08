@@ -1,33 +1,45 @@
-'use client';
-import Link from 'next/link';
-import '@/style/nav-bar.css';
+"use client";
+import Link from "next/link";
+import "@/style/nav-bar.css";
 
 export function NavigationBar() {
   return (
-    <nav className="bg-zinc-200 mx-auto max-w-xl rounded-xs z-50 my-2 fixed top-0 left-0 right-0 border-1 border-white navbar-fonts"
-      style={{
-        boxShadow: "-1px 1px 2px 1px rgba(0, 0, 0, 0.4)",
-      }}>
-      <ul className="flex gap-4 items-center justify-evenly pt-1">
-        <li className="navbar-fonts hover:text-gray-400">
-          <Link href="/">Home</Link>
-        </li>
+    <nav className="mx-auto max-w-xl z-50 my-2 fixed top-0 left-0 right-0">
+      <ul className="flex gap-4 items-center justify-evenly">
+        <Link
+          href="/"
+          className="bg-cyan-600 hover:bg-cyan-700 rounded-xs px-2 py-1 navbar-button-shadow navbar-fonts"
+        >
+          <li>Home</li>
+        </Link>
 
-        <li className="navbar-fonts hover:text-gray-400">
-          <Link href="/products">Products</Link>
-        </li>
+        <Link
+          href="/products"
+          className="bg-cyan-600 hover:bg-cyan-700 rounded-xs px-2 py-1 navbar-button-shadow navbar-fonts"
+        >
+          <li>Products</li>
+        </Link>
 
-        <li className="navbar-fonts hover:text-gray-400">
-          <Link href="/about">About</Link>
-        </li>
+        <Link
+          href="/about"
+          className="bg-cyan-600 hover:bg-cyan-700 rounded-xs px-2 py-1 navbar-button-shadow navbar-fonts"
+        >
+          <li>About</li>
+        </Link>
 
-        <li className="navbar-fonts hover:text-gray-400">
-          <Link href="/news">News</Link>
-        </li>
-        
-        <li className="navbar-fonts hover:text-gray-400">
-          <Link href="/contact">Contact</Link>
-        </li>
+        <Link
+          href="/news"
+          className="bg-cyan-600 hover:bg-cyan-700 rounded-xs px-2 py-1 navbar-button-shadow navbar-fonts"
+        >
+          <li>News</li>
+        </Link>
+
+        <Link
+          href="/contact"
+          className="bg-cyan-600 hover:bg-cyan-700 rounded-xs px-2 py-1 navbar-button-shadow navbar-fonts"
+        >
+          <li>Contact</li>
+        </Link>
       </ul>
     </nav>
   );
