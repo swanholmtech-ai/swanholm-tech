@@ -12,7 +12,8 @@ export default function SolutionSection() {
           <div className="px-12 pt-40 h-full">
             <h4 className="text-5xl font-bold h-fit overflow-y-hidden text-amber-700">Work Accident Happen Every day</h4>
             <p className="text-lg pt-8">
-            Work Confidently. Your Smart Vest Has Your Back.
+              Work Confidently.<br />
+              Your Smart Vest Has Your Back.
             </p>
             <p className="text-lg pt-8">
             AI Fall Detection
@@ -25,7 +26,7 @@ export default function SolutionSection() {
             </p>
             <p className="text-lg pt-8">
             Privacy First            </p>
-          </div>
+          </div>     
         </div>
       <div className="flex-1"></div>
       </div>
