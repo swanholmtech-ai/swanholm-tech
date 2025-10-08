@@ -22,9 +22,9 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="flex-2 flex items-center justify-center">
-        <div className="bg-amber-700 w-120 h-120 rounded-full flex items-center justify-center">
+        <div className="bg-gray-200 w-120 h-120 rounded-full flex items-center justify-center border-6 border-gray-400">
         <Image
-          src="assets/images/svgs/vest.svg"
+          src="/assets/images/vest-img.webp"
           alt="Vest"
           width={300}
           height={300}
