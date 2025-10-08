@@ -3,6 +3,7 @@ import ProblemsSection from "./home-sections/ProblemsSection";
 import SolutionSection from "./home-sections/SolutionSection";
 import ROISection from "./home-sections/ROISection";
 import TestimonialSection from "./home-sections/TestimonialSection";
+import CredibilitySection from "./home-sections/CredibilitySection";
 
 export default function HomeView() {
   return (
@@ -12,6 +13,7 @@ export default function HomeView() {
       <SolutionSection />
       <ROISection />
       <TestimonialSection />
+      <CredibilitySection />
     </>
   );
 }
