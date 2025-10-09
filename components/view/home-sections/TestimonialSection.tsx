@@ -35,7 +35,7 @@ const testimonials = [
 
 export default function TestimonialSection() {
   return (
-    <section className="w-full h-[100dvh] flex flex-col mt-14 border-2 border-gray-300 rounded-md relative overflow-hidden bg-white">
+    <section className="w-full h-[100dvh] flex flex-col mt-14 relative overflow-hidden bg-white">
       <div className="flex-1 mx-auto w-full">
         <h4
           className={`${poppinsBold.className} text-4xl tracking-tight text-center pt-32 text-sky-700`}

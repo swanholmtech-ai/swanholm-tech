@@ -43,7 +43,7 @@ const newsItems = [
 
 const NewsSection = () => {
   return (
-    <section className="w-full min-h-[80dvh] flex flex-col mt-14 border-2 border-gray-300 rounded-md relative overflow-hidden bg-white">
+    <section className="w-full min-h-[80dvh] flex flex-col mt-14 relative overflow-hidden">
       <div className="w-full">
         <h4
           className={`${poppinsBold.className} pt-20 text-5xl text-teal-600 pl-12`}

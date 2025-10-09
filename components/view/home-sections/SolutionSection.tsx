@@ -9,7 +9,7 @@ const poppinsBold = Poppins({
 
 export default function SolutionSection() {
   return (
-    <section className="w-full h-[100dvh] flex flex-col mt-14 border-2 border-gray-300 relative overflow-hidden">
+    <section className="w-full h-[100dvh] flex flex-col mt-14 relative overflow-hidden">
       <div className="flex-1 mx-auto">
         <h4
           className={`${poppinsBold.className} text-4xl tracking-tight text-center pt-32`}

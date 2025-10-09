@@ -1,6 +1,6 @@
 export default function ProblemsSection() {
   return (
-    <section className="w-full h-[100dvh] flex mt-14 border-2 border-gray-300 rounded-md relative overflow-hidden">
+    <section className="w-full h-[100dvh] flex mt-14 relative overflow-hidden">
       <div
         className="absolute inset-0 z-0"
         style={{

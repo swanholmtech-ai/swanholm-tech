@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="w-full h-[100dvh] flex border-2 border-gray-300 rounded-md bg-slate-100">
+    <section className="w-full h-[100dvh] flex">
       <div className="flex-3">
         <div className="px-12 pt-40 h-full">
           <div style={{ perspective: "600px", overflow: "hidden" }}>
