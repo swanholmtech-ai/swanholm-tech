@@ -40,7 +40,8 @@ export default function HeroSection() {
         <div className="px-12 pt-40 h-full">
           <div>
             <h4
-              className={`${poppinsBold.className} text-5xl font-bold h-content overflow-y-hidden text-cyan-700 tracking-tighter`}
+              className={`${poppinsBold.className} text-5xl font-bold h-content overflow-y-hidden text-cyan-700 tracking-tighter
+              hover:scale-105 transition-all duration-300 hover:rotate-1 cursor-pointer`}
             >
               What if your Vest could save your life?
             </h4>
