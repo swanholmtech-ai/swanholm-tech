@@ -235,7 +235,6 @@ const ROISection = () => {
             }}
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tl from-green-500/30 to-emerald-500/30 rounded-full blur-4xl animate-pulse" />
               <Image
                 src="/assets/svgs/chart.svg"
                 alt="Solution"
