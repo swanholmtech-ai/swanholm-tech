@@ -11,7 +11,6 @@ export default function Home() {
 
       {/* PWA Features - positioned at bottom for testing */}
       <div className="fixed bottom-4 right-4 space-y-4 z-50">
-        {/* <PushNotificationManager /> */}
         <InstallPrompt />
       </div>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
