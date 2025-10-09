@@ -3,6 +3,8 @@ import HomeView from "@/components/view/HomeView";
 export default function Home() {
   return (
     <>
+      {/* <PushNotificationManager />
+      <InstallPrompt /> */}
       <main className="max-w-7xl mx-auto">
         <HomeView />
       </main>
