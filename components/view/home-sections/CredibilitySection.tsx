@@ -196,15 +196,15 @@ const CredibilitySection = () => {
               <Image
                 src="/assets/svgs/trust.svg"
                 alt="Vest"
-                width={300}
-                height={300}
+                width={240}
+                height={240}
                 priority={true}
                 className="relative"
               />
             </motion.div>
           </AnimatedSection>
 
-          <ParallaxSection speed={30} className="absolute bottom-0 right-0">
+          <ParallaxSection speed={30} className="absolute top-40 right-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 0.25, scale: 1 }}
@@ -214,9 +214,9 @@ const CredibilitySection = () => {
               <Image
                 src="/assets/imgs/eu.avif"
                 alt="Solution"
-                width={700}
-                height={700}
-                className="opacity-20"
+                width={500}
+                height={500}
+                className="opacity-40"
               />
             </motion.div>
           </ParallaxSection>

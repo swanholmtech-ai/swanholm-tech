@@ -8,14 +8,34 @@ import NewsSection from "./home-sections/NewsSection";
 
 export default function HomeView() {
   return (
-    <>
-      <HeroSection />
-      <ProblemsSection />
-      <SolutionSection />
-      <ROISection />
-      <TestimonialSection />
-      <CredibilitySection />
-      <NewsSection />
-    </>
+    <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+      <section className="snap-start h-screen">
+        <HeroSection />
+      </section>
+
+      <section className="snap-start h-screen">
+        <ProblemsSection />
+      </section>
+
+      <section className="snap-start h-screen">
+        <SolutionSection />
+      </section>
+
+      <section className="snap-start h-screen">
+        <ROISection />
+      </section>
+
+      <section className="snap-start h-screen">
+        <TestimonialSection />
+      </section>
+
+      <section className="snap-start h-screen">
+        <CredibilitySection />
+      </section>
+
+      <section className="snap-start h-screen">
+        <NewsSection />
+      </section>
+    </main>
   );
 }
