@@ -36,11 +36,14 @@ export function PushNotificationManager() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    if ("serviceWorker" in navigator && "PushManager" in window) {
+    if (
+      typeof window !== "undefined" &&
+      "serviceWorker" in navigator &&
+      "PushManager" in window
+    ) {
       setIsSupported(true);
       registerServiceWorker();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function registerServiceWorker() {
@@ -198,38 +201,40 @@ export function InstallPrompt() {
     useState<BeforeInstallPromptEvent | null>(null);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     setIsIOS(
-      /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream
+      /iPad|iPhone|iPod/.test(navigator.userAgent) &&
+        !(window as unknown as { MSStream?: unknown }).MSStream
     );
 
-    // Check if app is running in standalone mode (installed as PWA)
     const checkStandalone = () => {
       const displayModeStandalone = window.matchMedia(
         "(display-mode: standalone)"
       ).matches;
-      const iosStandalone = (window.navigator as any).standalone;
+      const iosStandalone = (
+        window.navigator as unknown as { standalone?: boolean }
+      ).standalone;
       const androidTWA = document.referrer.includes("android-app://");
 
       const isStandalonePWA =
         displayModeStandalone || iosStandalone || androidTWA;
 
-      console.log("PWA Standalone Detection:", {
-        displayModeStandalone,
-        iosStandalone,
-        androidTWA,
-        isStandalone: isStandalonePWA,
-      });
+      // Optionally remove or comment out this log in production
+      // console.log("PWA Standalone Detection:", {
+      //   displayModeStandalone,
+      //   iosStandalone,
+      //   androidTWA,
+      //   isStandalone: isStandalonePWA,
+      // });
 
       setIsStandalone(isStandalonePWA);
     };
 
     checkStandalone();
 
-    // Listen for the beforeinstallprompt event
     const handleBeforeInstallPrompt = (e: Event) => {
-      // Prevent the mini-infobar from appearing on mobile
       e.preventDefault();
-      // Stash the event so it can be triggered later
       setDeferredPrompt(e as BeforeInstallPromptEvent);
     };
 
