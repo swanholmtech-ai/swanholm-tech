@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HomeView from "@/components/view/HomeView";
-import { InstallPrompt } from "@/components/PushNotification";
+// import { InstallPrompt } from "@/components/PushNotification";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
 
       {/* PWA Features - positioned at bottom for testing */}
       <div className="fixed bottom-4 right-4 space-y-4 z-50">
-        <InstallPrompt />
+        {/* <InstallPrompt /> */}
       </div>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
