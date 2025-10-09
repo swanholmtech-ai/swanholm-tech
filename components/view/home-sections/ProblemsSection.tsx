@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function ProblemsSection() {
   return (
     <section className="w-full h-[100dvh] flex mt-14 border-2 border-gray-300 rounded-md relative overflow-hidden">

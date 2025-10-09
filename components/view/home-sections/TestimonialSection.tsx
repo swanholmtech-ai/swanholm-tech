@@ -16,19 +16,19 @@ const testimonials = [
   {
     name: "Anna S.",
     role: "Safety Manager, Skanska",
-    text: "The Alert Vest gives our team peace of mind. It's easy to use and has already prevented a serious incident.",
+    text: "The Alert Vest gives our team peace of mind. It&apos;s easy to use and has already prevented a serious incident.",
     image: "assets/svgs/d-user.svg",
   },
   {
     name: "Johan L.",
     role: "Construction Worker",
-    text: "I feel safer knowing someone will be alerted if I fall. The vest is comfortable and doesn't get in the way.",
+    text: "I feel safer knowing someone will be alerted if I fall. The vest is comfortable and doesn&apos;t get in the way.",
     image: "assets/svgs/d-user.svg",
   },
   {
     name: "Maria P.",
     role: "HR Director, InfraBuild",
-    text: "Our insurance costs dropped after implementing Alert Vest. It's a win for safety and our bottom line.",
+    text: "Our insurance costs dropped after implementing Alert Vest. It&apos;s a win for safety and our bottom line.",
     image: "assets/svgs/d-user.svg",
   },
 ];
@@ -62,7 +62,7 @@ export default function TestimonialSection() {
               <p
                 className={`${poppinsRegular.className} text-lg text-gray-700 italic mb-4 text-center`}
               >
-                "{t.text}"
+                &ldquo;{t.text}&rdquo;
               </p>
               <div className="text-sm text-gray-600 font-semibold">
                 {t.name}
