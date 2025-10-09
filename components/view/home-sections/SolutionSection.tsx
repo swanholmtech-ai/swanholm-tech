@@ -52,40 +52,59 @@ export default function SolutionSection() {
 
       {/* Floating data streams */}
       <div className="absolute inset-0">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute text-cyan-400 font-mono text-sm opacity-60"
-            style={{
-              left: `${10 + i * 10}%`,
-              top: `${20 + (i % 3) * 20}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: 3 + i * 0.5,
-              repeat: Infinity,
-              delay: i * 0.3,
-            }}
-          >
-            {Array.from({ length: 5 }).map((_, j) => (
-              <motion.span
-                key={j}
-                className="block"
-                animate={{ opacity: [0, 1, 0] }}
-                transition={{
-                  duration: 0.5,
-                  repeat: Infinity,
-                  delay: j * 0.1,
-                }}
-              >
-                {Math.random().toString(36).substring(7)}
-              </motion.span>
-            ))}
-          </motion.div>
-        ))}
+        {Array.from({ length: 8 }).map((_, i) => {
+          const left = `${10 + i * 10}%`;
+          const top = `${20 + (i % 3) * 20}%`;
+          const duration = 3 + i * 0.5;
+          const delay = i * 0.3;
+
+          // Predefined data strings for consistency
+          const dataStrings = [
+            "01011010",
+            "11001001",
+            "10101010",
+            "11001100",
+            "10110010",
+            "01101001",
+            "10011001",
+            "11010010",
+          ];
+
+          return (
+            <motion.div
+              key={i}
+              className="absolute text-cyan-400 font-mono text-sm opacity-60"
+              style={{
+                left,
+                top,
+              }}
+              animate={{
+                y: [0, -20, 0],
+                opacity: [0.3, 0.8, 0.3],
+              }}
+              transition={{
+                duration,
+                repeat: Infinity,
+                delay,
+              }}
+            >
+              {Array.from({ length: 5 }).map((_, j) => (
+                <motion.span
+                  key={j}
+                  className="block"
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{
+                    duration: 0.5,
+                    repeat: Infinity,
+                    delay: j * 0.1,
+                  }}
+                >
+                  {dataStrings[i % dataStrings.length]}
+                </motion.span>
+              ))}
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Content Container - Max Width */}

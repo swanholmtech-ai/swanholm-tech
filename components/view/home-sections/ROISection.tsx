@@ -65,26 +65,34 @@ const ROISection = () => {
 
         {/* Golden particle effects */}
         <div className="absolute inset-0">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-3 h-3 bg-amber-400 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                scale: [0, 1.5, 0],
-                opacity: [0, 0.8, 0],
-                y: [0, -150, 0],
-              }}
-              transition={{
-                duration: Math.random() * 4 + 3,
-                repeat: Infinity,
-                delay: Math.random() * 5,
-              }}
-            />
-          ))}
+          {Array.from({ length: 20 }).map((_, i) => {
+            // Use deterministic positioning based on index
+            const left = `${(i * 19 + i * 13) % 100}%`;
+            const top = `${(i * 23 + i * 17) % 100}%`;
+            const duration = 3 + ((i * 31) % 4);
+            const delay = (i * 37) % 6;
+
+            return (
+              <motion.div
+                key={i}
+                className="absolute w-3 h-3 bg-amber-400 rounded-full"
+                style={{
+                  left,
+                  top,
+                }}
+                animate={{
+                  scale: [0, 1.5, 0],
+                  opacity: [0, 0.8, 0],
+                  y: [0, -150, 0],
+                }}
+                transition={{
+                  duration,
+                  repeat: Infinity,
+                  delay,
+                }}
+              />
+            );
+          })}
         </div>
 
         {/* Success overlays */}

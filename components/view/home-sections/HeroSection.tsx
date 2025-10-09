@@ -28,26 +28,35 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-900 to-pink-900">
         {/* Animated starfield */}
         <div className="absolute inset-0">
-          {Array.from({ length: 50 }).map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-white rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                opacity: Math.random() * 0.8 + 0.2,
-              }}
-              animate={{
-                scale: [0, 1, 0],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
+          {Array.from({ length: 50 }).map((_, i) => {
+            // Use deterministic positioning based on index
+            const left = `${(i * 7 + i * 3) % 100}%`;
+            const top = `${(i * 11 + i * 5) % 100}%`;
+            const opacity = 0.2 + ((i * 13) % 60) / 100;
+            const duration = 2 + ((i * 17) % 4);
+            const delay = (i * 19) % 3;
+
+            return (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-white rounded-full"
+                style={{
+                  left,
+                  top,
+                  opacity,
+                }}
+                animate={{
+                  scale: [0, 1, 0],
+                  opacity: [0, opacity, 0],
+                }}
+                transition={{
+                  duration,
+                  repeat: Infinity,
+                  delay,
+                }}
+              />
+            );
+          })}
         </div>
 
         {/* Cosmic nebulae */}

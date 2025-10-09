@@ -44,26 +44,34 @@ export default function ProblemsSection() {
 
       {/* Animated sparks and warning particles */}
       <div className="absolute inset-0">
-        {Array.from({ length: 15 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-orange-400 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              scale: [0, 1, 0],
-              opacity: [0, 1, 0],
-              y: [0, -100, 0],
-            }}
-            transition={{
-              duration: Math.random() * 2 + 1,
-              repeat: Infinity,
-              delay: Math.random() * 3,
-            }}
-          />
-        ))}
+        {Array.from({ length: 15 }).map((_, i) => {
+          // Use deterministic positioning based on index
+          const left = `${(i * 13 + i * 7) % 100}%`;
+          const top = `${(i * 17 + i * 11) % 100}%`;
+          const duration = 1 + ((i * 23) % 3);
+          const delay = (i * 29) % 4;
+
+          return (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-orange-400 rounded-full"
+              style={{
+                left,
+                top,
+              }}
+              animate={{
+                scale: [0, 1, 0],
+                opacity: [0, 1, 0],
+                y: [0, -100, 0],
+              }}
+              transition={{
+                duration,
+                repeat: Infinity,
+                delay,
+              }}
+            />
+          );
+        })}
       </div>
 
       {/* Dark Overlay with Accident Image */}
