@@ -3,8 +3,7 @@
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { AnimatedSection } from "@/components/animations/AnimatedSection";
-import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const poppinsBold = Poppins({
   weight: ["900"],
@@ -114,7 +113,10 @@ const NewsSection = () => {
       {/* Content Container */}
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="w-full">
-          <AnimatedSection
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px", amount: 0.3 }}
             variants={{
               hidden: { opacity: 0, y: -80, scale: 0.8 },
               visible: {
@@ -137,23 +139,29 @@ const NewsSection = () => {
             >
               Latest News
             </h4>
-          </AnimatedSection>
+          </motion.div>
 
-          <AnimatedSection variants={fadeInUp} delay={0.2}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px", amount: 0.3 }}
+            variants={fadeInUp}
+            transition={{ delay: 0.2 }}
+          >
             <p
               className={`${poppinsThin.className} text-xl pt-6 pl-16 text-blue-100 max-w-3xl`}
             >
               Stay up to date with our latest achievements, partnerships, and
               media features.
             </p>
-          </AnimatedSection>
+          </motion.div>
 
           <motion.div
             className="flex flex-wrap gap-8 pt-10 pl-16 pr-16"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px", amount: 0.1 }}
+            viewport={{ once: true, margin: "-100px", amount: 0.1 }}
           >
             {newsItems.map((item, idx) => (
               <motion.div
@@ -218,7 +226,7 @@ const NewsSection = () => {
                     }}
                     transition={{
                       duration: 2,
-                      repeat: Infinity,
+                      repeat: 0,
                     }}
                   >
                     {item.date}
@@ -235,28 +243,24 @@ const NewsSection = () => {
         </div>
       </div>
 
-      <AnimatedSection variants={scaleIn} delay={0.5}>
-        <motion.div
-          className="absolute bottom-0 right-0 pointer-events-none"
-          animate={{
-            opacity: [0.1, 0.2, 0.1],
-            scale: [1, 1.05, 1],
-            rotate: [0, 5, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-          }}
-        >
-          <Image
-            src="/assets/svgs/news.svg"
-            alt="News"
-            width={500}
-            height={500}
-            className="opacity-15"
-          />
-        </motion.div>
-      </AnimatedSection>
+      {/* <AnimatedSection variants={scaleIn} delay={0.5}> */}
+      <motion.div
+        className="absolute bottom-0 right-0 pointer-events-none"
+        animate={{
+          opacity: [0.1, 0.2, 0.1],
+          scale: [1, 1.05, 1],
+          rotate: [0, 5, 0],
+        }}
+      >
+        <Image
+          src="/assets/svgs/news.svg"
+          alt="News"
+          width={500}
+          height={500}
+          className="opacity-15"
+        />
+      </motion.div>
+      {/* </AnimatedSection> */}
     </section>
   );
 };
