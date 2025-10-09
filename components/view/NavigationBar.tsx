@@ -1,44 +1,71 @@
 "use client";
 import Link from "next/link";
 import "@/style/nav-bar.css";
+import { Home, Shirt, Store, Newspaper, Send } from "lucide-react";
+import { Button } from "../ui/button";
 
 export function NavigationBar() {
   return (
-    <nav className="mx-auto max-w-xl z-50 my-2 fixed top-0 left-0 right-0">
+    <nav className="mx-auto max-w-md z-50 my-2 fixed top-0 left-0 right-0">
       <ul className="flex gap-4 items-center justify-evenly">
-        <Link
-          href="/"
-          className="bg-cyan-600 hover:bg-cyan-700 rounded-xs px-2 py-1 navbar-button-shadow navbar-fonts"
-        >
-          <li>Home</li>
+        <Link href="/">
+          <Button
+            variant="default"
+            size="icon-lg"
+            className="cursor-pointer bg-orange-500 hover:bg-orange-600 rounded-full navbar-button-shadow"
+          >
+            <li>
+              <Home />
+            </li>
+          </Button>
         </Link>
 
-        <Link
-          href="/products"
-          className="bg-cyan-600 hover:bg-cyan-700 rounded-xs px-2 py-1 navbar-button-shadow navbar-fonts"
-        >
-          <li>Products</li>
+        <Link href="/products">
+          <Button
+            variant="default"
+            size="icon-lg"
+            className="cursor-pointer bg-orange-500 hover:bg-orange-600 rounded-full navbar-button-shadow"
+          >
+            <li>
+              <Shirt />
+            </li>
+          </Button>
         </Link>
 
-        <Link
-          href="/about"
-          className="bg-cyan-600 hover:bg-cyan-700 rounded-xs px-2 py-1 navbar-button-shadow navbar-fonts"
-        >
-          <li>About</li>
+        <Link href="/about">
+          <Button
+            variant="default"
+            size="icon-lg"
+            className="cursor-pointer bg-orange-500 hover:bg-orange-600 rounded-full navbar-button-shadow"
+          >
+            <li>
+              <Store />
+            </li>
+          </Button>
         </Link>
 
-        <Link
-          href="/news"
-          className="bg-cyan-600 hover:bg-cyan-700 rounded-xs px-2 py-1 navbar-button-shadow navbar-fonts"
-        >
-          <li>News</li>
+        <Link href="/news">
+          <Button
+            variant="default"
+            size="icon-lg"
+            className="cursor-pointer bg-orange-500 hover:bg-orange-600 rounded-full navbar-button-shadow"
+          >
+            <li>
+              <Newspaper />
+            </li>
+          </Button>
         </Link>
 
-        <Link
-          href="/contact"
-          className="bg-cyan-600 hover:bg-cyan-700 rounded-xs px-2 py-1 navbar-button-shadow navbar-fonts"
-        >
-          <li>Contact</li>
+        <Link href="/contact">
+          <Button
+            variant="default"
+            size="icon-lg"
+            className="cursor-pointer bg-orange-500 hover:bg-orange-600 rounded-full navbar-button-shadow"
+          >
+            <li>
+              <Send />
+            </li>
+          </Button>
         </Link>
       </ul>
     </nav>
