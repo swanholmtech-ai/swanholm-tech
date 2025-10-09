@@ -26,7 +26,7 @@ function urlBase64ToUint8Array(base64String: string) {
  * It also allows the user to install the app on their device.
  * It also allows the user to share the app on their device.
  */
-function PushNotificationManager() {
+export function PushNotificationManager() {
   const [isSupported, setIsSupported] = useState(false);
   const [subscription, setSubscription] = useState<PushSubscription | null>(
     null
@@ -80,24 +80,44 @@ function PushNotificationManager() {
   }
 
   return (
-    <div>
-      <h3>Push Notifications</h3>
+    <div className="p-4 border rounded-lg shadow-sm bg-white max-w-md">
+      <h3 className="text-lg font-semibold mb-3">Push Notifications</h3>
       {subscription ? (
         <>
-          <p>You are subscribed to push notifications.</p>
-          <button onClick={unsubscribeFromPush}>Unsubscribe</button>
+          <p className="text-sm text-green-600 mb-3">
+            You are subscribed to push notifications.
+          </p>
+          <button
+            onClick={unsubscribeFromPush}
+            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 mb-3"
+          >
+            Unsubscribe
+          </button>
           <input
             type="text"
             placeholder="Enter notification message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            className="w-full px-3 py-2 border rounded mb-2"
           />
-          <button onClick={sendTestNotification}>Send Test</button>
+          <button
+            onClick={sendTestNotification}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Send Test
+          </button>
         </>
       ) : (
         <>
-          <p>You are not subscribed to push notifications.</p>
-          <button onClick={subscribeToPush}>Subscribe</button>
+          <p className="text-sm text-gray-600 mb-3">
+            You are not subscribed to push notifications.
+          </p>
+          <button
+            onClick={subscribeToPush}
+            className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+          >
+            Subscribe
+          </button>
         </>
       )}
     </div>
@@ -108,9 +128,10 @@ function PushNotificationManager() {
  * InstallPrompt is a component that allows the user to install the app on their device.
  * It also allows the user to share the app on their device.
  */
-function InstallPrompt() {
+export function InstallPrompt() {
   const [isIOS, setIsIOS] = useState(false);
   const [isStandalone, setIsStandalone] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
 
   useEffect(() => {
     setIsIOS(
@@ -118,18 +139,63 @@ function InstallPrompt() {
     );
 
     setIsStandalone(window.matchMedia("(display-mode: standalone)").matches);
+
+    // Listen for the beforeinstallprompt event
+    const handleBeforeInstallPrompt = (e: Event) => {
+      // Prevent the mini-infobar from appearing on mobile
+      e.preventDefault();
+      // Stash the event so it can be triggered later
+      setDeferredPrompt(e);
+    };
+
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+
+    return () => {
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt
+      );
+    };
   }, []);
+
+  const handleInstallClick = async () => {
+    if (!deferredPrompt) {
+      return;
+    }
+
+    // Show the install prompt
+    deferredPrompt.prompt();
+
+    // Wait for the user to respond to the prompt
+    const { outcome } = await deferredPrompt.userChoice;
+
+    if (outcome === "accepted") {
+      console.log("User accepted the install prompt");
+    } else {
+      console.log("User dismissed the install prompt");
+    }
+
+    // Clear the deferredPrompt so it can only be used once
+    setDeferredPrompt(null);
+  };
 
   if (isStandalone) {
     return null; // Don't show install button if already installed
   }
 
   return (
-    <div>
-      <h3>Install App</h3>
-      <button>Add to Home Screen</button>
+    <div className="p-4 border rounded-lg shadow-sm bg-white max-w-md">
+      <h3 className="text-lg font-semibold mb-3">Install App</h3>
+      {deferredPrompt && (
+        <button
+          onClick={handleInstallClick}
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mb-3"
+        >
+          Add to Home Screen
+        </button>
+      )}
       {isIOS && (
-        <p>
+        <p className="text-sm text-gray-600">
           To install this app on your iOS device, tap the share button
           <span role="img" aria-label="share icon">
             {" "}
@@ -147,11 +213,4 @@ function InstallPrompt() {
   );
 }
 
-export default function Page() {
-  return (
-    <div>
-      <PushNotificationManager />
-      <InstallPrompt />
-    </div>
-  );
-}
+// Default export removed - use PushNotificationManager and InstallPrompt directly
