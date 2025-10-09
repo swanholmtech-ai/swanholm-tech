@@ -7,6 +7,9 @@ import {
   sendNotification,
 } from "@/app/actions";
 
+/**
+ * Converts a base64 string to a Uint8Array.
+ */
 function urlBase64ToUint8Array(base64String: string) {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
   const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
@@ -19,12 +22,11 @@ function urlBase64ToUint8Array(base64String: string) {
   }
   return outputArray;
 }
+
 /**
  * PushNotificationManager is a component that manages the push notifications for the app.
  * It allows the user to subscribe to push notifications and send test notifications.
  * It also allows the user to unsubscribe from push notifications.
- * It also allows the user to install the app on their device.
- * It also allows the user to share the app on their device.
  */
 export function PushNotificationManager() {
   const [isSupported, setIsSupported] = useState(false);
@@ -38,40 +40,96 @@ export function PushNotificationManager() {
       setIsSupported(true);
       registerServiceWorker();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function registerServiceWorker() {
-    const registration = await navigator.serviceWorker.register("/sw.js", {
-      scope: "/",
-      updateViaCache: "none",
-    });
-    const sub = await registration.pushManager.getSubscription();
-    setSubscription(sub);
+    try {
+      const registration = await navigator.serviceWorker.register("/sw.js", {
+        scope: "/",
+        updateViaCache: "none",
+      });
+      const sub = await registration.pushManager.getSubscription();
+      setSubscription(sub);
+    } catch (err) {
+      console.error("Service Worker registration failed:", err);
+      setIsSupported(false);
+    }
   }
 
   async function subscribeToPush() {
-    const registration = await navigator.serviceWorker.ready;
-    const sub = await registration.pushManager.subscribe({
-      userVisibleOnly: true,
-      applicationServerKey: urlBase64ToUint8Array(
-        process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY!
-      ),
-    });
-    setSubscription(sub);
-    const serializedSub = JSON.parse(JSON.stringify(sub));
-    await subscribeUser(serializedSub);
+    try {
+      // Request notification permission
+      const permission = await Notification.requestPermission();
+
+      if (permission !== "granted") {
+        alert(
+          "Notification permission denied. Please enable notifications in your browser settings."
+        );
+        return;
+      }
+
+      // Check if VAPID key exists
+      const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+      if (!vapidKey) {
+        console.error("VAPID public key is not configured");
+        alert("Push notifications are not configured properly.");
+        return;
+      }
+
+      const registration = await navigator.serviceWorker.ready;
+      const sub = await registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapidKey) as BufferSource,
+      });
+
+      setSubscription(sub);
+      const serializedSub = JSON.parse(JSON.stringify(sub));
+      await subscribeUser(serializedSub);
+
+      alert("Successfully subscribed to push notifications!");
+    } catch (err) {
+      console.error("Error subscribing to push notifications:", err);
+      alert("Failed to subscribe to push notifications. Please try again.");
+    }
   }
 
   async function unsubscribeFromPush() {
-    await subscription?.unsubscribe();
-    setSubscription(null);
-    await unsubscribeUser();
+    try {
+      await subscription?.unsubscribe();
+      setSubscription(null);
+      await unsubscribeUser();
+      alert("Successfully unsubscribed from push notifications.");
+    } catch (err) {
+      console.error("Error unsubscribing from push notifications:", err);
+      alert("Failed to unsubscribe. Please try again.");
+    }
   }
 
   async function sendTestNotification() {
-    if (subscription) {
-      await sendNotification(message);
-      setMessage("");
+    if (!subscription) {
+      alert("You need to subscribe first!");
+      return;
+    }
+
+    if (!message.trim()) {
+      alert("Please enter a message!");
+      return;
+    }
+
+    try {
+      const result = await sendNotification(message);
+      if (result.success) {
+        alert("Notification sent successfully!");
+        setMessage("");
+      } else {
+        alert(
+          "Failed to send notification: " + (result.error || "Unknown error")
+        );
+      }
+    } catch (err) {
+      console.error("Error sending notification:", err);
+      alert("Failed to send notification. Please try again.");
     }
   }
 
@@ -128,33 +186,65 @@ export function PushNotificationManager() {
  * InstallPrompt is a component that allows the user to install the app on their device.
  * It also allows the user to share the app on their device.
  */
+type BeforeInstallPromptEvent = Event & {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>;
+};
+
 export function InstallPrompt() {
   const [isIOS, setIsIOS] = useState(false);
   const [isStandalone, setIsStandalone] = useState(false);
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [deferredPrompt, setDeferredPrompt] =
+    useState<BeforeInstallPromptEvent | null>(null);
 
   useEffect(() => {
     setIsIOS(
       /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream
     );
 
-    setIsStandalone(window.matchMedia("(display-mode: standalone)").matches);
+    // Check if app is running in standalone mode (installed as PWA)
+    const checkStandalone = () => {
+      const displayModeStandalone = window.matchMedia(
+        "(display-mode: standalone)"
+      ).matches;
+      const iosStandalone = (window.navigator as any).standalone;
+      const androidTWA = document.referrer.includes("android-app://");
+
+      const isStandalonePWA =
+        displayModeStandalone || iosStandalone || androidTWA;
+
+      console.log("PWA Standalone Detection:", {
+        displayModeStandalone,
+        iosStandalone,
+        androidTWA,
+        isStandalone: isStandalonePWA,
+      });
+
+      setIsStandalone(isStandalonePWA);
+    };
+
+    checkStandalone();
 
     // Listen for the beforeinstallprompt event
     const handleBeforeInstallPrompt = (e: Event) => {
       // Prevent the mini-infobar from appearing on mobile
       e.preventDefault();
       // Stash the event so it can be triggered later
-      setDeferredPrompt(e);
+      setDeferredPrompt(e as BeforeInstallPromptEvent);
     };
 
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+
+    // Also listen for display mode changes
+    const displayModeQuery = window.matchMedia("(display-mode: standalone)");
+    displayModeQuery.addEventListener("change", checkStandalone);
 
     return () => {
       window.removeEventListener(
         "beforeinstallprompt",
         handleBeforeInstallPrompt
       );
+      displayModeQuery.removeEventListener("change", checkStandalone);
     };
   }, []);
 
@@ -164,15 +254,17 @@ export function InstallPrompt() {
     }
 
     // Show the install prompt
-    deferredPrompt.prompt();
+    await deferredPrompt.prompt();
 
     // Wait for the user to respond to the prompt
     const { outcome } = await deferredPrompt.userChoice;
 
     if (outcome === "accepted") {
-      console.log("User accepted the install prompt");
+      // User accepted the install prompt
+      // Optionally handle success
     } else {
-      console.log("User dismissed the install prompt");
+      // User dismissed the install prompt
+      // Optionally handle dismissal
     }
 
     // Clear the deferredPrompt so it can only be used once
@@ -201,7 +293,7 @@ export function InstallPrompt() {
             {" "}
             ⎋{" "}
           </span>
-          and then "Add to Home Screen"
+          and then &quot;Add to Home Screen&quot;
           <span role="img" aria-label="plus icon">
             {" "}
             ➕{" "}
