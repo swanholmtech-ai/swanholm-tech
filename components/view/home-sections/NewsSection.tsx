@@ -48,7 +48,7 @@ const newsItems = [
 
 const NewsSection = () => {
   return (
-    <section className="w-full min-h-[80dvh] flex flex-col mt-14 relative overflow-hidden">
+    <section className="w-full min-h-[80dvh] flex flex-col relative overflow-hidden">
       {/* News Media Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900">
         {/* Animated news ticker effect */}

@@ -17,7 +17,7 @@ const poppinsBold = Poppins({
 
 export default function SolutionSection() {
   return (
-    <section className="w-full h-[100dvh] flex flex-col mt-14 relative overflow-hidden">
+    <section className="w-full h-[100dvh] flex flex-col relative overflow-hidden">
       {/* High-Tech Interface Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-cyan-900 to-indigo-900">
         {/* Animated circuit board pattern */}

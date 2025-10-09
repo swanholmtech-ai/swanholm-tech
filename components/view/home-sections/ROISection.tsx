@@ -32,7 +32,7 @@ const poppinsRegular = Poppins({
 
 const ROISection = () => {
   return (
-    <section className="w-full h-[100dvh] flex mt-14 relative overflow-hidden">
+    <section className="w-full h-[100dvh] flex relative overflow-hidden">
       {/* Luxury Financial Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-green-900 to-teal-900">
         {/* Animated financial grid */}

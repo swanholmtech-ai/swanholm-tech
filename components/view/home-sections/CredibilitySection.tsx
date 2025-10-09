@@ -32,7 +32,7 @@ const poppinsRegular = Poppins({
 
 const CredibilitySection = () => {
   return (
-    <section className="w-full h-[100dvh] flex mt-14 relative overflow-hidden">
+    <section className="w-full h-[100dvh] flex relative overflow-hidden">
       {/* European Trust Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-teal-900 via-emerald-900 to-cyan-900">
         {/* Animated trust waves */}

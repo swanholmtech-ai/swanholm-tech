@@ -5,7 +5,7 @@ import HomeView from "@/components/view/HomeView";
 export default function Home() {
   return (
     <>
-      <main className="max-w-7xl mx-auto">
+      <main className="max-lvw mx-auto">
         <HomeView />
       </main>
 
