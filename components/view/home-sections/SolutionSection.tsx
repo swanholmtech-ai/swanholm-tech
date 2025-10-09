@@ -212,25 +212,12 @@ export default function SolutionSection() {
                   }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-purple-500/30 rounded-full blur-3xl animate-pulse" />
-                  <motion.div
-                    className="relative"
-                    animate={{
-                      boxShadow: [
-                        "0 0 0 rgba(6, 182, 212, 0)",
-                        "0 0 50px rgba(6, 182, 212, 0.5)",
-                        "0 0 0 rgba(6, 182, 212, 0)",
-                      ],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                    }}
-                  >
+                  <motion.div className="relative">
                     <Image
                       src="/assets/svgs/vest.svg"
                       alt="Solution"
-                      width={450}
-                      height={450}
+                      width={300}
+                      height={300}
                       className="relative"
                     />
                   </motion.div>
