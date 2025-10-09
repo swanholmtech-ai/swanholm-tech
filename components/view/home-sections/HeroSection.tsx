@@ -125,7 +125,7 @@ export default function HeroSection() {
             style={{
               backgroundImage: "url('/assets/imgs/vest-img.webp')",
               backgroundSize: "450px",
-              backgroundPosition: "right bottom",
+              backgroundPosition: "right center",
               backgroundRepeat: "no-repeat",
               filter:
                 "drop-shadow(0 0 60px rgba(6, 182, 212, 0.4)) brightness(1.2) contrast(1.1)",
