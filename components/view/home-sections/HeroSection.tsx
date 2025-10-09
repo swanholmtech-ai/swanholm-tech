@@ -1,4 +1,21 @@
 import Image from "next/image";
+import { Poppins } from "next/font/google";
+
+const poppinsBold = Poppins({
+  weight: ["700"],
+  subsets: ["latin"],
+  style: ["italic"],
+});
+
+const poppinsRegular = Poppins({
+  weight: ["500"],
+  subsets: ["latin"],
+});
+
+const poppinsThin = Poppins({
+  weight: ["300"],
+  subsets: ["latin"],
+});
 
 export default function HeroSection() {
   return (
@@ -7,19 +24,22 @@ export default function HeroSection() {
         <div className="px-12 pt-40 h-full">
           <div style={{ perspective: "600px", overflow: "hidden" }}>
             <h4
-              className="text-5xl font-bold h-content overflow-y-hidden text-amber-700"
-              style={{
-                transform: "rotateY(-22deg)",
-                transformStyle: "preserve-3d",
-              }}
+              className={`${poppinsBold.className} text-5xl font-bold h-content overflow-y-hidden text-cyan-700`}
             >
-              What if your Vest could think?
+              What if your Vest could save your life?
             </h4>
           </div>
-          <p className="text-lg pt-8">
+          <p className={`${poppinsRegular.className} text-lg pt-8`}>
             Swanholm Tech is a technology company that provides technology
             solutions to businesses.
           </p>
+          <ul className={`${poppinsThin.className} text-xl pt-8 pl-16`}>
+            <li>Every worker deserves to come home safe.</li>
+            <li>Your vest technology watches out when no one else can.</li>
+            <li>
+              You don&apos;t just get a notification, you get a saved life.
+            </li>
+          </ul>
         </div>
       </div>
       <div className="flex-2 flex items-center justify-center">
