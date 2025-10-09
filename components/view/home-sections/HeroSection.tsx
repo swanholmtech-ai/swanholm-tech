@@ -19,12 +19,28 @@ const poppinsThin = Poppins({
 
 export default function HeroSection() {
   return (
-    <section className="w-full h-[100dvh] flex">
-      <div className="flex-3">
+    <section className="w-full h-[100dvh] bg-cover bg-center bg-no-repeat bg-linear-to-br: url('/assets/imgs/vest-img.webp')">
+      {/* <div className="absolute bottom-0 right-0">
+        <Image
+          src="/assets/imgs/vest-img.webp"
+          alt="Solution"
+          width={300}
+          height={300}
+        />
+      </div> */}
+      <div
+        className="h-full w-full"
+        style={{
+          backgroundImage: "url('/assets/imgs/vest-img.webp')",
+          backgroundSize: "350px",
+          backgroundPosition: "right bottom",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="px-12 pt-40 h-full">
-          <div style={{ perspective: "600px", overflow: "hidden" }}>
+          <div>
             <h4
-              className={`${poppinsBold.className} text-5xl font-bold h-content overflow-y-hidden text-cyan-700`}
+              className={`${poppinsBold.className} text-5xl font-bold h-content overflow-y-hidden text-cyan-700 tracking-tighter`}
             >
               What if your Vest could save your life?
             </h4>
@@ -40,17 +56,6 @@ export default function HeroSection() {
               You don&apos;t just get a notification, you get a saved life.
             </li>
           </ul>
-        </div>
-      </div>
-      <div className="flex-2 flex items-center justify-center">
-        <div className="bg-gray-200 w-120 h-120 rounded-full flex items-center justify-center border-6 border-gray-400">
-          <Image
-            src="/assets/imgs/vest-img.webp"
-            alt="Vest"
-            width={300}
-            height={300}
-            priority={true}
-          />
         </div>
       </div>
     </section>
