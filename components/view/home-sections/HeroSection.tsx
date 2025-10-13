@@ -77,14 +77,14 @@ export default function HeroSection() {
         <div className="px-12 pt-40 h-full">
           <div>
             <h4
-              className={`${poppinsBold.className} text-7xl font-bold h-content overflow-y-hidden`}
+              className={`${poppinsBold.className} text-5xl font-bold h-content overflow-y-hidden`}
               style={{
-                background: 'linear-gradient(-45deg, #06b6d4, #a855f7,rgb(255, 255, 255), #06b6d4, #a855f7)',
+                background: 'linear-gradient(-45deg, #06b6d4, #a855f7,rgb(255, 255, 255), #06b6d4,rgb(255, 251, 0))',
                 backgroundSize: '400% 400%',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                animation: 'gradient-shift 12 ease-in-out infinite',
+                animation: 'gradient-shift 12s ease-in-out infinite',
               }}
             >
               What if your Vest could save your life?
