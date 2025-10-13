@@ -99,13 +99,13 @@ export default function HeroSection() {
             `}</style>
           </div>
 
-          <p className={`${poppinsRegular.className} text-xl pt-8 text-gray-300 max-w-2xl`}>
+          <p className={`${poppinsRegular.className} text-xl pt-8 text-gray-300 max-w-2xl pl-4`}>
             Revolutionary smart safety technology that protects workers in
             real-time, combining AI detection with instant holographic alerts to
             save lives.
           </p>
 
-          <ul className={`${poppinsThin.className} text-lg pt-10 pl-0 space-y-3 max-w-2xl`}>
+          <ul className={`${poppinsThin.className} text-lg pt-10 pl-6 space-y-3 max-w-2xl`}>
             {[
               "Every worker deserves to come home safe.",
               "Your vest technology watches out when no one else can.",
