@@ -79,7 +79,7 @@ export default function HeroSection() {
             <h4
               className={`${poppinsBold.className} text-5xl font-bold h-content overflow-y-hidden`}
               style={{
-                background: 'linear-gradient(-45deg, #06b6d4, #a855f7,rgb(255, 255, 255), #06b6d4,rgb(255, 251, 0))',
+                background: 'linear-gradient(-45deg, #06b6d4,rgb(181, 255, 203),rgb(255, 255, 255), #06b6d4,rgb(255, 251, 0))',
                 backgroundSize: '400% 400%',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
