@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import "@/style/nav-bar.css";
-import { Home, Shirt, Store, Newspaper, Send } from "lucide-react";
 import { Button } from "../ui/button";
 import { useMediaQuery } from "@/hook/useMediaQuery";
 import { HamburgerMenu } from "./HamburgerMenu";
@@ -13,16 +12,15 @@ export function NavigationBar() {
       {isMobile ? (
         <HamburgerMenu />
       ) : (
-        <nav className="mx-auto max-w-md z-50 my-2 fixed top-0 left-0 right-0">
-          <ul className="flex gap-4 items-center justify-evenly">
+        <nav className="mx-auto max-w-md z-50 my-2 fixed top-2 left-0 right-0 bg-">
+          <ul className="flex gap-4 items-center justify-evenly bg-">
             <Link href="/">
               <Button
                 variant="default"
-                size="icon-lg"
-                className="cursor-pointer bg-orange-500 hover:bg-orange-600 rounded-full navbar-button-shadow"
+                className="cursor-pointer bg-slate-800 border border-slate-600 hover:bg-slate-500"
               >
                 <li>
-                  <Home />
+                  Home
                 </li>
               </Button>
             </Link>
@@ -30,11 +28,10 @@ export function NavigationBar() {
             <Link href="/products">
               <Button
                 variant="default"
-                size="icon-lg"
-                className="cursor-pointer bg-orange-500 hover:bg-orange-600 rounded-full navbar-button-shadow"
+                className="cursor-pointer bg-slate-800 border border-slate-600 hover:bg-slate-500"
               >
                 <li>
-                  <Shirt />
+                 Products
                 </li>
               </Button>
             </Link>
@@ -42,11 +39,10 @@ export function NavigationBar() {
             <Link href="/about">
               <Button
                 variant="default"
-                size="icon-lg"
-                className="cursor-pointer bg-orange-500 hover:bg-orange-600 rounded-full navbar-button-shadow"
+                className="cursor-pointer bg-slate-800 border border-slate-600 hover:bg-slate-500"
               >
                 <li>
-                  <Store />
+                  About
                 </li>
               </Button>
             </Link>
@@ -54,11 +50,10 @@ export function NavigationBar() {
             <Link href="/news">
               <Button
                 variant="default"
-                size="icon-lg"
-                className="cursor-pointer bg-orange-500 hover:bg-orange-600 rounded-full navbar-button-shadow"
+                className="cursor-pointer bg-slate-800 border border-slate-600 hover:bg-slate-500"
               >
                 <li>
-                  <Newspaper />
+                  News
                 </li>
               </Button>
             </Link>
@@ -66,11 +61,10 @@ export function NavigationBar() {
             <Link href="/contact">
               <Button
                 variant="default"
-                size="icon-lg"
-                className="cursor-pointer bg-orange-500 hover:bg-orange-600 rounded-full navbar-button-shadow"
+                className="cursor-pointer bg-slate-800 border border-slate-600 hover:bg-slate-500"
               >
                 <li>
-                  <Send />
+                  Contact
                 </li>
               </Button>
             </Link>
