@@ -22,7 +22,7 @@ export default function HeroSection() {
   return (
     <section className="w-full h-[100dvh] relative overflow-hidden">
       {/* Animated starfield - keeping the sparkling dots */}
-      <div className="absolute inset-0 bg-black">
+      <div className="absolute inset-0 z-10">
         <div className="absolute inset-0">
           {Array.from({ length: 50 }).map((_, i) => {
             // Use deterministic positioning based on index
@@ -40,6 +40,7 @@ export default function HeroSection() {
                   left,
                   top,
                   opacity,
+                  zIndex: 20,
                 }}
                 animate={{
                   scale: [0, 1, 0],
@@ -78,12 +79,12 @@ export default function HeroSection() {
             <h4
               className={`${poppinsBold.className} text-7xl font-bold h-content overflow-y-hidden`}
               style={{
-                background: 'linear-gradient(-45deg, #06b6d4, #a855f7, #ec4899, #06b6d4, #a855f7)',
+                background: 'linear-gradient(-45deg, #06b6d4, #a855f7,rgb(255, 255, 255), #06b6d4, #a855f7)',
                 backgroundSize: '400% 400%',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                animation: 'gradient-shift 3s ease infinite',
+                animation: 'gradient-shift 12 ease-in-out infinite',
               }}
             >
               What if your Vest could save your life?
