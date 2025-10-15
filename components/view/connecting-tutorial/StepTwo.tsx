@@ -5,12 +5,12 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const StepOne = () => {
+const StepTwo = () => {
   return (
     <div className="flex flex-col h-full">
       <div className="h-1/2">
         <DialogHeader>
-          <DialogTitle>Connecting Toturial &nbsp;&nbsp;&nbsp;<span className="text-red-500">Step 1</span></DialogTitle>
+          <DialogTitle>Connecting Toturial &nbsp;&nbsp;&nbsp;<span className="text-red-500">Step 2</span></DialogTitle>
           <DialogDescription>
             1. Download Swanholme sense App From Google play or App store and
             Install It
@@ -52,4 +52,4 @@ const StepOne = () => {
   );
 };
 
-export default StepOne;
+export default StepTwo;
