@@ -4,6 +4,7 @@ import "@/style/nav-bar.css";
 import { Button } from "../ui/button";
 import { useMediaQuery } from "@/hook/useMediaQuery";
 import { HamburgerMenu } from "./HamburgerMenu";
+import { ServicesDropDown } from "./navigation-bar/ServicesDropDown";
 
 export function NavigationBar() {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -19,9 +20,7 @@ export function NavigationBar() {
                 variant="default"
                 className="cursor-pointer bg-slate-800 border border-slate-600 hover:bg-slate-500"
               >
-                <li>
-                  Home
-                </li>
+                <li>Home</li>
               </Button>
             </Link>
 
@@ -30,9 +29,7 @@ export function NavigationBar() {
                 variant="default"
                 className="cursor-pointer bg-slate-800 border border-slate-600 hover:bg-slate-500"
               >
-                <li>
-                 Products
-                </li>
+                <li>Products</li>
               </Button>
             </Link>
 
@@ -41,9 +38,7 @@ export function NavigationBar() {
                 variant="default"
                 className="cursor-pointer bg-slate-800 border border-slate-600 hover:bg-slate-500"
               >
-                <li>
-                  About
-                </li>
+                <li>About</li>
               </Button>
             </Link>
 
@@ -52,9 +47,7 @@ export function NavigationBar() {
                 variant="default"
                 className="cursor-pointer bg-slate-800 border border-slate-600 hover:bg-slate-500"
               >
-                <li>
-                  News
-                </li>
+                <li>News</li>
               </Button>
             </Link>
 
@@ -63,11 +56,12 @@ export function NavigationBar() {
                 variant="default"
                 className="cursor-pointer bg-slate-800 border border-slate-600 hover:bg-slate-500"
               >
-                <li>
-                  Contact
-                </li>
+                <li>Contact</li>
               </Button>
             </Link>
+            <li>
+              <ServicesDropDown />
+            </li>
           </ul>
         </nav>
       )}
