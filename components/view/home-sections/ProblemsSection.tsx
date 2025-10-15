@@ -4,12 +4,12 @@ import {
   AnimatedSection,
   ParallaxSection,
 } from "@/components/animations/AnimatedSection";
-import { fadeInUp, slideInLeft, blurIn } from "@/lib/animations";
+import { slideInLeft } from "@/lib/animations";
 import { motion } from "framer-motion";
 
 export default function ProblemsSection() {
   return (
-    <section className="w-full h-[100dvh] flex relative overflow-hidden">
+    <article className="w-full h-[100dvh] flex relative overflow-hidden">
       {/* Industrial Warning Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-red-900 to-orange-900">
         {/* Animated warning stripes */}
@@ -174,6 +174,6 @@ export default function ProblemsSection() {
         </div>
         <div className="flex-1"></div>
       </div>
-    </section>
+    </article>
   );
 }

@@ -32,7 +32,7 @@ const poppinsRegular = Poppins({
 
 const ROISection = () => {
   return (
-    <section className="w-full h-[100dvh] flex relative overflow-hidden">
+    <article className="w-full h-[100dvh] flex relative overflow-hidden">
       {/* Luxury Financial Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-green-900 to-teal-900">
         {/* Animated financial grid */}
@@ -197,7 +197,7 @@ const ROISection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-green-500/30 rounded-full blur-3xl animate-pulse" />
               <Image
-                src="/assets/imgs/vest-d2-ai.avif"
+                src="/assets/imgs/rio.avif"
                 alt="Vest"
                 width={350}
                 height={350}
@@ -246,7 +246,7 @@ const ROISection = () => {
           </motion.div>
         </AnimatedSection>
       </div>
-    </section>
+    </article>
   );
 };
 

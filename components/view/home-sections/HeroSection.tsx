@@ -20,7 +20,7 @@ const poppinsThin = Poppins({
 
 export default function HeroSection() {
   return (
-    <section className="w-full h-[100dvh] relative overflow-hidden">
+    <article className="w-full h-[100dvh] relative overflow-hidden">
       {/* Animated starfield - keeping the sparkling dots */}
       <div className="absolute inset-0 z-10">
         <div className="absolute inset-0">
@@ -119,6 +119,6 @@ export default function HeroSection() {
           </ul>
         </div>
       </div>
-    </section>
+    </article>
   );
 }

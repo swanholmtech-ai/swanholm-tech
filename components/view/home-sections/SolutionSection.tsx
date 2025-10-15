@@ -4,9 +4,8 @@ import Image from "next/image";
 import { Poppins } from "next/font/google";
 import {
   AnimatedSection,
-  ScrollScale,
 } from "@/components/animations/AnimatedSection";
-import { fadeInUp, slideInLeft, slideInRight, scaleIn } from "@/lib/animations";
+import { slideInLeft, slideInRight } from "@/lib/animations";
 import { motion } from "framer-motion";
 
 const poppinsBold = Poppins({
@@ -17,7 +16,7 @@ const poppinsBold = Poppins({
 
 export default function SolutionSection() {
   return (
-    <section className="w-full h-[100dvh] flex flex-col relative overflow-hidden">
+    <article className="w-full h-[100dvh] flex flex-col relative overflow-hidden">
       {/* High-Tech Interface Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-cyan-900 to-indigo-900">
         {/* Animated circuit board pattern */}
@@ -275,6 +274,6 @@ export default function SolutionSection() {
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 }

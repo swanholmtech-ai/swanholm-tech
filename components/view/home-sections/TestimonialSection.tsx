@@ -40,7 +40,7 @@ const testimonials = [
 
 export default function TestimonialSection() {
   return (
-    <section className="w-full h-[100dvh] flex flex-col relative overflow-hidden">
+    <article className="w-full h-[100dvh] flex flex-col relative overflow-hidden">
       {/* Testimonial Trust Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-sky-900 via-blue-900 to-indigo-900">
         {/* Animated speech bubbles */}
@@ -256,6 +256,6 @@ export default function TestimonialSection() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </article>
   );
 }
