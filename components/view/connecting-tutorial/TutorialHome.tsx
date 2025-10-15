@@ -7,17 +7,16 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+//   DialogTrigger,
 } from "@/components/ui/dialog"
 
-export function TutorialHome() {
+export function TutorialHome({open, setOpen}: {open: boolean, setOpen: (open: boolean) => void}) {
   return (
-    <Dialog>
-      <form>
-        <DialogTrigger asChild>
+    <Dialog open={open}>
+        {/* <DialogTrigger asChild>
           <Button variant="outline">Open Dialog</Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
+          </DialogTrigger>  */}
+        <DialogContent className="sm:max-w-[425px] close">
           <DialogHeader>
             <DialogTitle>Edit profile</DialogTitle>
             <DialogDescription>
@@ -37,12 +36,11 @@ export function TutorialHome() {
           </div>
           <DialogFooter>
             <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
             </DialogClose>
-            <Button type="submit">Save changes</Button>
+            <Button type="submit" onClick={() => setOpen(false)}>Save changes</Button>
           </DialogFooter>
         </DialogContent>
-      </form>
     </Dialog>
   )
 }
