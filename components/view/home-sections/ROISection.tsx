@@ -133,8 +133,8 @@ const ROISection = () => {
             className={`${poppinsThin.className} text-xl pt-10 pl-16 text-emerald-100 max-w-3xl`}
             whileHover={{ x: 10, transition: { duration: 0.2 } }}
           >
-            Accidents cost in Lives, Downtime, and Insurance. Alert Vest reduces
-            risks and improves employer branding.
+            Swanholm Technology&apos;s smart vest reduces cost of incidents,
+            production stops, and sick leave{" "}
           </motion.p>
         </AnimatedSection>
 
@@ -148,11 +148,24 @@ const ROISection = () => {
           {[
             {
               icon: "💰",
-              text: "Fewer accidents & sick leave",
+              text: "3% of incidents involves a fall or a slip",
               color: "emerald",
             },
-            { icon: "📊", text: "Lower insurance costs", color: "green" },
-            { icon: "🏆", text: "Stronger safety culture", color: "teal" },
+            {
+              icon: "📊",
+              text: "Up to 20% of all accidents happen when the worker is alone",
+              color: "green",
+            },
+            {
+              icon: "🏆",
+              text: "Every minute faster help arrives, the risk of serious injury decreases",
+              color: "teal",
+            },
+            {
+              icon: "🏆",
+              text: "A day less sick leave saves at least 20 % of a monthly salary cost",
+              color: "teal",
+            },
           ].map((item, index) => (
             <motion.li
               key={index}
@@ -194,15 +207,15 @@ const ROISection = () => {
             whileHover={{ scale: 1.15, rotate: 8 }}
             transition={{ type: "spring", stiffness: 200 }}
           >
-            <div className="relative">
+            <div className="relative pl-10 pb-6">
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-green-500/30 rounded-full blur-3xl animate-pulse" />
               <Image
-                src="/assets/imgs/rio.avif"
+                src="/assets/svgs/chart.svg"
                 alt="Vest"
-                width={350}
-                height={350}
+                width={550}
+                height={550}
                 priority={true}
-                className="relative drop-shadow-[0_0_50px_rgba(16,185,129,0.5)]"
+                className="relative drop-shadow-[0_0_50px_rgba(16,185,129,0.5)] opacity-44"
               />
             </div>
           </motion.div>
@@ -234,12 +247,12 @@ const ROISection = () => {
               transition: { duration: 0.3 },
             }}
           >
-            <div className="relative">
+            <div className="relative pr-20">
               <Image
-                src="/assets/svgs/chart.svg"
+                src="/assets/imgs/rio.avif"
                 alt="Solution"
-                width={750}
-                height={750}
+                width={450}
+                height={450}
                 className="relative drop-shadow-[0_0_60px_rgba(34,197,94,0.4)]"
               />
             </div>
