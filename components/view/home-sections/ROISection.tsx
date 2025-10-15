@@ -7,7 +7,6 @@ import {
   ParallaxSection,
 } from "@/components/animations/AnimatedSection";
 import {
-  fadeInUp,
   slideInLeft,
   staggerContainer,
   listItemVariant,
@@ -120,7 +119,7 @@ const ROISection = () => {
           }}
         >
           <h4
-            className={`${poppinsBold.className} pt-32 text-7xl h-fit overflow-y-hidden pl-12
+            className={`${poppinsBold.className} pt-32 text-5xl h-fit overflow-y-hidden pl-12
             bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 bg-clip-text text-transparent
             drop-shadow-[0_0_50px_rgba(16,185,129,0.6)]`}
           >
@@ -147,8 +146,8 @@ const ROISection = () => {
         >
           {[
             {
-              icon: "💰",
-              text: "3% of incidents involves a fall or a slip",
+              icon: "🤸🏽‍♂️",
+              text: "3% of incident involves a fall or a slip",
               color: "emerald",
             },
             {
@@ -157,13 +156,13 @@ const ROISection = () => {
               color: "green",
             },
             {
-              icon: "🏆",
+              icon: "⏰",
               text: "Every minute faster help arrives, the risk of serious injury decreases",
               color: "teal",
             },
             {
-              icon: "🏆",
-              text: "A day less sick leave saves at least 20 % of a monthly salary cost",
+              icon: "🌤️",
+              text: "A day less sick leave saves at least 20% of a monthly salary cost",
               color: "teal",
             },
           ].map((item, index) => (
