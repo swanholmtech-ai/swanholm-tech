@@ -207,7 +207,7 @@ const ROISection = () => {
             transition={{ type: "spring", stiffness: 200 }}
           >
             <div className="relative pl-10 pb-6">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-green-500/30 rounded-full blur-3xl animate-pulse" />
+              {/* <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-green-500/30 rounded-full blur-3xl animate-pulse" /> */}
               <Image
                 src="/assets/svgs/chart.svg"
                 alt="Vest"
