@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog"
 import StepOne from "./StepOne"
 import StepTwo from "./StepTwo"
+import StepThree from "./StepThree"
 import { XIcon } from "lucide-react"
 
 export function TutorialHome({open, setOpen}: {open: boolean, setOpen: (open: boolean) => void}) {
@@ -23,6 +24,7 @@ export function TutorialHome({open, setOpen}: {open: boolean, setOpen: (open: bo
           <div>
             {currentStep === 1 && <StepOne />}
             {currentStep === 2 && <StepTwo />}
+            {currentStep === 3 && <StepThree />}
           </div>
           <DialogFooter className="h-1/6">
             <DialogClose asChild>
