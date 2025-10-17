@@ -1,9 +1,17 @@
+import { Poppins } from "next/font/google";
 import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+
 import Image from "next/image";
+
+const poppinsThin = Poppins({
+  weight: ["300"],
+  subsets: ["latin"],
+});
+
 const StepFive = () => {
   return (
     <div className="flex flex-col h-full">
