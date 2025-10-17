@@ -13,6 +13,7 @@ import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
 import StepFive from "./StepFive";
+import StepSix from "./StepSix";
 import { XIcon } from "lucide-react";
 
 export function TutorialHome({
@@ -23,6 +24,7 @@ export function TutorialHome({
   setOpen: (open: boolean) => void;
 }) {
   const [currentStep, setCurrentStep] = useState(1);
+
   return (
     <Dialog open={open}>
       <DialogContent className="sm:max-w-[725px] close min-h-[400px] flex flex-col gap-2">
@@ -40,18 +42,29 @@ export function TutorialHome({
           {currentStep === 3 && <StepThree />}
           {currentStep === 4 && <StepFour />}
           {currentStep === 5 && <StepFive />}
+          {currentStep === 6 && <StepSix />}
         </div>
         <DialogFooter className="h-1/6">
           <DialogClose asChild>
             <Button
+              className="cursor-pointer"
               variant="outline"
+              disabled={currentStep <= 1}
               onClick={() => setCurrentStep(currentStep - 1)}
             >
               Back
             </Button>
           </DialogClose>
-          <Button type="submit" onClick={() => setCurrentStep(currentStep + 1)}>
-            Next
+          <Button
+            type="button"
+            className="cursor-pointer"
+            onClick={() =>
+              setCurrentStep(
+                currentStep === 6 ? (setOpen(false), 6) : currentStep + 1
+              )
+            }
+          >
+            {currentStep === 6 ? "Finish" : "Next"}
           </Button>
         </DialogFooter>
       </DialogContent>
