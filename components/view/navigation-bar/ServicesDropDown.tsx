@@ -30,7 +30,7 @@ export function ServicesDropDown() {
             <Settings size={32} color="white" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56" align="start">
+        <DropdownMenuContent className="w-56" align="center">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuGroup>
             <DropdownMenuItem
