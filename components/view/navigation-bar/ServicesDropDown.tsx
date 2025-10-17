@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { TutorialHome } from "../connecting-tutorial/TutorialHome";
+import { Settings } from "lucide-react";
 
 export function ServicesDropDown() {
   const [open, setOpen] = useState(false);
@@ -25,17 +26,17 @@ export function ServicesDropDown() {
       {open && <TutorialHome setOpen={setOpen} open={open} />}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button
-            variant="default"
-            className="cursor-pointer bg-slate-800 border border-slate-600 hover:bg-slate-500"
-          >
-            Service
+          <Button variant="ghost" className="cursor-pointer hover:bg-slate-500">
+            <Settings size={32} color="white" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56" align="start">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuGroup>
-            <DropdownMenuItem onClick={clickOnTutorialHandler}>
+            <DropdownMenuItem
+              onClick={clickOnTutorialHandler}
+              className="cursor-pointer"
+            >
               Tutorial
               <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
             </DropdownMenuItem>
