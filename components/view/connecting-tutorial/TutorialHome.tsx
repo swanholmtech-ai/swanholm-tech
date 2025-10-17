@@ -15,6 +15,7 @@ import StepFour from "./StepFour";
 import StepFive from "./StepFive";
 import StepSix from "./StepSix";
 import { XIcon } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function TutorialHome({
   open,
@@ -36,14 +37,22 @@ export function TutorialHome({
         >
           <XIcon className="text-white" />
         </Button>
-        <div>
-          {currentStep === 1 && <StepOne />}
-          {currentStep === 2 && <StepTwo />}
-          {currentStep === 3 && <StepThree />}
-          {currentStep === 4 && <StepFour />}
-          {currentStep === 5 && <StepFive />}
-          {currentStep === 6 && <StepSix />}
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentStep}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {currentStep === 1 && <StepOne />}
+            {currentStep === 2 && <StepTwo />}
+            {currentStep === 3 && <StepThree />}
+            {currentStep === 4 && <StepFour />}
+            {currentStep === 5 && <StepFive />}
+            {currentStep === 6 && <StepSix />}
+          </motion.div>
+        </AnimatePresence>
         <DialogFooter className="h-1/6">
           <DialogClose asChild>
             <Button
