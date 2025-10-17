@@ -11,7 +11,7 @@ const StepFive = () => {
         <DialogHeader>
           <DialogTitle>
             Connecting Toturial &nbsp;&nbsp;&nbsp;
-            <span className="text-red-500">Step 4</span>
+            <span className="text-red-500">Step 5</span>
           </DialogTitle>
           <DialogDescription>
             9. To ensure alerts are sent when the app is inactive, the
