@@ -3,12 +3,7 @@ import { motion } from "framer-motion";
 import { staggerContainer } from "@/lib/animations";
 import useProducts from "@/store/useProducts";
 import { Poppins } from "next/font/google";
-
-// const poppinsBold = Poppins({
-//   weight: ["900"],
-//   subsets: ["latin"],
-//   style: ["italic"],
-// });
+import Image from "next/image";
 
 const poppinsThin = Poppins({
   weight: ["300"],
@@ -19,13 +14,14 @@ const poppinsRegular = Poppins({
   weight: ["400"],
   subsets: ["latin"],
 });
+
 export default function ProductsPage() {
   const { products } = useProducts();
 
   return (
     <main className="max-w-7xl mt-20 mx-auto">
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10 w-full"
+        className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 pt-10 w-full px-4"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
@@ -54,7 +50,7 @@ export default function ProductsPage() {
               },
             }}
             className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 rounded-2xl shadow-xl 
-                flex flex-col md:flex-row items-center p-6 w-full md:w-[32%] min-w-[280px]
+                flex flex-col items-center p-4 w-full
                 border border-blue-500/30 backdrop-blur-sm cursor-pointer"
             whileHover={{
               scale: 1.05,
@@ -64,7 +60,7 @@ export default function ProductsPage() {
               transition: { duration: 0.3 },
             }}
           >
-            <div className="w-full md:w-1/3 flex justify-center items-center mb-4 md:mb-0">
+            <div className="w-full flex justify-center items-center mb-4">
               <motion.div
                 whileHover={{
                   scale: 1.1,
@@ -72,16 +68,16 @@ export default function ProductsPage() {
                   transition: { duration: 0.3 },
                 }}
               >
-                {/* <Image
+                <Image
                   src={item.image}
-                  alt={item.title}
+                  alt={item.name}
                   width={120}
                   height={120}
                   className="rounded-xl object-cover shadow-lg"
-                /> */}
+                />
               </motion.div>
             </div>
-            <div className="md:pl-6 w-full md:w-2/3">
+            <div className="w-full">
               <h5
                 className={`${poppinsRegular.className} text- text-blue-200 font-bold`}
               >
