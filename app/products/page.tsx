@@ -78,8 +78,8 @@ export default function ProductsPage() {
                 <Image
                   src={item.image}
                   alt={item.name}
-                  width={120}
-                  height={120}
+                  width={160}
+                  height={100}
                   className="rounded-xl object-cover shadow-lg"
                 />
               </motion.div>

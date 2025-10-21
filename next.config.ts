@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.swanholmtech.com",
+        pathname: "/wp-content/uploads/**",
+      },
+      {
+        protocol: "http",
+        hostname: "swanholmtech-local.local",
+        pathname: "/wp-content/uploads/**",
+      },
+    ],
+  },
   async headers() {
     return [
       {
