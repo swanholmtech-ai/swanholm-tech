@@ -67,7 +67,7 @@ export default function ProductsPage() {
               transition: { duration: 0.3 },
             }}
           >
-            <div className="w-full flex-1 justify-center items-center mb-4 bg-green-500">
+            <div className="w-full flex-1 flex justify-center items-center mb-4">
               <motion.div
                 whileHover={{
                   scale: 1.1,
@@ -78,15 +78,15 @@ export default function ProductsPage() {
                 <Image
                   src={item.image}
                   alt={item.name}
-                  width={160}
-                  height={100}
+                  width={item.id === "001" || item.id === "003" ? 120 : 160}
+                  height={item.id === "001" || item.id === "003" ? 120 : 160}
                   className="rounded-xl object-cover shadow-lg"
                 />
               </motion.div>
             </div>
-            <div className="w-full h-[80px] bg-blue-500">
+            <div className="w-full h-[80px] flex justify-center items-center">
               <h5
-                className={`${poppinsRegular.className} text- text-blue-200 font-bold`}
+                className={`${poppinsRegular.className} text-sm text-blue-200 font-bold`}
               >
                 {item.name}
               </h5>
