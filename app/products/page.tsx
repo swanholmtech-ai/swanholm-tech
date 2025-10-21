@@ -104,7 +104,7 @@ export default function ProductsPage() {
                 <div className="text-white">Price: {item.price} kr </div>
                 {item.inStock ? (
                   <div>
-                    <span className="text-green-700 font-bold italic">
+                    <span className="text-green-700 hover:text-green-500 font-bold italic">
                       In Stock
                     </span>
                   </div>
