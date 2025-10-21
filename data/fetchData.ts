@@ -13,6 +13,7 @@ export const products: ProductType[] = [
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1.webp",
     size: ["S", "M", "L", "XL", "2XL"],
     imageGallery: [],
+    inStock: true,
   },
   {
     id: "002",
@@ -26,6 +27,7 @@ export const products: ProductType[] = [
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2.webp",
     size: ["S", "M", "L", "XL", "2XL"],
     imageGallery: [],
+    inStock: true,
   },
   {
     id: "003",
@@ -39,6 +41,7 @@ export const products: ProductType[] = [
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1.webp",
     size: ["S", "M", "L", "XL", "2XL"],
     imageGallery: [],
+    inStock: true,
   },
   {
     id: "004",
@@ -52,6 +55,7 @@ export const products: ProductType[] = [
       "https://www.swanholmtech.com/wp-content/uploads/2025/02/vast-lo-arm2.png",
     size: ["S", "M", "L", "XL", "2XL"],
     imageGallery: [],
+    inStock: true,
   },
   {
     id: "005",
@@ -65,5 +69,6 @@ export const products: ProductType[] = [
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-5.webp",
     size: ["S", "L"],
     imageGallery: [],
+    inStock: true,
   },
 ];

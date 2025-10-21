@@ -6,4 +6,5 @@ export type ProductType = {
   size: ("S" | "M" | "L" | "XL" | "2XL")[];
   imageGallery?: string[];
   id: string;
+  inStock: boolean;
 };

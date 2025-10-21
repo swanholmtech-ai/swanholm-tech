@@ -11,6 +11,11 @@ const poppinsRegular = Poppins({
   subsets: ["latin"],
 });
 
+const poppinsThin = Poppins({
+  weight: ["200"],
+  subsets: ["latin"],
+});
+
 export default function ProductsPage() {
   const { products } = useProducts();
   const ref = useRef(null);
@@ -53,7 +58,7 @@ export default function ProductsPage() {
               },
             }}
             className="bg-gradient-to-br from-blue-900/40 to-gray-900/40 rounded-2xl shadow-xl 
-                flex flex-col items-center p-4 w-full
+                flex flex-col items-center px-4 py-2 w-full
                 border border-blue-500/30 backdrop-blur-sm cursor-pointer"
             style={{
               border: "2px solid transparent", // define an initial border!
@@ -67,6 +72,14 @@ export default function ProductsPage() {
               transition: { duration: 0.3 },
             }}
           >
+            <div className="w-full h-[80px] flex justify-center items-center">
+              <h5
+                className={`${poppinsRegular.className} text-sm text-blue-200 font-bold`}
+              >
+                {item.name}
+              </h5>
+            </div>
+
             <div className="w-full flex-1 flex justify-center items-center mb-4">
               <motion.div
                 whileHover={{
@@ -84,24 +97,25 @@ export default function ProductsPage() {
                 />
               </motion.div>
             </div>
-            <div className="w-full h-[80px] flex justify-center items-center">
-              <h5
-                className={`${poppinsRegular.className} text-sm text-blue-200 font-bold`}
+            <div className="w-full h-[10px] flex justify-center items-center">
+              <div
+                className={`${poppinsThin.className} text-sm text-blue-200 font-bold flex justify-between w-full`}
               >
-                {item.name}
-              </h5>
-              <motion.span
-                className="text-sm text-purple-300"
-                animate={{
-                  opacity: [0.6, 1, 0.6],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: 0,
-                }}
-              >
-                {item.price}
-              </motion.span>
+                <div className="text-white">Price: {item.price} kr </div>
+                {item.inStock ? (
+                  <div>
+                    <span className="text-green-700 font-bold italic">
+                      In Stock
+                    </span>
+                  </div>
+                ) : (
+                  <div>
+                    <span className="text-red-500 font- italic">
+                      Out of Stock
+                    </span>
+                  </div>
+                )}
+              </div>
             </div>
           </motion.div>
         ))}

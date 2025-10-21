@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import HomeView from "@/components/view/HomeView";
 // import { InstallPrompt } from "@/components/PushNotification";
 
