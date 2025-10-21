@@ -52,7 +52,7 @@ export default function ProductsPage() {
                 },
               },
             }}
-            className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 rounded-2xl shadow-xl 
+            className="bg-gradient-to-br from-blue-900/40 to-gray-900/40 rounded-2xl shadow-xl 
                 flex flex-col items-center p-4 w-full
                 border border-blue-500/30 backdrop-blur-sm cursor-pointer"
             style={{
