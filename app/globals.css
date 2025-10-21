@@ -4,6 +4,7 @@
 body {
   /* background-color: oklch(92.9% 0.013 255.508); */
   overflow-x: hidden;
+  background-color: #111c2e;
 }
 
 @custom-variant dark (&:is(.dark *));
