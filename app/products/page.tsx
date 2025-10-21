@@ -1,10 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { staggerContainer } from "@/lib/animations";
 import useProducts from "@/store/useProducts";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
+import { useRef } from "react";
 
 const poppinsRegular = Poppins({
   weight: ["400"],
@@ -13,19 +13,21 @@ const poppinsRegular = Poppins({
 
 export default function ProductsPage() {
   const { products } = useProducts();
-  const [visibility, setVisibility] = useState("");
-  useEffect(() => {
-    setVisibility("visible");
-  }, [products]);
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px",
+    amount: 0.1,
+  });
 
   return (
     <main className="max-w-7xl mt-20 mx-auto">
       <motion.div
+        ref={ref}
         className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 pt-10 w-full px-4"
         variants={staggerContainer}
         initial="hidden"
-        whileInView={visibility}
-        viewport={{ once: true, margin: "-100px", amount: 0.1 }}
+        animate={isInView ? "visible" : "hidden"}
         transition={{ delay: 0.2 }}
       >
         {products.map((item, idx) => (
