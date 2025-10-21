@@ -67,7 +67,7 @@ export default function ProductsPage() {
               transition: { duration: 0.3 },
             }}
           >
-            <div className="w-full flex justify-center items-center mb-4">
+            <div className="w-full flex-1 justify-center items-center mb-4 bg-green-500">
               <motion.div
                 whileHover={{
                   scale: 1.1,
@@ -84,7 +84,7 @@ export default function ProductsPage() {
                 />
               </motion.div>
             </div>
-            <div className="w-full">
+            <div className="w-full h-[80px] bg-blue-500">
               <h5
                 className={`${poppinsRegular.className} text- text-blue-200 font-bold`}
               >
