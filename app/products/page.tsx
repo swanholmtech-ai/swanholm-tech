@@ -55,10 +55,14 @@ export default function ProductsPage() {
             className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 rounded-2xl shadow-xl 
                 flex flex-col items-center p-4 w-full
                 border border-blue-500/30 backdrop-blur-sm cursor-pointer"
+            style={{
+              border: "2px solid transparent", // define an initial border!
+              borderRadius: "12px", // optional
+            }}
             whileHover={{
               scale: 1.05,
               y: -10,
-              borderColor: "rgba(59, 130, 246, 0.7)",
+              borderColor: "rgb(255, 251, 21)",
               boxShadow: "0 0 40px rgba(59, 130, 246, 0.3)",
               transition: { duration: 0.3 },
             }}
