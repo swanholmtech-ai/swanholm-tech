@@ -57,12 +57,9 @@ export default function ProductsPage() {
                 },
               },
             }}
-            className="bg-gradient-to-br from-blue-900/40 to-gray-900/40 rounded-2xl shadow-xl 
-                flex flex-col items-center px-4 py-2 w-full
-                border border-blue-500/30 backdrop-blur-sm cursor-pointer"
+            className="flex flex-col items-center px-4 py-2 w-full cursor-pointer"
             style={{
-              border: "2px solid transparent", // define an initial border!
-              borderRadius: "12px", // optional
+              border: "1px solid rgba(88, 88, 88, 0.2)", // define an initial border!
             }}
             whileHover={{
               scale: 1.05,
