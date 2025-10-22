@@ -5,6 +5,7 @@ import useProducts from "@/store/useProducts";
 import { Poppins } from "next/font/google";
 import { useRef } from "react";
 import ProductImage from "@/components/view/ProductImage";
+import { useRouter } from "next/navigation";
 
 const poppinsRegular = Poppins({
   weight: ["400"],
@@ -17,6 +18,7 @@ const poppinsThin = Poppins({
 });
 
 export default function ProductsPage() {
+  const router = useRouter();
   const { products } = useProducts();
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -68,6 +70,7 @@ export default function ProductsPage() {
               boxShadow: "0 0 40px rgba(59, 130, 246, 0.3)",
               transition: { duration: 0.3 },
             }}
+            onClick={() => router.push(`/products/${item.id}`)}
           >
             <div className="w-full h-[80px] flex justify-center items-center">
               <h5
