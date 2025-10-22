@@ -3,8 +3,8 @@ import { motion, useInView } from "framer-motion";
 import { staggerContainer } from "@/lib/animations";
 import useProducts from "@/store/useProducts";
 import { Poppins } from "next/font/google";
-import Image from "next/image";
 import { useRef } from "react";
+import ProductImage from "@/components/view/ProductImage";
 
 const poppinsRegular = Poppins({
   weight: ["400"],
@@ -78,20 +78,15 @@ export default function ProductsPage() {
             </div>
 
             <div className="w-full flex-1 flex justify-center items-center mb-4">
-              <motion.div
+              {/* <motion.div
                 whileHover={{
                   scale: 1.1,
                   rotate: 5,
                   transition: { duration: 0.3 },
                 }}
-              >
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  width={item.id === "001" || item.id === "003" ? 120 : 160}
-                  height={item.id === "001" || item.id === "003" ? 120 : 160}
-                />
-              </motion.div>
+              > */}
+              <ProductImage item={item} />
+              {/* </motion.div> */}
             </div>
             <div className="w-full h-[10px] flex justify-center items-center">
               <div
