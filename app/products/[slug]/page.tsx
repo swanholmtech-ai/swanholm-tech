@@ -2,7 +2,10 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = await params;
 
   const data = await fetch(
-    `https://www.swanholmtech.com/wp-json/wp/v2/product/${slug}`
+    `https://www.swanholmtech.com/wp-json/wp/v2/product/${slug}`,
+    {
+      next: { revalidate: 3600 }, // Cache for 1 hour
+    }
   );
   const productData = await data.json();
 

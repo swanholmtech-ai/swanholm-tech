@@ -5,7 +5,7 @@ import useProducts from "@/store/useProducts";
 import { Poppins } from "next/font/google";
 import { useRef } from "react";
 import ProductImage from "@/components/view/ProductImage";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const poppinsRegular = Poppins({
   weight: ["400"],
@@ -18,7 +18,6 @@ const poppinsThin = Poppins({
 });
 
 export default function ProductsPage() {
-  const router = useRouter();
   const { products } = useProducts();
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -38,40 +37,39 @@ export default function ProductsPage() {
         transition={{ delay: 0.2 }}
       >
         {products.map((item, idx) => (
-          <motion.div
-            key={idx}
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: 80,
-                scale: 0.8,
-                rotate: -5,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                rotate: 0,
-                transition: {
-                  duration: 0.8,
-                  ease: [0.16, 1, 0.3, 1],
-                  delay: idx * 0.15,
+          <Link key={idx} href={`/products/${item.id}`} prefetch={true}>
+            <motion.div
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: 80,
+                  scale: 0.8,
+                  rotate: -5,
                 },
-              },
-            }}
-            className="flex flex-col items-center px-4 py-2 w-full cursor-pointer"
-            style={{
-              border: "1px solid rgba(88, 88, 88, 0.2)", // define an initial border!
-            }}
-            whileHover={{
-              scale: 1.05,
-              y: -10,
-              borderColor: "rgb(255, 251, 21)",
-              boxShadow: "0 0 40px rgba(59, 130, 246, 0.3)",
-              transition: { duration: 0.3 },
-            }}
-            onClick={() => router.push(`/products/${item.id}`)}
-          >
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  rotate: 0,
+                  transition: {
+                    duration: 0.8,
+                    ease: [0.16, 1, 0.3, 1],
+                    delay: idx * 0.15,
+                  },
+                },
+              }}
+              className="flex flex-col items-center px-4 py-2 w-full cursor-pointer"
+              style={{
+                border: "1px solid rgba(88, 88, 88, 0.2)", // define an initial border!
+              }}
+              whileHover={{
+                scale: 1.05,
+                y: -10,
+                borderColor: "rgb(255, 251, 21)",
+                boxShadow: "0 0 40px rgba(59, 130, 246, 0.3)",
+                transition: { duration: 0.3 },
+              }}
+            >
             <div className="w-full h-[80px] flex justify-center items-center">
               <h5
                 className={`${poppinsRegular.className} text-sm text-blue-200 font-bold`}
@@ -111,7 +109,8 @@ export default function ProductsPage() {
                 )}
               </div>
             </div>
-          </motion.div>
+            </motion.div>
+          </Link>
         ))}
       </motion.div>
     </main>
