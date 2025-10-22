@@ -15,6 +15,11 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { CalendarClock } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export function DrawerBookDemo() {
   const [goal, setGoal] = React.useState(350);
@@ -25,11 +30,21 @@ export function DrawerBookDemo() {
 
   return (
     <Drawer>
-      <DrawerTrigger asChild className="cursor-pointer fixed bottom-4 right-18">
-        <Button variant="outline">
-          <CalendarClock />
-        </Button>
-      </DrawerTrigger>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <DrawerTrigger
+            asChild
+            className="cursor-pointer fixed bottom-4 right-18"
+          >
+            <Button variant="outline">
+              <CalendarClock />
+            </Button>
+          </DrawerTrigger>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Book a demo</p>
+        </TooltipContent>
+      </Tooltip>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
           <DrawerHeader>
