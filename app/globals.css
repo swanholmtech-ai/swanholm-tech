@@ -4,7 +4,14 @@
 body {
   /* background-color: oklch(92.9% 0.013 255.508); */
   overflow-x: hidden;
-  background-color: #111c2e;
+  /* background-color: #111c2e; */
+  background: #000000;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(44, 56, 74, 1) 100%
+  );
+  /* min-height: 100svh; */
 }
 
 @custom-variant dark (&:is(.dark *));

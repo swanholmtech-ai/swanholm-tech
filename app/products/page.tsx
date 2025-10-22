@@ -26,7 +26,7 @@ export default function ProductsPage() {
   });
 
   return (
-    <main className="max-w-7xl mt-20 mx-auto">
+    <main className="max-w-7xl mt-20 mx-auto h-[calc(100vh-5rem)]">
       <motion.div
         ref={ref}
         className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 pt-10 w-full px-4"
