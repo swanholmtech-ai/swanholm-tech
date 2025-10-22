@@ -7,12 +7,12 @@ import { ProductType } from "@/types/types";
 
 const ProductImage = ({ item }: { item: ProductType }) => {
   const [hovered, setHovered] = useState(false);
-  const size = item.id === 173 || item.id === 548 ? 140 : 160;
+  // const size = item.id === 173 || item.id === 548 ? 160 : 160;
 
   return (
     <div
       className="relative"
-      style={{ width: size, height: size, perspective: 1000 }}
+      style={{ width: 160, height: 160, perspective: 1000 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
