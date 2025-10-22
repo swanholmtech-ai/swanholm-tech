@@ -43,8 +43,12 @@ export function DrawerBookDemo() {
             </DrawerDescription>
           </DrawerHeader>
           <div className="flex bg-slate-700 w-4xl">
-            <FormBookDemo />
-            <CalendarBookDemo />
+            <div className="flex-2">
+              <FormBookDemo />
+            </div>
+            <div className="flex-1">
+              <CalendarBookDemo />
+            </div>
           </div>
           <DrawerFooter>
             <div className="flex w-full">
