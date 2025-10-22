@@ -50,6 +50,7 @@ export function DrawerBookDemo() {
               <CalendarBookDemo />
             </div>
           </div>
+          <div className="w-full h-[1px] bg-slate-300 mt-2"></div>
           <DrawerFooter>
             <div className="flex w-full">
               <div className="flex-1 text-center">
