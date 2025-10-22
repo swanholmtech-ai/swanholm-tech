@@ -19,8 +19,8 @@ export function NavigationBar() {
       {isMobile ? (
         <HamburgerMenu />
       ) : (
-        <nav className="mx-auto max-w-md z-50 my-2 fixed top-2 left-0 right-0 bg-">
-          <ul className="flex gap-4 items-center justify-evenly bg-">
+        <nav className="mx-auto max-w-md z-50 my-2 fixed top-2 left-0 right-0">
+          <ul className="flex gap-4 items-center justify-center">
             {/* <div className="holographic-container">
               <div className="holographic-card">
                 <h2>HOLOGRAM</h2>
