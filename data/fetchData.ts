@@ -28,7 +28,7 @@ export const products: ProductType[] = [
     image:
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2.webp",
     imageBack:
-      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1-b.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2.webp",
     size: ["S", "M", "L", "XL", "2XL"],
     imageGallery: [],
     inStock: true,
@@ -44,7 +44,7 @@ export const products: ProductType[] = [
     image:
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-5.webp",
     imageBack:
-      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1-b.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-5.webp",
     size: ["S", "L"],
     imageGallery: [],
     inStock: true,
