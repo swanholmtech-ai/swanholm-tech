@@ -20,6 +20,9 @@ export function CalendarBookDemo() {
 
   return (
     <div className="flex flex-col items-center">
+      <label htmlFor="time-select" className="block mb-2">
+        Select Date & Time
+      </label>
       <Calendar
         mode="single"
         selected={date}
@@ -27,11 +30,8 @@ export function CalendarBookDemo() {
         className="rounded-md border shadow-sm"
         captionLayout="dropdown"
       />
-      <div className="mt-4 p-2">
-        <label htmlFor="time-select" className="block mb-2">
-          Select Time
-        </label>
-        <div className="flex w-[150px] mx-auto">
+      <div>
+        <div className="flex w-[150px] mx-auto mt-2">
           <div className="flex-1">
             <Select value={hour} onValueChange={setHour}>
               <SelectTrigger id="hour-select">
