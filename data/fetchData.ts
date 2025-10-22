@@ -11,6 +11,8 @@ export const products: ProductType[] = [
         Plastkrok på elastiskt band i vänster framficka.`,
     image:
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1.webp",
+    imageBack:
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1-b.webp",
     size: ["S", "M", "L", "XL", "2XL"],
     imageGallery: [],
     inStock: true,
@@ -25,6 +27,8 @@ export const products: ProductType[] = [
         Plastkrok på elastiskt band i vänster framficka.`,
     image:
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2.webp",
+    imageBack:
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-b.webp",
     size: ["S", "M", "L", "XL", "2XL"],
     imageGallery: [],
     inStock: true,
@@ -39,6 +43,8 @@ export const products: ProductType[] = [
         Large: för västar/jackor i storlekarna XL och XXL.`,
     image:
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-5.webp",
+    imageBack:
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-5-b.webp",
     size: ["S", "L"],
     imageGallery: [],
     inStock: true,
@@ -53,6 +59,8 @@ export const products: ProductType[] = [
         Plastkrok på elastiskt band i vänster framficka.`,
     image:
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1.webp",
+    imageBack:
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1-b.webp",
     size: ["S", "M", "L", "XL", "2XL"],
     imageGallery: [],
     inStock: true,
@@ -67,6 +75,8 @@ export const products: ProductType[] = [
         Plastkrok på elastiskt band i vänster framficka.`,
     image:
       "https://www.swanholmtech.com/wp-content/uploads/2025/02/vast-lo-arm2.png",
+    imageBack:
+      "https://www.swanholmtech.com/wp-content/uploads/2025/02/vast-lo-arm2-b.png",
     size: ["S", "M", "L", "XL", "2XL"],
     imageGallery: [],
     inStock: true,
