@@ -42,7 +42,7 @@ export function DrawerBookDemo() {
               Book a demo to learn more about our product.
             </DrawerDescription>
           </DrawerHeader>
-          <div className="flex bg-slate-700 w-4xl">
+          <div className="flex w-4xl">
             <div className="flex-2">
               <FormBookDemo />
             </div>
