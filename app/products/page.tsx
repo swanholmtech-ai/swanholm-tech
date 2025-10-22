@@ -90,7 +90,6 @@ export default function ProductsPage() {
                   alt={item.name}
                   width={item.id === "001" || item.id === "003" ? 120 : 160}
                   height={item.id === "001" || item.id === "003" ? 120 : 160}
-                  className="rounded-xl object-cover shadow-lg"
                 />
               </motion.div>
             </div>
