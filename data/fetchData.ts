@@ -2,7 +2,7 @@ import { ProductType } from "@/types/types";
 
 export const products: ProductType[] = [
   {
-    id: "001",
+    id: 173,
     name: "Swanholm Alert Vest 01 krage ingår",
     price: 5750,
     description: `En AI-driven säkerhetsväst, klass 2, med tillhörande elektronisk krage för uppkoppling och larmfunktion.
@@ -16,7 +16,7 @@ export const products: ProductType[] = [
     inStock: true,
   },
   {
-    id: "002",
+    id: 179,
     name: "Swanholm Alert Vest 02 krage ingår",
     price: 4250,
     description: `En AI-driven säkerhetsväst, klass 2, med tillhörande elektronisk krage för uppkoppling och larmfunktion.
@@ -30,7 +30,21 @@ export const products: ProductType[] = [
     inStock: true,
   },
   {
-    id: "003",
+    id: 170,
+    name: "Elektronisk krage för Alert Vest inkl USB-C-kabel",
+    price: 3600,
+    description: `Den elektroniska kragen är hjärnan i Alert Vest och kan användas både för plagg med och utan ljus.
+        Den elektroniska kragen finns i två storlekar för bästa passform i Alert Vest och Alert Jacket:
+        Small: för västar/jackor i storlekarna S, M och L.
+        Large: för västar/jackor i storlekarna XL och XXL.`,
+    image:
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-5.webp",
+    size: ["S", "L"],
+    imageGallery: [],
+    inStock: true,
+  },
+  {
+    id: 548,
     name: "Swanholm Alert Vest 01 krage ingår ej",
     price: 2700,
     description: `En AI-driven säkerhetsväst, klass 2, utan tillhörande elektronisk krage för uppkoppling och larmfunktion.
@@ -44,7 +58,7 @@ export const products: ProductType[] = [
     inStock: true,
   },
   {
-    id: "004",
+    id: 559,
     name: "Swanholm Alert Vest 02 krage ingår ej",
     price: 900,
     description: `En AI-driven säkerhetsväst, klass 2, utan tillhörande elektronisk krage för uppkoppling och larmfunktion.
@@ -54,20 +68,6 @@ export const products: ProductType[] = [
     image:
       "https://www.swanholmtech.com/wp-content/uploads/2025/02/vast-lo-arm2.png",
     size: ["S", "M", "L", "XL", "2XL"],
-    imageGallery: [],
-    inStock: true,
-  },
-  {
-    id: "005",
-    name: "Elektronisk krage för Alert Vest inkl USB-C-kabel",
-    price: 3600,
-    description: `Den elektroniska kragen är hjärnan i Alert Vest och kan användas både för plagg med och utan ljus.
-        Den elektroniska kragen finns i två storlekar för bästa passform i Alert Vest och Alert Jacket:
-        Small: för västar/jackor i storlekarna S, M och L.
-        Large: för västar/jackor i storlekarna XL och XXL.`,
-    image:
-      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-5.webp",
-    size: ["S", "L"],
     imageGallery: [],
     inStock: true,
   },
