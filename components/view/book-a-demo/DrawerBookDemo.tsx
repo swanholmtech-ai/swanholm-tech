@@ -14,6 +14,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { CalendarClock } from "lucide-react";
 
 export function DrawerBookDemo() {
   const [goal, setGoal] = React.useState(350);
@@ -24,8 +25,10 @@ export function DrawerBookDemo() {
 
   return (
     <Drawer>
-      <DrawerTrigger asChild>
-        <Button variant="outline">Open Drawer</Button>
+      <DrawerTrigger asChild className="cursor-pointer fixed bottom-4 right-18">
+        <Button variant="outline">
+          <CalendarClock />
+        </Button>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
