@@ -34,8 +34,11 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
             className={`prose prose-slate max-w-none text-gray-100 ${poppinsThin.className}`}
             dangerouslySetInnerHTML={{ __html: productData.content.rendered }}
           />
-          <div className="text-gray-100 text-md font-bold text-gray-400">
-            <div>Price: 1200 SEK</div>
+          <div className="text-gray-100 text-md font-bold text-gray-400 flex gap-2 items-center justify-between">
+            <div className="text-green-300">
+              Price:
+              <span className="text-yellow-300"> 1200 SEK</span>
+            </div>
             <SizeSelector />
             <QuantitySelector />
             <Button
