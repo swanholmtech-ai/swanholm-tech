@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Poppins } from "next/font/google";
-
+import SizeSelector from "@/components/view/order-vest/SizeSelector";
+import QuantitySelector from "@/components/view/order-vest/QuantitySelector";
+import { Button } from "@/components/ui/button";
 // const poppinsRegular = Poppins({
 //   weight: ["400"],
 //   subsets: ["latin"],
@@ -32,26 +34,16 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
             className={`prose prose-slate max-w-none text-gray-100 ${poppinsThin.className}`}
             dangerouslySetInnerHTML={{ __html: productData.content.rendered }}
           />
-          <div className="text-gray-100 text-md font-bold">
-            <div>Price: {productData.price}</div>
-            <div className="flex gap-2 items-center">
-              Sizes:
-              <div className="text-gray-100 text-md bg-gray-800 p-2 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer">
-                S
-              </div>
-              ,
-              <div className="text-gray-100 text-md bg-gray-800 p-2 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer">
-                M
-              </div>
-              ,
-              <div className="text-gray-100 text-md bg-gray-800 p-2 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer">
-                L
-              </div>
-              ,
-              <div className="text-gray-100 text-md bg-gray-800 p-2 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer">
-                XL
-              </div>
-            </div>
+          <div className="text-gray-100 text-md font-bold text-gray-400">
+            <div>Price: 1200 SEK</div>
+            <SizeSelector />
+            <QuantitySelector />
+            <Button
+              variant="outline"
+              className="bg-yellow-400 text-black cursor-pointer"
+            >
+              Add to Cart
+            </Button>
           </div>
         </div>
         <div className="col-span-1">
