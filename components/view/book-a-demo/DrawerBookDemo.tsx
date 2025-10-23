@@ -24,7 +24,7 @@ export function DrawerBookDemo() {
     <Drawer>
       <DrawerTrigger
         asChild
-        className="cursor-pointer fixed bottom-4 right-18 z-50"
+        className="cursor-pointer fixed bottom-4 right-8 z-50 sm:right-20 md:right-24 lg:right-28 xl:right-32"
       >
         <Button
           variant="outline"
