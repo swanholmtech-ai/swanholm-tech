@@ -35,18 +35,5 @@ export default function ContactPage() {
         <div className="flex-2 bg-green-500">2</div>
       </div>
     </main>
-    // <main className="max-w-7xl mt-20 mx-auto h-[calc(100vh-5rem)] text-center text-gray-200">
-    //   <h1 className="text-3xl font-bold mb-6 text-gray-200">Contact </h1>
-    //   <div className="flex justify-evenly items-center align-center w-full">
-    //     <div className="flex flex-row justify-evenly gap-2 items-center align-center">
-    //       <Phone />
-    //       +46 73 649 7710
-    //     </div>
-    //     <div className="flex flex-row justify-evenly gap-2 items-center align-center">
-    //       <Mail />
-    //       info@swanholmtech.com
-    //     </div>
-    //   </div>
-    // </main>
   );
 }
