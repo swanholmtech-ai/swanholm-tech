@@ -26,11 +26,16 @@ export const products: ProductType[] = [
         Elektroniken knäpps enkelt fast i västens krage och styrs med en knapp och även med Sense appen.
         Plastkrok på elastiskt band i vänster framficka.`,
     image:
-      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img1-f.webp",
     imageBack:
-      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img1-b.webp",
     size: ["S", "M", "L", "XL", "2XL"],
-    imageGallery: [],
+    imageGallery: [
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img1-f.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img3-f.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img2-f.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img4-f.webp",
+    ],
     inStock: true,
   },
   {
@@ -74,9 +79,9 @@ export const products: ProductType[] = [
         Elektroniken knäpps enkelt fast i västens krage och styrs med en knapp och även med Sense Appen.
         Plastkrok på elastiskt band i vänster framficka.`,
     image:
-      "https://www.swanholmtech.com/wp-content/uploads/2025/02/vast-lo-arm2.png",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img1-f.webp",
     imageBack:
-      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1-b.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img1-b.webp",
     size: ["S", "M", "L", "XL", "2XL"],
     imageGallery: [],
     inStock: true,

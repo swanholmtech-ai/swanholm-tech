@@ -3,6 +3,8 @@ import { Poppins } from "next/font/google";
 import SizeSelector from "@/components/view/order-vest/SizeSelector";
 import QuantitySelector from "@/components/view/order-vest/QuantitySelector";
 import { Button } from "@/components/ui/button";
+import { products } from "@/data/fetchData";
+import ImageSelector from "@/components/view/product/ImageSelector";
 // const poppinsRegular = Poppins({
 //   weight: ["400"],
 //   subsets: ["latin"],
@@ -21,10 +23,14 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
       next: { revalidate: 3600 }, // Cache for 1 hour
     }
   );
+
   const productData = await data.json();
+  const imageGallery = products.find(
+    (product) => product.id === Number(slug)
+  )?.imageGallery;
 
   return (
-    <main className="max-w-7xl mt-32 mx-auto h-[calc(100vh-5rem)]">
+    <main className="max-w-7xl mt-32 mx-auto h-[calc(100dvh-8rem)]">
       <h1 className="text-xl mb-2 text-left text-yellow-300">
         {productData.title.rendered}
       </h1>
@@ -49,28 +55,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
             </Button>
           </div>
         </div>
-        <div className="col-span-1">
-          <Image
-            src="https://www.swanholmtech.com/wp-content/uploads/2025/02/vast-lo-arm2.png"
-            alt={productData.title.rendered}
-            width={500}
-            height={500}
-          />
-          <div className="flex gap-2">
-            <div className="flex-1 w-1/4 h-24 bg-gray-800 border border-gray-600 text-center text-gray-100">
-              Image
-            </div>
-            <div className="flex-1 w-1/4 h-24 bg-gray-800 border border-gray-600 text-center text-gray-100">
-              Image
-            </div>
-            <div className="flex-1 w-1/4 h-24 bg-gray-800 border border-gray-600 text-center text-gray-100">
-              Image
-            </div>
-            <div className="flex-1 w-1/4 h-24 bg-gray-800 border border-gray-600 text-center text-gray-100">
-              Image
-            </div>
-          </div>
-        </div>
+        <ImageSelector imageGallery={imageGallery || []} />
       </div>
     </main>
   );
