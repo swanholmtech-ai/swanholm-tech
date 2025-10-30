@@ -14,7 +14,12 @@ export const products: ProductType[] = [
     imageBack:
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1-b.webp",
     size: ["S", "M", "L", "XL", "2XL"],
-    imageGallery: [],
+    imageGallery: [
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1.webp",
+    ],
     inStock: true,
   },
   {
@@ -51,7 +56,12 @@ export const products: ProductType[] = [
     imageBack:
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-5.webp",
     size: ["S", "L"],
-    imageGallery: [],
+    imageGallery: [
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-5.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-5.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-5.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-5.webp",
+    ],
     inStock: true,
   },
   {
@@ -67,7 +77,13 @@ export const products: ProductType[] = [
     imageBack:
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1-b.webp",
     size: ["S", "M", "L", "XL", "2XL"],
-    imageGallery: [],
+    imageGallery: [
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-1.webp",
+    ],
+
     inStock: true,
   },
   {
@@ -83,7 +99,12 @@ export const products: ProductType[] = [
     imageBack:
       "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img1-b.webp",
     size: ["S", "M", "L", "XL", "2XL"],
-    imageGallery: [],
+    imageGallery: [
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img1-f.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img3-f.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img2-f.webp",
+      "https://www.swanholmtech.com/wp-content/uploads/2025/10/product-2-img4-f.webp",
+    ],
     inStock: true,
   },
 ];
