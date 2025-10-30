@@ -50,7 +50,7 @@ const FormBookDemo = () => {
             />
           </div>
         </div>
-        <div className="flex-1 mr-0 ml-0 lg:mr-4 lg:ml-2">
+        <div className="flex-1 mr-0 ml-0 lg:ml-4 lg:ml-2">
           <label htmlFor="message" className="text-sm font-medium">
             Extra Information
           </label>
