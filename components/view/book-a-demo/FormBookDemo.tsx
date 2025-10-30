@@ -56,7 +56,7 @@ const FormBookDemo = () => {
           </label>
           <textarea
             id="message"
-            className="w-full border rounded-md mr-2"
+            className="w-full border rounded-md mr-2 p-2"
             placeholder="Enter your message"
             rows={6}
           />
