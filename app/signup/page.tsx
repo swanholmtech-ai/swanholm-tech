@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function SignupPage() {
   return (
     <main className="max-w-7xl mt-40 mx-auto h-[calc(100vh-5rem)]">
-      <section className="bg-gray-100 w-md mx-auto p-2 rounded-sm">
+      <section className="bg-slate-300 w-md mx-auto p-2 rounded-sm">
         <h1 className="text-3xl font-bold mb-6 text-center">Signup</h1>
 
         <form action="" className="flex flex-col items-center">
