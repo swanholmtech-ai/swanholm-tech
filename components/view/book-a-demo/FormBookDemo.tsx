@@ -1,27 +1,24 @@
 "use client";
 
+import { Input } from "@/components/ui/input";
+
 const FormBookDemo = () => {
   return (
-    <form className="space-y-4 p-4">
-      <div className="flex flex-row">
+    <form className="">
+      <div className="flex flex-col lg:flex-row mx-2 w-[94vw] md:w-full">
         <div className="flex-1">
-          <div className="space-y-2">
+          <div className="">
             <label htmlFor="name" className="text-sm font-medium">
               Full Name
             </label>
-            <input
-              id="name"
-              type="text"
-              className="w-full border rounded-md px-3 py-2"
-              placeholder="Enter your name"
-            />
+            <Input id="name" type="text" placeholder="Enter your name" />
           </div>
 
-          <div className="space-y-2">
+          <div>
             <label htmlFor="email" className="text-sm font-medium">
               Email Address
             </label>
-            <input
+            <Input
               id="email"
               type="email"
               className="w-full border rounded-md px-3 py-2"
@@ -29,11 +26,11 @@ const FormBookDemo = () => {
             />
           </div>
 
-          <div className="space-y-2">
+          <div>
             <label htmlFor="company" className="text-sm font-medium">
               Company
             </label>
-            <input
+            <Input
               id="company"
               type="text"
               className="w-full border rounded-md px-3 py-2"
@@ -41,11 +38,11 @@ const FormBookDemo = () => {
             />
           </div>
 
-          <div className="space-y-2">
+          <div>
             <label htmlFor="phone" className="text-sm font-medium">
               Phone Number
             </label>
-            <input
+            <Input
               id="phone"
               type="tel"
               className="w-full border rounded-md px-3 py-2"
@@ -53,15 +50,15 @@ const FormBookDemo = () => {
             />
           </div>
         </div>
-        <div className="flex-1">
-          <label htmlFor="message" className="text-sm font-medium ml-4">
+        <div className="flex-1 mr-0 ml-0 lg:ml-4 lg:ml-2">
+          <label htmlFor="message" className="text-sm font-medium">
             Extra Information
           </label>
           <textarea
             id="message"
-            className="w-full border rounded-md mx-2"
+            className="w-full border rounded-md mr-2 p-2"
             placeholder="Enter your message"
-            rows={10}
+            rows={6}
           />
         </div>
       </div>
