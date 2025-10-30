@@ -34,16 +34,16 @@ export function DrawerBookDemo() {
           <CalendarClock size={24} />
         </Button>
       </DrawerTrigger>
-      <DrawerContent>
-        <div className="mx-auto w-full max-w-4xl">
+      <DrawerContent className="bg-slate-400">
+        <div className="mx-auto w-full max-w-4xl overflow-x-hidden overflow-y-auto">
           <DrawerHeader>
             <DrawerTitle>Book A Demo</DrawerTitle>
             <DrawerDescription>
               Book a demo to learn more about our product.
             </DrawerDescription>
           </DrawerHeader>
-          <div className="flex w-4xl">
-            <div className="flex-2">
+          <div className="flex w-4xl flex-col md:flex-row">
+            <div className="lg:flex-2 flex-1">
               <FormBookDemo />
             </div>
             <div className="flex-1">

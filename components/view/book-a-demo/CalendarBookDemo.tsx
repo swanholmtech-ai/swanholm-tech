@@ -19,7 +19,7 @@ export function CalendarBookDemo() {
   const minutes = ["00", "15", "30", "45"];
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col w-[320px] mx-auto">
       <label htmlFor="time-select" className="block mb-2">
         Select Date & Time
       </label>
