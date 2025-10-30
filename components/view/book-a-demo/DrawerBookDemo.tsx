@@ -34,7 +34,7 @@ export function DrawerBookDemo() {
           <CalendarClock size={24} />
         </Button>
       </DrawerTrigger>
-      <DrawerContent className="bg-slate-400">
+      <DrawerContent className="bg-slate-300">
         <div className="mx-auto w-full max-w-4xl overflow-x-hidden overflow-y-auto">
           <DrawerHeader>
             <DrawerTitle>Book A Demo</DrawerTitle>
@@ -50,8 +50,11 @@ export function DrawerBookDemo() {
               <CalendarBookDemo />
             </div>
           </div>
-          <div className="w-full h-[1px] bg-slate-300 mt-2"></div>
-          <DrawerFooter>
+          <div className="w-full h-[1px] bg-slate-300 mt-24"></div>
+          <DrawerFooter
+            className="bg-slate-200 fixed bottom-0 w-full max-w-4xl"
+            style={{ boxShadow: "0px -2px 4px rgba(0, 0, 0, 0.1)" }}
+          >
             <div className="flex w-full">
               <div className="flex-1 text-center">
                 <DrawerClose asChild>
