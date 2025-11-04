@@ -77,14 +77,15 @@ export default function HeroSection() {
         <div className="px-12 pt-40 h-full">
           <div>
             <h4
-              className={`${poppinsBold.className} text-5xl font-bold h-content overflow-y-hidden`}
+              className={`${poppinsBold.className} text-xl md:text-2xl lg:text-4xl font-bold h-content overflow-y-hidden`}
               style={{
-                background: 'linear-gradient(-45deg, #06b6d4,rgb(181, 255, 203),rgb(255, 255, 255), #06b6d4,rgb(255, 251, 0))',
-                backgroundSize: '400% 400%',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                animation: 'gradient-shift 12s ease-in-out infinite',
+                background:
+                  "linear-gradient(-45deg, #06b6d4,rgb(181, 255, 203),rgb(255, 255, 255), #06b6d4,rgb(255, 251, 0))",
+                backgroundSize: "400% 400%",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                animation: "gradient-shift 12s ease-in-out infinite",
               }}
             >
               What if your Vest could save your life?
@@ -92,20 +93,30 @@ export default function HeroSection() {
 
             <style jsx>{`
               @keyframes gradient-shift {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
+                0% {
+                  background-position: 0% 50%;
+                }
+                50% {
+                  background-position: 100% 50%;
+                }
+                100% {
+                  background-position: 0% 50%;
+                }
               }
             `}</style>
           </div>
 
-          <p className={`${poppinsRegular.className} text-xl pt-8 text-gray-300 max-w-2xl pl-4`}>
+          <p
+            className={`${poppinsRegular.className} text-xl pt-8 text-gray-300 max-w-2xl pl-4`}
+          >
             Revolutionary smart safety technology that protects workers in
             real-time, combining AI detection with instant holographic alerts to
             save lives.
           </p>
 
-          <ul className={`${poppinsThin.className} text-lg pt-10 pl-6 space-y-3 max-w-2xl`}>
+          <ul
+            className={`${poppinsThin.className} text-lg pt-10 pl-6 space-y-3 max-w-2xl`}
+          >
             {[
               "Every worker deserves to come home safe.",
               "Your vest technology watches out when no one else can.",

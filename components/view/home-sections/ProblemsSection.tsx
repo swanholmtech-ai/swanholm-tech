@@ -10,9 +10,7 @@ import { motion } from "framer-motion";
 export default function ProblemsSection() {
   return (
     <article className="w-full h-[100dvh] flex relative overflow-hidden">
-      {/* Industrial Warning Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-red-900 to-orange-900">
-        {/* Animated warning stripes */}
         <div className="absolute inset-0">
           {Array.from({ length: 20 }).map((_, i) => (
             <motion.div
@@ -42,39 +40,6 @@ export default function ProblemsSection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(251,146,60,0.1),transparent_50%)]" />
       </div>
 
-      {/* Animated sparks and warning particles */}
-      <div className="absolute inset-0">
-        {Array.from({ length: 15 }).map((_, i) => {
-          // Use deterministic positioning based on index
-          const left = `${(i * 13 + i * 7) % 100}%`;
-          const top = `${(i * 17 + i * 11) % 100}%`;
-          const duration = 1 + ((i * 23) % 3);
-          const delay = (i * 29) % 4;
-
-          return (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-orange-400 rounded-full"
-              style={{
-                left,
-                top,
-              }}
-              animate={{
-                scale: [0, 1, 0],
-                opacity: [0, 1, 0],
-                y: [0, -100, 0],
-              }}
-              transition={{
-                duration,
-                repeat: Infinity,
-                delay,
-              }}
-            />
-          );
-        })}
-      </div>
-
-      {/* Dark Overlay with Accident Image */}
       <ParallaxSection speed={40} className="absolute inset-0 z-0">
         <div
           className="h-[120vh] w-full relative"
@@ -113,7 +78,7 @@ export default function ProblemsSection() {
               }}
             >
               <h4
-                className="text-7xl font-bold h-fit overflow-y-hidden
+                className="text-xl md:text-4xl lg:text-4xl xl:text-6xl h-fit overflow-y-hidden
                 bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent
                 drop-shadow-[0_0_40px_rgba(239,68,68,0.6)]
                 animate-pulse"
