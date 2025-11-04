@@ -77,7 +77,7 @@ export default function SolutionSection() {
               }}
               animate={{
                 y: [0, -20, 0],
-                opacity: [0.3, 0.8, 0.3],
+                opacity: [0.2, 0.1, 0.2],
               }}
               transition={{
                 duration,
