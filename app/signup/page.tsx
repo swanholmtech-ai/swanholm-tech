@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function SignupPage() {
   return (
-    <main className="max-w-7xl mt-40 mx-auto h-[calc(100vh-5rem)]">
-      <section className="bg-slate-300 w-md mx-auto p-2 rounded-sm">
+    <main className="max-w-7xl mt-40 mx-auto h-[calc(100vh-10rem)]">
+      <section className="w-md mx-auto p-2 rounded-sm text-gray-200  md:border md:border-gray-700 md:shadow-lg">
         <h1 className="text-3xl font-bold mb-6 text-center">Signup</h1>
 
         <form action="" className="flex flex-col items-center">
@@ -35,13 +35,15 @@ export default function SignupPage() {
               <Input
                 type="password"
                 id="confirm-password"
+                placeholder="Confirm Password"
                 name="confirm-password"
               />
             </div>
           </div>
           <Button
             type="submit"
-            className="mt-6 mx-auto cursor-pointer hover:bg-blue-600 transition-colors"
+            variant="outline"
+            className="mt-6 mx-auto cursor-pointer hover:bg-gray-600 transition-colors text-gray-700"
           >
             Sign Up
           </Button>
@@ -50,7 +52,7 @@ export default function SignupPage() {
           <p className="text-center">
             <Link
               href="/login"
-              className="text-gray-500 hover:text-gray-700 hover:underline"
+              className="text-gray-500 hover:text-gray-300 hover:underline"
             >
               Already have an account?
             </Link>
@@ -58,7 +60,7 @@ export default function SignupPage() {
           <p className="text-center">
             <Link
               href="/forgot-password"
-              className="text-gray-500 hover:text-gray-700 hover:underline"
+              className="text-gray-500 hover:text-gray-300 hover:underline"
             >
               Forgot Password
             </Link>
