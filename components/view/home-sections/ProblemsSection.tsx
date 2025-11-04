@@ -89,7 +89,7 @@ export default function ProblemsSection() {
 
             <AnimatedSection variants={slideInLeft} delay={0.2}>
               <motion.div
-                className="mt-8 p-6 bg-red-900/30 border-l-4 border-red-500 backdrop-blur-sm rounded-r-lg"
+                className="mt-4 p-4 bg-orange-900/30 border-l-4 border-orange-500 backdrop-blur-sm rounded-r-lg max-w-[540px] cursor-pointer"
                 whileHover={{
                   x: 10,
                   backgroundColor: "rgba(153, 27, 27, 0.4)",
@@ -121,7 +121,7 @@ export default function ProblemsSection() {
               }}
             >
               <motion.div
-                className="mt-6 p-6 bg-orange-900/30 border-l-4 border-orange-500 backdrop-blur-sm rounded-r-lg"
+                className="mt-4 p-4 bg-orange-900/30 border-l-4 border-orange-500 backdrop-blur-sm rounded-r-lg max-w-[540px] cursor-pointer"
                 whileHover={{
                   x: 10,
                   scale: 1.02,
@@ -137,7 +137,6 @@ export default function ProblemsSection() {
             </AnimatedSection>
           </div>
         </div>
-        <div className="flex-1"></div>
       </div>
     </article>
   );
