@@ -113,8 +113,8 @@ export default function SolutionSection() {
             Your Smart Vest Has Your Back.
           </h4>
         </div>
-        <div className="flex-2">
-          <div className="relative z-10 flex flex-row items-center justify-center h-full text-center">
+        <div className="flex-2 w-[80%]">
+          <div className="relative z-10 flex flex-row items-center justify-evenly h-full text-center">
             <Image
               src="/assets/svgs/vest.svg"
               alt="Solution"
@@ -122,9 +122,27 @@ export default function SolutionSection() {
               height={300}
               className="relative"
             />
-            <div className="flex flex-col items-center justify-center h-full text-center">
-              <p>Smart Vest</p>
-              <p>Smart Vest</p>
+            <div className="flex flex-col justify-center h-full text-left p-3 gap-4">
+              <p
+                className={`text-2xl ${poppinsBold.className} text-cyan-300 cursor-pointer hover:scale-105 transition-all hover:text-cyan-400 hover:rotate-2 hover:translate-y-2`}
+              >
+                AI Fall Detection
+              </p>
+              <p
+                className={`text-2xl ${poppinsBold.className} text-cyan-300 cursor-pointer hover:scale-105 transition-all hover:text-cyan-400 hover:rotate-2 hover:translate-y-2`}
+              >
+                Three Alarm Types
+              </p>
+              <p
+                className={`text-2xl ${poppinsBold.className} text-cyan-300 cursor-pointer hover:scale-105 transition-all hover:text-cyan-400 hover:rotate-2 hover:translate-y-2`}
+              >
+                Active Printed Light
+              </p>
+              <p
+                className={`text-2xl ${poppinsBold.className} text-cyan-300 cursor-pointer hover:scale-105 transition-all hover:text-cyan-400 hover:rotate-2 hover:translate-y-2`}
+              >
+                Swanholm Sense App
+              </p>
             </div>
           </div>
         </div>
