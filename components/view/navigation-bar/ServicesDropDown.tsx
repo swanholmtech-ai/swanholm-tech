@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { TutorialHome } from "../connecting-tutorial/TutorialHome";
 import { Settings } from "lucide-react";
+import Link from "next/link";
 
 export function ServicesDropDown() {
   const [open, setOpen] = useState(false);
@@ -31,14 +32,21 @@ export function ServicesDropDown() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56" align="center">
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <Link href="/profile">
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          </Link>
           <DropdownMenuGroup>
+            <Link href="/signup">
+              <DropdownMenuItem className="cursor-pointer">
+                Sign Up
+              </DropdownMenuItem>
+            </Link>
+
             <DropdownMenuItem
               onClick={clickOnTutorialHandler}
               className="cursor-pointer"
             >
               Tutorial
-              <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
