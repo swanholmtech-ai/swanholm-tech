@@ -97,7 +97,7 @@ export default function ProblemsSection() {
                   transition: { duration: 0.2 },
                 }}
               >
-                <p className="text-xl text-red-100 font-medium">
+                <p className="md:text-xl text-red-100 text-sm">
                   Every 15 minutes a serious accident happens in the EU
                 </p>
               </motion.div>
@@ -130,7 +130,7 @@ export default function ProblemsSection() {
                   transition: { duration: 0.2 },
                 }}
               >
-                <p className="text-xl text-orange-100 font-medium">
+                <p className="md:text-xl text-red-100 text-sm">
                   Lone work and hazardous environments put lives at risk
                 </p>
               </motion.div>
