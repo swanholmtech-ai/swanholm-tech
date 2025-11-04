@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { motion } from "framer-motion";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
@@ -103,15 +104,32 @@ export default function SolutionSection() {
       {/* Centered headline */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
         <div className="flex-1 flex flex-col items-center justify-center h-full text-center">
-          <h4
-            className={`${poppinsBold.className} text-2xl md:text-3xl lg:text-4xl tracking-tight
-          bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent
-          drop-shadow-[0_0_40px_rgba(6,182,212,0.6)]`}
+          <AnimatedSection
+            variants={{
+              hidden: { opacity: 0, y: 120, scale: 0.7, rotateX: 45 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                rotateX: 0,
+                transition: {
+                  duration: 1.3,
+                  type: "tween", // smooth, no spring bounce
+                  ease: [0.16, 1, 0.3, 1], // gentle easing
+                },
+              },
+            }}
           >
-            Work Confidently,
-            <br />
-            Your Smart Vest Has Your Back.
-          </h4>
+            <h4
+              className={`${poppinsBold.className} text-2xl md:text-3xl lg:text-4xl tracking-tight
+    bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent
+    drop-shadow-[0_0_40px_rgba(6,182,212,0.6)]`}
+            >
+              Work Confidently,
+              <br />
+              Your Smart Vest Has Your Back.
+            </h4>
+          </AnimatedSection>
         </div>
         <div className="flex-2 w-[80%]">
           <div className="relative z-10 flex flex-row items-center justify-evenly h-full text-center">
