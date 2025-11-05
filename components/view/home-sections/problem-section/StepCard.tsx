@@ -14,9 +14,9 @@ const StepCard = () => {
   return (
     <article className="w-full h-full">
       <div className="w-full flex gap-4 justify-center items-center py-4">
-        <div className="w-[50%] bg-emerald-100 p-4 m-4 rounded-lg h-full">
+        <div className="w-[50%] bg-emerald-100 p-4 m-4 rounded-lg min-h-[160px]">
           <h2
-            className={`${nunitoBold.className} text-lg md:text-2xl lg:text-4xl xl:text-5xl h-fit overflow-y-hidden tracking-tighter`}
+            className={`${nunitoBold.className} text-lg md:text-xl lg:text-2xl xl:text-4xl h-fit overflow-y-hidden tracking-tighter`}
           >
             €550 B = 3.3% of EU GDP
           </h2>
@@ -24,9 +24,9 @@ const StepCard = () => {
             lost each year to workplace injuries and diseases. (Source: EU-OSHA)
           </p>
         </div>
-        <div className="w-[50%] bg-fuchsia-200 p-4 m-4 rounded-lg h-full">
+        <div className="w-[50%] bg-fuchsia-200 p-4 m-4 rounded-lg min-h-[160px]">
           <h2
-            className={`${nunitoBold.className} text-lg md:text-2xl lg:text-4xl xl:text-5xl h-fit overflow-y-hidden tracking-tighter`}
+            className={`${nunitoBold.className} text-lg md:text-xl lg:text-2xl xl:text-4xl h-fit overflow-y-hidden tracking-tighter`}
           >
             ~3,298fatal and ~2.8 M non-fatal
           </h2>
@@ -36,9 +36,9 @@ const StepCard = () => {
         </div>
       </div>
       <div className="w-full flex gap-4 justify-center items-center py-4">
-        <div className="w-[50%] bg-violet-200 p-4 m-4 rounded-lg h-full">
+        <div className="w-[50%] bg-violet-200 p-4 m-4 rounded-lg min-h-[160px]">
           <h2
-            className={`${nunitoBold.className} text-lg md:text-2xl lg:text-4xl xl:text-5xl h-fit overflow-y-hidden tracking-tighter`}
+            className={`${nunitoBold.className} text-lg md:text-xl lg:text-2xl xl:text-4xl h-fit overflow-y-hidden tracking-tighter`}
           >
             STF are the #2 cause
           </h2>
@@ -47,13 +47,13 @@ const StepCard = () => {
             (Source: Eurostat, 2023)
           </p>
         </div>
-        <div className="w-[50%] bg-amber-100 p-4 m-4 rounded-lg h-full">
+        <div className="w-[50%] bg-amber-100 p-4 m-4 rounded-lg min-h-[160px]">
           <h2
-            className={`${nunitoBold.className} text-xl md:text-2xl lg:text-4xl xl:text-5xl h-fit overflow-y-hidden tracking-tighter`}
+            className={`${nunitoBold.className} text-lg md:text-xl lg:text-2xl xl:text-4xl h-fit overflow-y-hidden tracking-tighter`}
           >
             Lone workers face higher risk
           </h2>
-          <p className={`${nunitoRegular.className} text-xl text-gray-800`}>
+          <p className={`${nunitoRegular.className} text-lg text-gray-800`}>
             of delayed rescue and undetected incidents.(Source: EU-OSHA, HSE UK)
           </p>
         </div>
