@@ -11,6 +11,12 @@ const nunitoRegular = Nunito_Sans({
   style: ["normal"],
 });
 
+const nunitoBold = Nunito_Sans({
+  weight: ["700"],
+  subsets: ["latin"],
+  style: ["italic"],
+});
+
 export default function ProblemsSection() {
   return (
     <article
@@ -19,10 +25,9 @@ export default function ProblemsSection() {
         backgroundColor: "#f2eded",
       }}
     >
-      {/* Content Container - Max Width */}
       <div className="max-w-7xl mx-auto relative z-10 w-full flex">
         <div className="flex-1">
-          <div className="px-12 pt-40 h-full">
+          <div className="px-12 pt-32 h-full">
             <AnimatedSection
               variants={{
                 hidden: { opacity: 0, y: 120, scale: 0.7, rotateX: 45 },
@@ -40,14 +45,16 @@ export default function ProblemsSection() {
                 },
               }}
             >
-              <h4 className="text-xl md:text-4xl lg:text-4xl xl:text-6xl h-fit overflow-y-hidden">
+              <h4
+                className={`${nunitoBold.className} text-xl md:text-2xl lg:text-4xl xl:text-5xl h-fit overflow-y-hidden`}
+              >
                 Work Accidents Happen Every Day
               </h4>
             </AnimatedSection>
 
-            <AnimatedSection variants={slideInLeft} delay={0.2}>
+            <AnimatedSection variants={slideInLeft} delay={0.4}>
               <motion.div
-                className="bg-violet-300 backdrop-blur-sm w-fit cursor-pointer"
+                className="bg-violet-300 backdrop-blur-sm w-fit cursor-pointer mt-8 ml-4"
                 whileHover={{
                   x: 10,
                   backgroundColor: "rgba(211, 203, 255, 0.97)",
@@ -71,7 +78,7 @@ export default function ProblemsSection() {
                   transition: {
                     duration: 1,
                     ease: [0.16, 1, 0.3, 1],
-                    delay: 0.4,
+                    delay: 0.2,
                     type: "spring",
                     stiffness: 80,
                   },
@@ -79,7 +86,7 @@ export default function ProblemsSection() {
               }}
             >
               <motion.div
-                className="bg-orange-200 backdrop-blur-sm w-fit cursor-pointer mt-2"
+                className="bg-orange-200 backdrop-blur-sm w-fit cursor-pointer mt-2 ml-4"
                 whileHover={{
                   x: 10,
                   backgroundColor: "rgba(211, 203, 255, 0.97)",
@@ -103,7 +110,7 @@ export default function ProblemsSection() {
                   transition: {
                     duration: 1,
                     ease: [0.16, 1, 0.3, 1],
-                    delay: 0.6,
+                    delay: 0.4,
                     type: "spring",
                     stiffness: 80,
                   },
@@ -111,7 +118,7 @@ export default function ProblemsSection() {
               }}
             >
               <motion.div
-                className="bg-fuchsia-200 backdrop-blur-sm w-fit cursor-pointer mt-2"
+                className="bg-fuchsia-200 backdrop-blur-sm w-fit cursor-pointer mt-2 ml-4"
                 whileHover={{
                   x: 10,
                   backgroundColor: "rgba(211, 203, 255, 0.97)",
