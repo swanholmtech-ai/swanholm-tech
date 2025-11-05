@@ -55,7 +55,7 @@ export default function ProblemsSection() {
 
             <AnimatedSection variants={slideInLeft} delay={0.4}>
               <motion.div
-                className="bg-violet-300 backdrop-blur-sm w-fit cursor-pointer mt-8 ml-4"
+                className="bg-gray-300 backdrop-blur-sm w-fit cursor-pointer mt-8 ml-4"
                 whileHover={{
                   x: 10,
                   backgroundColor: "rgba(211, 203, 255, 0.97)",
@@ -63,7 +63,7 @@ export default function ProblemsSection() {
                 }}
               >
                 <p
-                  className={`md:text-4xl text-gray-800 text-sm ${nunitoRegular.className} font-bold tracking-tighter`}
+                  className={`md:text-4xl text-gray-400 text-sm ${nunitoRegular.className} font-bold tracking-tighter hover:text-gray-600`}
                 >
                   Problem Statement
                 </p>
@@ -87,15 +87,15 @@ export default function ProblemsSection() {
               }}
             >
               <motion.div
-                className="bg-orange-200 backdrop-blur-sm w-fit cursor-pointer mt-1 ml-4"
+                className="bg-gray-300 backdrop-blur-sm w-fit cursor-pointer mt-1 ml-4"
                 whileHover={{
                   x: 10,
-                  backgroundColor: "rgba(211, 203, 255, 0.97)",
+                  backgroundColor: "rgba(255, 216, 158, 0.97)",
                   transition: { duration: 0.2 },
                 }}
               >
                 <p
-                  className={`md:text-4xl text-gray-800 text-sm ${nunitoRegular.className} font-bold tracking-tighter`}
+                  className={`md:text-4xl text-gray-400 text-sm ${nunitoRegular.className} font-bold tracking-tighter hover:text-gray-600`}
                 >
                   Solution
                 </p>
@@ -119,15 +119,15 @@ export default function ProblemsSection() {
               }}
             >
               <motion.div
-                className="bg-fuchsia-200 backdrop-blur-sm w-fit cursor-pointer mt-1 ml-4"
+                className="bg-gray-300 backdrop-blur-sm w-fit cursor-pointer mt-1 ml-4"
                 whileHover={{
                   x: 10,
-                  backgroundColor: "rgba(211, 203, 255, 0.97)",
+                  backgroundColor: "rgba(255, 167, 228, 0.97)",
                   transition: { duration: 0.2 },
                 }}
               >
                 <p
-                  className={`md:text-4xl text-gray-800 text-sm ${nunitoRegular.className} font-bold tracking-tighter`}
+                  className={`md:text-4xl text-gray-400 text-sm ${nunitoRegular.className} font-bold tracking-tighter hover:text-gray-600`}
                 >
                   Value We Provide
                 </p>
