@@ -86,7 +86,7 @@ export default function ProblemsSection() {
               }}
             >
               <motion.div
-                className="bg-orange-200 backdrop-blur-sm w-fit cursor-pointer mt-2 ml-4"
+                className="bg-orange-200 backdrop-blur-sm w-fit cursor-pointer mt-1 ml-4"
                 whileHover={{
                   x: 10,
                   backgroundColor: "rgba(211, 203, 255, 0.97)",
@@ -118,7 +118,7 @@ export default function ProblemsSection() {
               }}
             >
               <motion.div
-                className="bg-fuchsia-200 backdrop-blur-sm w-fit cursor-pointer mt-2 ml-4"
+                className="bg-fuchsia-200 backdrop-blur-sm w-fit cursor-pointer mt-1 ml-4"
                 whileHover={{
                   x: 10,
                   backgroundColor: "rgba(211, 203, 255, 0.97)",
