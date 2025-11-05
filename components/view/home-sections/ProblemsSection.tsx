@@ -61,7 +61,23 @@ export default function ProblemsSection() {
                 </p>
               </motion.div>
             </AnimatedSection>
-            <AnimatedSection variants={slideInLeft} delay={0.2}>
+            <AnimatedSection
+              variants={{
+                hidden: { opacity: 0, x: -100, rotate: -10 },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  rotate: 0,
+                  transition: {
+                    duration: 1,
+                    ease: [0.16, 1, 0.3, 1],
+                    delay: 0.4,
+                    type: "spring",
+                    stiffness: 80,
+                  },
+                },
+              }}
+            >
               <motion.div
                 className="bg-orange-200 backdrop-blur-sm w-fit cursor-pointer mt-2"
                 whileHover={{
@@ -77,7 +93,23 @@ export default function ProblemsSection() {
                 </p>
               </motion.div>
             </AnimatedSection>
-            <AnimatedSection variants={slideInLeft} delay={0.2}>
+            <AnimatedSection
+              variants={{
+                hidden: { opacity: 0, x: -100, rotate: -10 },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  rotate: 0,
+                  transition: {
+                    duration: 1,
+                    ease: [0.16, 1, 0.3, 1],
+                    delay: 0.6,
+                    type: "spring",
+                    stiffness: 80,
+                  },
+                },
+              }}
+            >
               <motion.div
                 className="bg-fuchsia-200 backdrop-blur-sm w-fit cursor-pointer mt-2"
                 whileHover={{
