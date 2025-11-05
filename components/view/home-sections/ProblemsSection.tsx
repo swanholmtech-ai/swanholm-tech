@@ -3,6 +3,7 @@
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { slideInLeft } from "@/lib/animations";
 import { motion } from "framer-motion";
+import StepCard from "./problem-section/StepCard";
 import { Nunito_Sans } from "next/font/google";
 
 const nunitoRegular = Nunito_Sans({
@@ -132,6 +133,7 @@ export default function ProblemsSection() {
                 </p>
               </motion.div>
             </AnimatedSection>
+            <StepCard />
           </div>
         </div>
       </div>
