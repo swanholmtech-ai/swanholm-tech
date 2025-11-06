@@ -1,13 +1,13 @@
 "use client";
 import { Poppins } from "next/font/google";
 
-import Link from "next/link";
 import "@/style/nav-buttons.css";
 import { Button } from "../ui/button";
 import { useMediaQuery } from "@/hook/useMediaQuery";
 import { HamburgerMenu } from "./HamburgerMenu";
 import { ServicesDropDown } from "./navigation-bar/ServicesDropDown";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import LanguageToggle from "../LanguageToggle";
 
 const poppinsThin = Poppins({

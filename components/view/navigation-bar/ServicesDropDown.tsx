@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { TutorialHome } from "../connecting-tutorial/TutorialHome";
 import { Settings } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 export function ServicesDropDown() {
   const [open, setOpen] = useState(false);
