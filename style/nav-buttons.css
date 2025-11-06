@@ -48,7 +48,7 @@
 
 .holographic-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 4px rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
 }
 
 .holographic-card:hover::before {
