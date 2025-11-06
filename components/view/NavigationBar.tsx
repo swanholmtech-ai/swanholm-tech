@@ -8,6 +8,7 @@ import { useMediaQuery } from "@/hook/useMediaQuery";
 import { HamburgerMenu } from "./HamburgerMenu";
 import { ServicesDropDown } from "./navigation-bar/ServicesDropDown";
 import { useTranslations } from "next-intl";
+import LanguageToggle from "../LanguageToggle";
 
 const poppinsThin = Poppins({
   weight: ["300"],
@@ -75,6 +76,9 @@ export function NavigationBar() {
             </Link>
             <li>
               <ServicesDropDown />
+            </li>
+            <li>
+              <LanguageToggle />
             </li>
           </ul>
         </nav>

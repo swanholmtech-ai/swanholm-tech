@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 
@@ -13,11 +13,11 @@ const LanguageToggle = () => {
 
   return (
     <section
-      className="cursor-pointer absolute right-2 xs:right-18 top-2"
+      className="cursor-pointer absolute top-0 bg-sky-500 w-8 h-8 flex items-center justify-center rounded-full"
       onClick={toggleLanguage}
     >
       <article className="shopping-cart-div text-white">
-        <Image
+        {/* <Image
           src={
             locale === "en"
               ? "/assets/svgs/flag-uk.svg"
@@ -26,7 +26,8 @@ const LanguageToggle = () => {
           alt={locale === "en" ? "English" : "Swedish"}
           width={26}
           height={26}
-        />
+        /> */}
+        {locale === "en" ? "EN" : "SV"}
       </article>
     </section>
   );
