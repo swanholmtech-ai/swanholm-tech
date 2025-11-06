@@ -13,7 +13,7 @@ const nunitoRegular = Nunito_Sans({
 });
 
 const nunitoBold = Nunito_Sans({
-  weight: ["700"],
+  weight: ["800"],
   subsets: ["latin"],
   style: ["italic"],
 });
@@ -47,7 +47,7 @@ export default function ProblemsSection() {
               }}
             >
               <h4
-                className={`${nunitoBold.className} text-xl md:text-2xl lg:text-4xl xl:text-5xl h-fit overflow-y-hidden`}
+                className={`${nunitoBold.className} text-xl md:text-2xl lg:text-4xl xl:text-5xl h-fit overflow-y-hidden tracking-tighter text-gray-600`}
               >
                 Work Accidents Happen Every Day
               </h4>
