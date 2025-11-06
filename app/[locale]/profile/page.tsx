@@ -1,3 +1,4 @@
+"use client";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
@@ -10,7 +11,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useAuthStore } from "@/store/useAuthStore";
+
 export default function Profile() {
+  const { user } = useAuthStore();
   return (
     <main
       className="h-screen"
@@ -25,8 +29,13 @@ export default function Profile() {
         }}
       >
         <div className="h-20"></div>
-        <article className="w-full  mx-auto p-2 text-gray-700">
-          <h2 className="text-2xl font-bold">Personal Information</h2>
+        <article className="w-full mx-auto p-2">
+          <h2 className="text-xl font-bold text-slate-700">{user?.email}</h2>
+          <div className="h-[1px] w-full bg-gray-300 mb-4"></div>
+
+          <h2 className="text-xl font-bold text-gray-500">
+            Personal Information
+          </h2>
           <div className="flex md:flex-row flex-col md:gap-8 gap-2 mt-2">
             <Input
               placeholder="First Name"
@@ -36,8 +45,8 @@ export default function Profile() {
             <Input placeholder="Phone" className="border border-gray-400" />
           </div>
         </article>
-        <article className="w-full  mx-auto p-2 text-gray-700">
-          <h2 className="text-2xl font-bold">Company Information</h2>
+        <article className="w-full mx-auto p-2 text-gray-500">
+          <h2 className="text-xl font-bold">Company Information</h2>
           <div className="flex md:flex-row flex-col md:gap-8 gap-2 mt-2">
             <Input
               placeholder="Company Name"
