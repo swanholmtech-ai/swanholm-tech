@@ -1,5 +1,7 @@
 // useAuthStore.ts
 import { create } from "zustand";
+import { devtools } from "zustand/middleware";
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -9,7 +11,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../services/firebase";
 
-interface AuthState {
+export interface AuthState {
   user: User | null;
   loading: boolean;
   error: string | null;
@@ -24,7 +26,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   loading: false,
   error: null,
 
-  login: async (email, password) => {
+  login: async (email: string, password: string) => {
     set({ loading: true, error: null });
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
@@ -36,7 +38,7 @@ export const useAuthStore = create<AuthState>((set) => ({
     }
   },
 
-  signup: async (email, password) => {
+  signup: async (email: string, password: string) => {
     set({ loading: true, error: null });
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);

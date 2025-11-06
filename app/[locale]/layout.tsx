@@ -6,6 +6,7 @@ import { DrawerBookDemo } from "@/components/view/book-a-demo/DrawerBookDemo";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { AuthProvider } from "@/components/AuthProvider";
 // import Footer from "@/components/view/Footer";
 
 const geistSans = Geist({
@@ -37,16 +38,18 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <NextIntlClientProvider>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <NavigationBar />
-          <DrawerBookDemo />
-          {children}
-          {/* <Footer /> */}
-        </body>
-      </NextIntlClientProvider>
+      <AuthProvider>
+        <NextIntlClientProvider>
+          <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          >
+            <NavigationBar />
+            <DrawerBookDemo />
+            {children}
+            {/* <Footer /> */}
+          </body>
+        </NextIntlClientProvider>
+      </AuthProvider>
     </html>
   );
 }
