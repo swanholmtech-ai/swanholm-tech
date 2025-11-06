@@ -8,7 +8,7 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Menu } from "lucide-react";
 
 export function HamburgerMenu() {

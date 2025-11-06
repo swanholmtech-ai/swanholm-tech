@@ -13,13 +13,21 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { TutorialHome } from "../connecting-tutorial/TutorialHome";
 import { Settings } from "lucide-react";
-import Link from "next/link";
-
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import { useAuthStore } from "@/store/useAuthStore";
 export function ServicesDropDown() {
   const [open, setOpen] = useState(false);
   const clickOnTutorialHandler = () => {
     console.log("clickOnTutorialHandler");
     setOpen(true);
+  };
+  const t = useTranslations("sign-up");
+  const { user, logout } = useAuthStore();
+
+  const logoutHandler = () => {
+    logout();
+    setOpen(false);
   };
 
   return (
@@ -36,11 +44,13 @@ export function ServicesDropDown() {
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
           </Link>
           <DropdownMenuGroup>
-            <Link href="/signup">
-              <DropdownMenuItem className="cursor-pointer">
-                Sign Up
-              </DropdownMenuItem>
-            </Link>
+            {!user && (
+              <Link href="/login">
+                <DropdownMenuItem className="cursor-pointer">
+                  {t("signup-login")}
+                </DropdownMenuItem>
+              </Link>
+            )}
 
             <DropdownMenuItem
               onClick={clickOnTutorialHandler}
@@ -52,7 +62,7 @@ export function ServicesDropDown() {
           <DropdownMenuSeparator />
           <DropdownMenuItem disabled>API</DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={logoutHandler} className="cursor-pointer">
             Log out
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>

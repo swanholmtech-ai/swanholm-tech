@@ -1,11 +1,11 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { staggerContainer } from "@/lib/animations";
-import useProducts from "@/store/useProducts";
+import useProductsStore from "@/store/useProductsStore";
 import { Poppins } from "next/font/google";
 import { useRef } from "react";
 import ProductImage from "@/components/view/ProductImage";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 const poppinsRegular = Poppins({
   weight: ["400"],
@@ -18,7 +18,7 @@ const poppinsThin = Poppins({
 });
 
 export default function ProductsPage() {
-  const { products } = useProducts();
+  const { products } = useProductsStore();
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -70,45 +70,45 @@ export default function ProductsPage() {
                 transition: { duration: 0.3 },
               }}
             >
-            <div className="w-full h-[80px] flex justify-center items-center">
-              <h5
-                className={`${poppinsRegular.className} text-sm text-blue-200 font-bold`}
-              >
-                {item.name}
-              </h5>
-            </div>
+              <div className="w-full h-[80px] flex justify-center items-center">
+                <h5
+                  className={`${poppinsRegular.className} text-sm text-blue-200 font-bold`}
+                >
+                  {item.name}
+                </h5>
+              </div>
 
-            <div className="w-full flex-1 flex justify-center items-center mb-4">
-              {/* <motion.div
+              <div className="w-full flex-1 flex justify-center items-center mb-4">
+                {/* <motion.div
                 whileHover={{
                   scale: 1.1,
                   rotate: 5,
                   transition: { duration: 0.3 },
                 }}
               > */}
-              <ProductImage item={item} />
-              {/* </motion.div> */}
-            </div>
-            <div className="w-full h-[10px] flex justify-center items-center">
-              <div
-                className={`${poppinsThin.className} text-sm text-blue-200 font-bold flex justify-between w-full`}
-              >
-                <div className="text-white">Price: {item.price} kr </div>
-                {item.inStock ? (
-                  <div>
-                    <span className="text-green-700 hover:text-green-500 font-bold italic">
-                      In Stock
-                    </span>
-                  </div>
-                ) : (
-                  <div>
-                    <span className="text-red-500 font- italic">
-                      Out of Stock
-                    </span>
-                  </div>
-                )}
+                <ProductImage item={item} />
+                {/* </motion.div> */}
               </div>
-            </div>
+              <div className="w-full h-[10px] flex justify-center items-center">
+                <div
+                  className={`${poppinsThin.className} text-sm text-blue-200 font-bold flex justify-between w-full`}
+                >
+                  <div className="text-white">Price: {item.price} kr </div>
+                  {item.inStock ? (
+                    <div>
+                      <span className="text-green-700 hover:text-green-500 font-bold italic">
+                        In Stock
+                      </span>
+                    </div>
+                  ) : (
+                    <div>
+                      <span className="text-red-500 font- italic">
+                        Out of Stock
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </div>
             </motion.div>
           </Link>
         ))}

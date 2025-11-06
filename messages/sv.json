@@ -15,5 +15,15 @@
     "secondPartTitle": "Varför smart arbetskläder?",
     "secondPartDescription": "Ögonblickliga hjälp kan ges när det behövs. Genom att använda AI kan vi snabbt identifiera och svara på tillfällen där någon behöver hjälp. Exempelvis att fallera eller trassla på skor.",
     "secondPartDescription2": "Genom att integrera teknologin i arbetskläderna säkerställer vi att den används."
+  },
+  "sign-up": {
+    "signup": "Registrera dig",
+    "signup-login": "Logga in/Registrera",
+    "email": "E-post",
+    "password": "Lösenord",
+    "confirmPassword": "Bekräfta lösenord",
+    "submit": "Skicka",
+    "forgotPassword": "Glömt lösenord?",
+    "already-have-account": "Har du redan ett konto?"
   }
 }

@@ -15,5 +15,15 @@
     "secondPartTitle": "Why smart workwear?",
     "secondPartDescription": "Accidents can be identified much faster with the use of AI. Workplace accidents due to poor visibility, slippery or unstable ground, working alone or in other hazardous environments could be avoided with the use of smart technology.",
     "secondPartDescription2": "By integrating the technology into the workwear you make sure that it is used."
+  },
+  "sign-up": {
+    "signup": "Sign up",
+    "signup-login": "Login/Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Submit",
+    "forgotPassword": "Forgot Password?",
+    "already-have-account": "Already have an account?"
   }
 }
