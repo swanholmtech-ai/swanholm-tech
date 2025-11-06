@@ -8,19 +8,19 @@
 .holographic-card {
   width: 100px;
   height: 35px;
-  background: rgba(17, 17, 17, 0.3);
+  background: rgba(17, 17, 17, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0px;
   transition: all 0.5s ease;
-  border: 1px solid rgba(0, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .holographic-card li {
-  color: #0ff;
+  color: rgb(241, 241, 241);
   font-size: 12px;
   position: relative;
   z-index: 2;
@@ -39,7 +39,7 @@
     0deg,
     transparent,
     transparent 30%,
-    rgba(0, 255, 255, 0.3)
+    rgba(255, 255, 255, 0.4)
   );
   transform: rotate(-45deg);
   transition: all 0.5s ease;
