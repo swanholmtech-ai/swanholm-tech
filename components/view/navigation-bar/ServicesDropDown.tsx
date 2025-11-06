@@ -14,14 +14,14 @@ import {
 import { TutorialHome } from "../connecting-tutorial/TutorialHome";
 import { Settings } from "lucide-react";
 import Link from "next/link";
-
+import { useTranslations } from "next-intl";
 export function ServicesDropDown() {
   const [open, setOpen] = useState(false);
   const clickOnTutorialHandler = () => {
     console.log("clickOnTutorialHandler");
     setOpen(true);
   };
-
+  const t = useTranslations("sign-up");
   return (
     <>
       {open && <TutorialHome setOpen={setOpen} open={open} />}
@@ -38,7 +38,7 @@ export function ServicesDropDown() {
           <DropdownMenuGroup>
             <Link href="/signup">
               <DropdownMenuItem className="cursor-pointer">
-                Sign Up
+                {t("signup")}
               </DropdownMenuItem>
             </Link>
 
