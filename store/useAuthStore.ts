@@ -16,7 +16,10 @@ export interface AuthState {
   loading: boolean;
   error: string | null;
   login: (email: string, password: string) => Promise<void>;
-  signup: (email: string, password: string) => Promise<void>;
+  signup: (
+    email: string,
+    password: string
+  ) => Promise<{ user?: User; error?: string }>;
   logout: () => Promise<void>;
   initAuthListener: () => void;
 }
@@ -39,18 +42,22 @@ export const useAuthStore = create<AuthState>()(
       }
     },
 
-    signup: async (email: string, password: string) => {
+    signup: async (
+      email: string,
+      password: string
+    ): Promise<{ user?: User; error?: string }> => {
       set({ loading: true, error: null });
       try {
         const res = await createUserWithEmailAndPassword(auth, email, password);
         set({ user: res.user });
-      } catch (error: any) {
-        set({ error: error.message });
+        return { user: res.user }; // ✅ important
+      } catch (err: any) {
+        set({ error: err.message });
+        return { error: err.message }; // ✅ important
       } finally {
         set({ loading: false });
       }
     },
-
     logout: async () => {
       set({ loading: true, error: null });
       try {

@@ -1,17 +1,20 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { FormEvent } from "react";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import { getValidEmail } from "@/lib/tools";
+import { useAuthStore } from "@/store/useAuthStore";
 
 export default function SignupPage() {
   const t = useTranslations("sign-up");
+  const signup = useAuthStore((state) => state.signup);
+  const router = useRouter();
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const formData = Object.fromEntries(
@@ -41,6 +44,21 @@ export default function SignupPage() {
       });
       return;
     }
+    const password = formData.password?.trim() as string;
+
+    const { error } = await signup(email, password);
+    if (error) {
+      toast.error(error, {
+        duration: 3000,
+        position: "top-center",
+      });
+      return;
+    }
+    toast.success("Signup successful!", {
+      duration: 3000,
+      position: "top-center",
+    });
+    router.push("/profile");
   }
 
   return (
