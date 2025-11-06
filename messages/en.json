@@ -17,6 +17,12 @@
     "secondPartDescription2": "By integrating the technology into the workwear you make sure that it is used."
   },
   "sign-up": {
-    "signup": "Sign up"
+    "signup": "Sign up",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Submit",
+    "forgotPassword": "Forgot Password?",
+    "already-have-account": "Already have an account?"
   }
 }
