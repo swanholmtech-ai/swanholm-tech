@@ -1,0 +1,19 @@
+{
+  "navbar": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "news": "News",
+    "contact": "Contact",
+    "settings": "Settings"
+  },
+  "home": {
+    "title": "Welcome to Swanholm Technology",
+    "subtitle": "Be connected. Be safe.",
+    "description": "By using Swanholm Alert Vest you can be sure to get help when in need.",
+    "description2": "Keep you and your personnel safe with the help of smart technology.",
+    "secondPartTitle": "Why smart workwear?",
+    "secondPartDescription": "Accidents can be identified much faster with the use of AI. Workplace accidents due to poor visibility, slippery or unstable ground, working alone or in other hazardous environments could be avoided with the use of smart technology.",
+    "secondPartDescription2": "By integrating the technology into the workwear you make sure that it is used."
+  }
+}

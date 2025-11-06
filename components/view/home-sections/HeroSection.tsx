@@ -61,12 +61,10 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         <div className="h-[120vh] w-full relative">
           <div
-            className="h-full w-full"
+            className="h-full w-full bg-[position:right_-180px_top_0] bg-no-repeat bg-cover
+            xl:bg-cover xl:bg-center"
             style={{
               backgroundImage: "url('/assets/bg/bg-1.webp')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
             }}
           />
         </div>
