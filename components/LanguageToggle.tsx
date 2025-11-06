@@ -13,7 +13,7 @@ const LanguageToggle = () => {
 
   return (
     <section
-      className="cursor-pointer absolute top-1 bg-sky-900/50 w-8 h-8 flex items-center justify-center"
+      className="cursor-pointer absolute top-1 bg-sky-900/50 w-8 h-8 flex items-center justify-center hover:bg-sky-900"
       onClick={toggleLanguage}
     >
       <article className="shopping-cart-div text-white">
