@@ -7,10 +7,10 @@ interface ProductState {
   products: ProductType[];
 }
 
-const useProducts = create<ProductState>()(
+const useProductsStore = create<ProductState>()(
   devtools((set) => ({
     products,
   }))
 );
 
-export default useProducts;
+export default useProductsStore;

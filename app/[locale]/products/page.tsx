@@ -1,7 +1,7 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { staggerContainer } from "@/lib/animations";
-import useProducts from "@/store/useProducts";
+import useProductsStore from "@/store/useProductsStore";
 import { Poppins } from "next/font/google";
 import { useRef } from "react";
 import ProductImage from "@/components/view/ProductImage";
@@ -18,7 +18,7 @@ const poppinsThin = Poppins({
 });
 
 export default function ProductsPage() {
-  const { products } = useProducts();
+  const { products } = useProductsStore();
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
