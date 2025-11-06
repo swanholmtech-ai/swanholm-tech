@@ -23,7 +23,12 @@ export function ServicesDropDown() {
     setOpen(true);
   };
   const t = useTranslations("sign-up");
-  const { user } = useAuthStore();
+  const { user, logout } = useAuthStore();
+
+  const logoutHandler = () => {
+    logout();
+    setOpen(false);
+  };
 
   return (
     <>
@@ -57,7 +62,7 @@ export function ServicesDropDown() {
           <DropdownMenuSeparator />
           <DropdownMenuItem disabled>API</DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={logoutHandler} className="cursor-pointer">
             Log out
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>
