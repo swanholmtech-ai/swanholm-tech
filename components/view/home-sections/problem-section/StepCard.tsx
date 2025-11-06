@@ -14,7 +14,7 @@ const StepCard = () => {
   return (
     <article className="w-full h-full">
       <div className="w-full flex gap-4 justify-center items-center py-4">
-        <div className="w-[50%] bg-emerald-100 p-4 m-4 rounded-lg min-h-[160px] flex flex-col justify-between">
+        <div className="w-[50%] bg-emerald-100 p-4 m-4 min-h-[160px] flex flex-col justify-between shadow-sm">
           <h2
             className={`${nunitoBold.className} text-lg md:text-xl lg:text-2xl xl:text-4xl h-fit overflow-y-hidden tracking-tighter`}
           >
@@ -24,7 +24,7 @@ const StepCard = () => {
             lost each year to workplace injuries and diseases. (Source: EU-OSHA)
           </p>
         </div>
-        <div className="w-[50%] bg-fuchsia-200 p-4 m-4 rounded-lg min-h-[160px] flex flex-col justify-between">
+        <div className="w-[50%] bg-fuchsia-200 p-4 m-4 min-h-[160px] flex flex-col justify-between shadow-sm">
           <h2
             className={`${nunitoBold.className} text-lg md:text-xl lg:text-2xl xl:text-4xl h-fit overflow-y-hidden tracking-tighter`}
           >
@@ -36,7 +36,7 @@ const StepCard = () => {
         </div>
       </div>
       <div className="w-full flex gap-4 justify-center items-center py-4">
-        <div className="w-[50%] bg-violet-200 p-4 m-4 rounded-lg min-h-[160px] flex flex-col justify-between">
+        <div className="w-[50%] bg-violet-200 p-4 m-4 min-h-[160px] flex flex-col justify-between shadow-sm">
           <h2
             className={`${nunitoBold.className} text-lg md:text-xl lg:text-2xl xl:text-4xl h-fit overflow-y-hidden tracking-tighter`}
           >
@@ -47,7 +47,7 @@ const StepCard = () => {
             (Source: Eurostat, 2023)
           </p>
         </div>
-        <div className="w-[50%] bg-amber-100 p-4 m-4 rounded-lg min-h-[160px] flex flex-col justify-between">
+        <div className="w-[50%] bg-amber-100 p-4 m-4 min-h-[160px] flex flex-col justify-between shadow-sm">
           <h2
             className={`${nunitoBold.className} text-lg md:text-xl lg:text-2xl xl:text-4xl h-fit overflow-y-hidden tracking-tighter`}
           >
