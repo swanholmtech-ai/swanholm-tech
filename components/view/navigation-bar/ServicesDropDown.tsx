@@ -15,6 +15,7 @@ import { TutorialHome } from "../connecting-tutorial/TutorialHome";
 import { Settings } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
+import { useAuthStore } from "@/store/useAuthStore";
 export function ServicesDropDown() {
   const [open, setOpen] = useState(false);
   const clickOnTutorialHandler = () => {
@@ -22,6 +23,8 @@ export function ServicesDropDown() {
     setOpen(true);
   };
   const t = useTranslations("sign-up");
+  const { user } = useAuthStore();
+
   return (
     <>
       {open && <TutorialHome setOpen={setOpen} open={open} />}
@@ -36,11 +39,13 @@ export function ServicesDropDown() {
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
           </Link>
           <DropdownMenuGroup>
-            <Link href="/signup">
-              <DropdownMenuItem className="cursor-pointer">
-                {t("signup")}
-              </DropdownMenuItem>
-            </Link>
+            {!user && (
+              <Link href="/signup">
+                <DropdownMenuItem className="cursor-pointer">
+                  {t("signup-login")}
+                </DropdownMenuItem>
+              </Link>
+            )}
 
             <DropdownMenuItem
               onClick={clickOnTutorialHandler}
