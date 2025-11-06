@@ -45,7 +45,7 @@ export function ServicesDropDown() {
           </Link>
           <DropdownMenuGroup>
             {!user && (
-              <Link href="/signup">
+              <Link href="/login">
                 <DropdownMenuItem className="cursor-pointer">
                   {t("signup-login")}
                 </DropdownMenuItem>

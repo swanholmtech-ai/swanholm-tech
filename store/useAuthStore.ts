@@ -15,7 +15,10 @@ export interface AuthState {
   user: User | null;
   loading: boolean;
   error: string | null;
-  login: (email: string, password: string) => Promise<void>;
+  login: (
+    email: string,
+    password: string
+  ) => Promise<{ user?: User; error?: string }>;
   signup: (
     email: string,
     password: string
@@ -35,8 +38,10 @@ export const useAuthStore = create<AuthState>()(
       try {
         const res = await signInWithEmailAndPassword(auth, email, password);
         set({ user: res.user });
-      } catch (error: any) {
-        set({ error: error.message });
+        return { user: res.user }; // ✅ important
+      } catch (err: any) {
+        set({ error: err.message });
+        return { error: err.message }; // ✅ important
       } finally {
         set({ loading: false });
       }

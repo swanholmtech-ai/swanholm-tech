@@ -18,7 +18,7 @@
   },
   "sign-up": {
     "signup": "Registrera dig",
-    "signup-login": "Registrera dig/inloggning",
+    "signup-login": "Logga in/Registrera",
     "email": "E-post",
     "password": "Lösenord",
     "confirmPassword": "Bekräfta lösenord",

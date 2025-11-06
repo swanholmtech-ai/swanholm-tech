@@ -18,7 +18,7 @@
   },
   "sign-up": {
     "signup": "Sign up",
-    "signup-login": "Sign up/login",
+    "signup-login": "Login/Sign Up",
     "email": "Email",
     "password": "Password",
     "confirmPassword": "Confirm Password",
