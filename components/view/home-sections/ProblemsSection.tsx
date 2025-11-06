@@ -127,7 +127,7 @@ export default function ProblemsSection() {
                 }}
               >
                 <p
-                  className={`md:text-4xl text-gray-400 text-sm ${nunitoRegular.className} font-bold tracking-tighter hover:text-gray-600`}
+                  className={`md:text-4xl text-gray-400 text-sm ${nunitoRegular.className} font-bold tracking-tighter hover:text-gray-100`}
                 >
                   Value We Provide
                 </p>
