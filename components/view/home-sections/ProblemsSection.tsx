@@ -1,65 +1,34 @@
 "use client";
 
-import {
-  AnimatedSection,
-  ParallaxSection,
-} from "@/components/animations/AnimatedSection";
+import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { slideInLeft } from "@/lib/animations";
 import { motion } from "framer-motion";
+import StepCard from "./problem-section/StepCard";
+import { Nunito_Sans } from "next/font/google";
+
+const nunitoRegular = Nunito_Sans({
+  weight: ["600"],
+  subsets: ["latin"],
+  style: ["normal"],
+});
+
+const nunitoBold = Nunito_Sans({
+  weight: ["700"],
+  subsets: ["latin"],
+  style: ["italic"],
+});
 
 export default function ProblemsSection() {
   return (
-    <article className="w-full h-[100dvh] flex relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-red-900 to-orange-900">
-        <div className="absolute inset-0">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute bg-gradient-to-r from-red-600/20 to-orange-600/20"
-              style={{
-                height: "20px",
-                width: "100%",
-                top: `${i * 80}px`,
-                transform: `rotate(${i % 2 === 0 ? 2 : -2}deg)`,
-              }}
-              animate={{
-                opacity: [0.2, 0.5, 0.2],
-                scale: [1, 1.02, 1],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                delay: i * 0.1,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Hazard symbols overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(239,68,68,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(251,146,60,0.1),transparent_50%)]" />
-      </div>
-
-      <ParallaxSection speed={40} className="absolute inset-0 z-0">
-        <div
-          className="h-[120vh] w-full relative"
-          style={{
-            backgroundImage: "url('/assets/imgs/accident.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            opacity: 0.1,
-          }}
-        />
-      </ParallaxSection>
-
-      {/* Warning Glow Effect */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-[100px] animate-pulse" />
-
-      {/* Content Container - Max Width */}
+    <article
+      className="w-full h-[100dvh] flex relative overflow-hidden"
+      style={{
+        backgroundColor: "#f2eded",
+      }}
+    >
       <div className="max-w-7xl mx-auto relative z-10 w-full flex">
         <div className="flex-1">
-          <div className="px-12 pt-40 h-full">
+          <div className="px-12 pt-32 h-full">
             <AnimatedSection
               variants={{
                 hidden: { opacity: 0, y: 120, scale: 0.7, rotateX: 45 },
@@ -78,31 +47,60 @@ export default function ProblemsSection() {
               }}
             >
               <h4
-                className="text-xl md:text-4xl lg:text-4xl xl:text-6xl h-fit overflow-y-hidden
-                bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent
-                drop-shadow-[0_0_40px_rgba(239,68,68,0.6)]
-                animate-pulse"
+                className={`${nunitoBold.className} text-xl md:text-2xl lg:text-4xl xl:text-5xl h-fit overflow-y-hidden`}
               >
                 Work Accidents Happen Every Day
               </h4>
             </AnimatedSection>
 
-            <AnimatedSection variants={slideInLeft} delay={0.2}>
+            <AnimatedSection variants={slideInLeft} delay={0.4}>
               <motion.div
-                className="mt-4 p-4 bg-orange-900/30 border-l-4 border-orange-500 backdrop-blur-sm rounded-r-lg max-w-[540px] cursor-pointer"
+                className="bg-gray-300 backdrop-blur-sm w-fit cursor-pointer mt-8 ml-4"
                 whileHover={{
                   x: 10,
-                  backgroundColor: "rgba(153, 27, 27, 0.4)",
-                  borderColor: "rgba(239, 68, 68, 0.8)",
+                  backgroundColor: "rgba(211, 203, 255, 0.97)",
                   transition: { duration: 0.2 },
                 }}
               >
-                <p className="md:text-xl text-red-100 text-sm">
-                  Every 15 minutes a serious accident happens in the EU
+                <p
+                  className={`md:text-4xl text-gray-400 text-sm ${nunitoRegular.className} font-bold tracking-tighter hover:text-gray-600`}
+                >
+                  Problem Statement
                 </p>
               </motion.div>
             </AnimatedSection>
-
+            <AnimatedSection
+              variants={{
+                hidden: { opacity: 0, x: -100, rotate: -10 },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  rotate: 0,
+                  transition: {
+                    duration: 1,
+                    ease: [0.16, 1, 0.3, 1],
+                    delay: 0.2,
+                    type: "spring",
+                    stiffness: 80,
+                  },
+                },
+              }}
+            >
+              <motion.div
+                className="bg-gray-300 backdrop-blur-sm w-fit cursor-pointer mt-1 ml-4"
+                whileHover={{
+                  x: 10,
+                  backgroundColor: "rgba(255, 216, 158, 0.97)",
+                  transition: { duration: 0.2 },
+                }}
+              >
+                <p
+                  className={`md:text-4xl text-gray-400 text-sm ${nunitoRegular.className} font-bold tracking-tighter hover:text-gray-600`}
+                >
+                  Solution
+                </p>
+              </motion.div>
+            </AnimatedSection>
             <AnimatedSection
               variants={{
                 hidden: { opacity: 0, x: -100, rotate: -10 },
@@ -121,20 +119,21 @@ export default function ProblemsSection() {
               }}
             >
               <motion.div
-                className="mt-4 p-4 bg-orange-900/30 border-l-4 border-orange-500 backdrop-blur-sm rounded-r-lg max-w-[540px] cursor-pointer"
+                className="bg-gray-300 backdrop-blur-sm w-fit cursor-pointer mt-1 ml-4"
                 whileHover={{
                   x: 10,
-                  scale: 1.02,
-                  backgroundColor: "rgba(194, 65, 12, 0.4)",
-                  borderColor: "rgba(251, 146, 60, 0.8)",
+                  backgroundColor: "rgba(255, 167, 228, 0.97)",
                   transition: { duration: 0.2 },
                 }}
               >
-                <p className="md:text-xl text-red-100 text-sm">
-                  Lone work and hazardous environments put lives at risk
+                <p
+                  className={`md:text-4xl text-gray-400 text-sm ${nunitoRegular.className} font-bold tracking-tighter hover:text-gray-100`}
+                >
+                  Value We Provide
                 </p>
               </motion.div>
             </AnimatedSection>
+            <StepCard />
           </div>
         </div>
       </div>

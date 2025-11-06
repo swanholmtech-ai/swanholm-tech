@@ -63,7 +63,7 @@ export default function HeroSection() {
           <div
             className="h-full w-full"
             style={{
-              backgroundImage: "url('/assets/bg/bg-1.avif')",
+              backgroundImage: "url('/assets/bg/bg-1.webp')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
