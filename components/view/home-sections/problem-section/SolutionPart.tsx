@@ -10,7 +10,7 @@ const nunitoRegular = Nunito_Sans({
   subsets: ["latin"],
 });
 
-const ProblemPart = () => {
+const SolutionPart = () => {
   return (
     <article className={`${nunitoRegular.className} w-full h-full mt-12`}>
       <h2
@@ -34,4 +34,4 @@ const ProblemPart = () => {
   );
 };
 
-export default ProblemPart;
+export default SolutionPart;
