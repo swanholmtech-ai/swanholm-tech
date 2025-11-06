@@ -5,7 +5,7 @@ import { slideInLeft } from "@/lib/animations";
 import { motion } from "framer-motion";
 import StepCard from "./problem-section/StepCard";
 import { Nunito_Sans } from "next/font/google";
-
+import { useState } from "react";
 const nunitoRegular = Nunito_Sans({
   weight: ["600"],
   subsets: ["latin"],
@@ -19,6 +19,8 @@ const nunitoBold = Nunito_Sans({
 });
 
 export default function ProblemsSection() {
+  const [currentStep, setCurrentStep] = useState(0);
+
   return (
     <article
       className="w-full h-[100dvh] flex relative overflow-hidden"
@@ -61,6 +63,7 @@ export default function ProblemsSection() {
                   backgroundColor: "rgba(211, 203, 255, 0.97)",
                   transition: { duration: 0.2 },
                 }}
+                onClick={() => setCurrentStep(1)}
               >
                 <p
                   className={`md:text-4xl text-gray-400 text-sm ${nunitoRegular.className} font-bold tracking-tighter hover:text-gray-600`}
@@ -93,6 +96,7 @@ export default function ProblemsSection() {
                   backgroundColor: "rgba(255, 216, 158, 0.97)",
                   transition: { duration: 0.2 },
                 }}
+                onClick={() => setCurrentStep(2)}
               >
                 <p
                   className={`md:text-4xl text-gray-400 text-sm ${nunitoRegular.className} font-bold tracking-tighter hover:text-gray-600`}
@@ -125,6 +129,7 @@ export default function ProblemsSection() {
                   backgroundColor: "rgba(255, 167, 228, 0.97)",
                   transition: { duration: 0.2 },
                 }}
+                onClick={() => setCurrentStep(3)}
               >
                 <p
                   className={`md:text-4xl text-gray-400 text-sm ${nunitoRegular.className} font-bold tracking-tighter hover:text-gray-100`}
@@ -133,7 +138,7 @@ export default function ProblemsSection() {
                 </p>
               </motion.div>
             </AnimatedSection>
-            <StepCard />
+            <StepCard currentStep={currentStep} />
           </div>
         </div>
       </div>
