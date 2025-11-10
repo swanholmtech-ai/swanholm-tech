@@ -44,7 +44,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
           />
           <div className="text-gray-100 text-md font-bold text-gray-400 flex gap-2 items-center justify-between">
             <div className="text-green-300">
-              Price:
+              Price:{" "}
               <span className="text-yellow-300">{productData.price}</span>
             </div>
             <SizeSelector sizes={productData.sizes} />

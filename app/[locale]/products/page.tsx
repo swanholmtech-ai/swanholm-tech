@@ -90,11 +90,11 @@ export default function ProductsPage() {
                 <div
                   className={`${poppinsThin.className} text-sm text-blue-200 font-bold flex justify-between w-full`}
                 >
-                  {/* <div className="text-white">Price: {item.price} kr </div>
-                  {item.inStock ? (
+                  <div className="text-white">Price: {item.price} kr </div>
+                  {item.quantity > 0 ? (
                     <div>
                       <span className="text-green-700 hover:text-green-500 font-bold italic">
-                        In Stock
+                        In Stock : {item.quantity}
                       </span>
                     </div>
                   ) : (
@@ -103,7 +103,7 @@ export default function ProductsPage() {
                         Out of Stock
                       </span>
                     </div>
-                  )} */}
+                  )}
                 </div>
               </div>
             </motion.div>
