@@ -36,7 +36,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
       <h1 className="text-xl mb-2 text-left text-yellow-300">
         {productData.name}
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+      <div className="flex xl:flex-row flex-col w-full">
         <div className="col-span-2 border border-gray-600 p-2 flex flex-col justify-evenly">
           <div
             className={`prose prose-slate max-w-none text-gray-100 ${poppinsThin.className}`}
