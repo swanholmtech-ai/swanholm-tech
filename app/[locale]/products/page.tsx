@@ -87,7 +87,7 @@ export default function ProductsPage() {
               </div>
               <div className="w-full h-[10px] flex justify-center items-center">
                 <div
-                  className={`${poppinsThin.className} text-sm text-blue-200 font-bold flex justify-between w-full`}
+                  className={`${poppinsThin.className} text-sm text-blue-200 font-bold flex justify-between w-full xl:flex-row flex-col xl:mb-0 mb-4`}
                 >
                   <div className="text-white">Price: {item.price} kr </div>
                   {item.quantity > 0 ? (
