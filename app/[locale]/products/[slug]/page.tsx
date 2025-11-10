@@ -32,7 +32,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
     );
 
   return (
-    <main className="max-w-7xl mt-32 mx-auto h-[calc(100dvh-8rem)]">
+    <main className="max-w-7xl mt-32 mx-auto h-[calc(100dvh-8rem)] w-full">
       <h1 className="text-xl mb-2 text-left text-yellow-300">
         {productData.name}
       </h1>
