@@ -1,14 +1,13 @@
 "use client";
 import { useState } from "react";
 
-const SizeSelector = () => {
+const SizeSelector = ({ sizes }: { sizes: string }) => {
   const [size, setSize] = useState<string | null>(null);
 
-  const sizes = ["S", "M", "L", "XL"];
   return (
     <div className="flex gap-2 items-center">
       <div className="text-green-300 text-md font-bold">Size:</div>
-      {sizes.map((sizeOption) => (
+      {sizes.split(",").map((sizeOption) => (
         <div
           key={sizeOption}
           onClick={() => setSize(sizeOption)}

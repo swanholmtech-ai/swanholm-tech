@@ -19,7 +19,6 @@ import { useAuthStore } from "@/store/useAuthStore";
 export function ServicesDropDown() {
   const [open, setOpen] = useState(false);
   const clickOnTutorialHandler = () => {
-    console.log("clickOnTutorialHandler");
     setOpen(true);
   };
   const t = useTranslations("sign-up");

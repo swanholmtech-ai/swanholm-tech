@@ -1,9 +1,8 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { Poppins } from "next/font/google";
 import SizeSelector from "@/components/view/order-vest/SizeSelector";
 import QuantitySelector from "@/components/view/order-vest/QuantitySelector";
 import { Button } from "@/components/ui/button";
-import { products } from "@/data/fetchData";
 import ImageSelector from "@/components/view/product/ImageSelector";
 // const poppinsRegular = Poppins({
 //   weight: ["400"],
@@ -18,34 +17,37 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = await params;
 
   const data = await fetch(
-    `https://www.swanholmtech.com/wp-json/wp/v2/product/${slug}`,
+    `https://www.swanholmtech.com/wp-json/wp/v2/products/${slug}`,
     {
       next: { revalidate: 3600 }, // Cache for 1 hour
     }
   );
 
   const productData = await data.json();
-  const imageGallery = products.find(
-    (product) => product.id === Number(slug)
-  )?.imageGallery;
+  const imageGallery = productData.image_url
+    .split(",")
+    .map(
+      (url: string) =>
+        `https://www.swanholmtech.com/wp-content/uploads/${url.trim()}`
+    );
 
   return (
     <main className="max-w-7xl mt-32 mx-auto h-[calc(100dvh-8rem)]">
       <h1 className="text-xl mb-2 text-left text-yellow-300">
-        {productData.title.rendered}
+        {productData.name}
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-        <div className="col-span-2 border border-gray-600 p-2 flex flex-col justify-evenly">
+      <div className="flex xl:flex-row flex-col w-full">
+        <div className="col-span-2  md:border border-gray-600 p-2 flex flex-col justify-evenly">
           <div
             className={`prose prose-slate max-w-none text-gray-100 ${poppinsThin.className}`}
-            dangerouslySetInnerHTML={{ __html: productData.content.rendered }}
+            dangerouslySetInnerHTML={{ __html: productData.description }}
           />
-          <div className="text-gray-100 text-md font-bold text-gray-400 flex gap-2 items-center justify-between">
+          <div className="text-gray-100 text-md font-bold text-gray-400 flex md:flex-row flex-col gap-2  md:items-center  items-start md:justify-between">
             <div className="text-green-300">
-              Price:
-              <span className="text-yellow-300"> 1200 SEK</span>
+              Price:{" "}
+              <span className="text-yellow-300">{productData.price}</span>
             </div>
-            <SizeSelector />
+            <SizeSelector sizes={productData.sizes} />
             <QuantitySelector />
             <Button
               variant="outline"
@@ -55,7 +57,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
             </Button>
           </div>
         </div>
-        <ImageSelector imageGallery={imageGallery || []} />
+        <ImageSelector imageGallery={imageGallery} />
       </div>
     </main>
   );

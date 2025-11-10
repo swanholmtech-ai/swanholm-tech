@@ -20,7 +20,7 @@ const ImageSelector = ({ imageGallery }: { imageGallery: string[] }) => {
             className="absolute"
           >
             <Image
-              src={selectedImage}
+              src={selectedImage || ""}
               alt="Selected"
               width={400}
               height={400}
@@ -43,7 +43,7 @@ const ImageSelector = ({ imageGallery }: { imageGallery: string[] }) => {
             onClick={() => setSelectedImage(image)}
           >
             <Image
-              src={image}
+              src={image || ""}
               alt={`Thumbnail ${index}`}
               width={80}
               height={80}

@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { staggerContainer } from "@/lib/animations";
 import useProductsStore from "@/store/useProductsStore";
 import { Poppins } from "next/font/google";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import ProductImage from "@/components/view/ProductImage";
 import { Link } from "@/i18n/navigation";
 
@@ -18,13 +18,17 @@ const poppinsThin = Poppins({
 });
 
 export default function ProductsPage() {
-  const { products } = useProductsStore();
+  const { products, fetchProducts, isLoading } = useProductsStore();
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
     margin: "-100px",
     amount: 0.1,
   });
+
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
 
   return (
     <main className="max-w-7xl mt-20 mx-auto h-[calc(100vh-5rem)]">
@@ -60,7 +64,7 @@ export default function ProductsPage() {
               }}
               className="flex flex-col items-center px-4 py-2 w-full cursor-pointer"
               style={{
-                border: "1px solid rgba(88, 88, 88, 0.2)", // define an initial border!
+                border: "1px solid rgba(88, 88, 88, 0.2)",
               }}
               whileHover={{
                 scale: 1.05,
@@ -79,25 +83,17 @@ export default function ProductsPage() {
               </div>
 
               <div className="w-full flex-1 flex justify-center items-center mb-4">
-                {/* <motion.div
-                whileHover={{
-                  scale: 1.1,
-                  rotate: 5,
-                  transition: { duration: 0.3 },
-                }}
-              > */}
                 <ProductImage item={item} />
-                {/* </motion.div> */}
               </div>
               <div className="w-full h-[10px] flex justify-center items-center">
                 <div
-                  className={`${poppinsThin.className} text-sm text-blue-200 font-bold flex justify-between w-full`}
+                  className={`${poppinsThin.className} text-sm text-blue-200 font-bold flex justify-between w-full xl:flex-row flex-col xl:mb-0 mb-4`}
                 >
                   <div className="text-white">Price: {item.price} kr </div>
-                  {item.inStock ? (
+                  {item.quantity > 0 ? (
                     <div>
                       <span className="text-green-700 hover:text-green-500 font-bold italic">
-                        In Stock
+                        In Stock : {item.quantity}
                       </span>
                     </div>
                   ) : (

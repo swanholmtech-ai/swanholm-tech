@@ -28,7 +28,7 @@ const ProductImage = ({ item }: { item: ProductType }) => {
           style={{ backfaceVisibility: "hidden" }}
         >
           <Image
-            src={item.image}
+            src={item.image_url[0]}
             alt={item.name}
             fill
             className="object-contain rounded-xl"
@@ -44,7 +44,7 @@ const ProductImage = ({ item }: { item: ProductType }) => {
           }}
         >
           <Image
-            src={item.imageBack || item.image}
+            src={item.image_url[1] || item.image_url[0]}
             alt={`${item.name} back`}
             fill
             className="object-contain rounded-xl"

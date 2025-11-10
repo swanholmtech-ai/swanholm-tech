@@ -20,7 +20,6 @@ export default function SignupPage() {
     const formData = Object.fromEntries(
       new FormData(event.currentTarget)
     ) as Record<string, string>;
-    console.log(formData);
 
     if (formData.password.length < 6) {
       toast.error("Password must be at least 6 characters long", {

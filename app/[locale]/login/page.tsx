@@ -16,7 +16,6 @@ export default function LoginPage() {
     const formData = Object.fromEntries(
       new FormData(event.currentTarget)
     ) as Record<string, string>;
-    console.log(formData);
 
     const email = formData.email;
     const password = formData.password;
