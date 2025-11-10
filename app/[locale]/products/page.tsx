@@ -26,7 +26,6 @@ export default function ProductsPage() {
     amount: 0.1,
   });
 
-  console.log("PRODUCTS", products);
   useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);

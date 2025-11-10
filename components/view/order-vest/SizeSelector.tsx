@@ -3,7 +3,6 @@ import { useState } from "react";
 
 const SizeSelector = ({ sizes }: { sizes: string }) => {
   const [size, setSize] = useState<string | null>(null);
-  console.log(size);
 
   return (
     <div className="flex gap-2 items-center">
