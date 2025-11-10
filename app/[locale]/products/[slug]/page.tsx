@@ -37,12 +37,12 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
         {productData.name}
       </h1>
       <div className="flex xl:flex-row flex-col w-full">
-        <div className="col-span-2 border border-gray-600 p-2 flex flex-col justify-evenly">
+        <div className="col-span-2  md:border border-gray-600 p-2 flex flex-col justify-evenly">
           <div
             className={`prose prose-slate max-w-none text-gray-100 ${poppinsThin.className}`}
             dangerouslySetInnerHTML={{ __html: productData.description }}
           />
-          <div className="text-gray-100 text-md font-bold text-gray-400 flex gap-2 items-center justify-between">
+          <div className="text-gray-100 text-md font-bold text-gray-400 flex md:flex-row flex-col gap-2  md:items-center  items-start md:justify-between">
             <div className="text-green-300">
               Price:{" "}
               <span className="text-yellow-300">{productData.price}</span>
