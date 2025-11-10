@@ -1,45 +1,40 @@
-import Image from "next/image";
-import { Poppins } from "next/font/google";
+"use client";
+// import Image from "next/image";
+// import { Poppins } from "next/font/google";
 import SizeSelector from "@/components/view/order-vest/SizeSelector";
 import QuantitySelector from "@/components/view/order-vest/QuantitySelector";
 import { Button } from "@/components/ui/button";
-import { products } from "@/data/fetchData";
 import ImageSelector from "@/components/view/product/ImageSelector";
+import useProductsStore from "@/store/useProductsStore";
+import React from "react";
 // const poppinsRegular = Poppins({
 //   weight: ["400"],
 //   subsets: ["latin"],
 // });
 
-const poppinsThin = Poppins({
-  weight: ["200"],
-  subsets: ["latin"],
-});
-const ProductPage = async ({ params }: { params: { slug: string } }) => {
-  const { slug } = await params;
+const ProductPage = ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = React.use(params); // ✅ unwrap the Promise
 
-  const data = await fetch(
-    `https://www.swanholmtech.com/wp-json/wp/v2/product/${slug}`,
-    {
-      next: { revalidate: 3600 }, // Cache for 1 hour
-    }
-  );
-
-  const productData = await data.json();
-  const imageGallery = products.find(
-    (product) => product.id === Number(slug)
-  )?.imageGallery;
-
+  const { products } = useProductsStore();
+  console.log("PRODUCTS", products);
+  const productData = products.find((product) => product.id === slug);
+  console.log("PRODUCTDATA", productData);
+  const imageGallery = productData?.image_url
+    ? (productData.image_url as string[])
+    : [];
+  console.log("SLUG", slug);
+  console.log("IMAGEGALLERY", imageGallery);
   return (
     <main className="max-w-7xl mt-32 mx-auto h-[calc(100dvh-8rem)]">
       <h1 className="text-xl mb-2 text-left text-yellow-300">
-        {productData.title.rendered}
+        {/* {productData.title.rendered} */}
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
         <div className="col-span-2 border border-gray-600 p-2 flex flex-col justify-evenly">
-          <div
+          {/* <div
             className={`prose prose-slate max-w-none text-gray-100 ${poppinsThin.className}`}
             dangerouslySetInnerHTML={{ __html: productData.content.rendered }}
-          />
+          /> */}
           <div className="text-gray-100 text-md font-bold text-gray-400 flex gap-2 items-center justify-between">
             <div className="text-green-300">
               Price:
@@ -55,7 +50,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
             </Button>
           </div>
         </div>
-        <ImageSelector imageGallery={imageGallery || []} />
+        <ImageSelector imageGallery={imageGallery} />
       </div>
     </main>
   );
