@@ -9,7 +9,7 @@ const ImageSelector = ({ imageGallery }: { imageGallery: string[] }) => {
   return (
     <div className="col-span-1 flex flex-col items-center">
       {/* Main image area */}
-      <div className="relative w-[500px] h-[500px] flex items-center justify-center overflow-hidden">
+      <div className="relative w-[360px] h-[400px] md:w-[500px] md:h-[500px] flex items-center justify-center overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedImage}
@@ -35,7 +35,7 @@ const ImageSelector = ({ imageGallery }: { imageGallery: string[] }) => {
         {imageGallery.map((image, index) => (
           <div
             key={index}
-            className={`w-24 h-24 border-2 cursor-pointer overflow-hidden rounded-md transition-all duration-200 ${
+            className={`w-20 h-20 border-2 cursor-pointer overflow-hidden rounded-md transition-all duration-200 ${
               selectedImage === image
                 ? "border-blue-500 scale-105"
                 : "border-gray-600 hover:border-gray-400"
