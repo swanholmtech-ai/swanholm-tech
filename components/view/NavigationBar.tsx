@@ -9,7 +9,7 @@ import { ServicesDropDown } from "./navigation-bar/ServicesDropDown";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import LanguageToggle from "../LanguageToggle";
-
+import { ShoppingSheet } from "../shopping/ShoppingSheet";
 const poppinsThin = Poppins({
   weight: ["300"],
   subsets: ["latin"],
@@ -19,6 +19,7 @@ export function NavigationBar() {
   const t = useTranslations("navbar");
   return (
     <>
+      <ShoppingSheet />
       {isMobile ? (
         <HamburgerMenu />
       ) : (
