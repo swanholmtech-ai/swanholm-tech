@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { Poppins } from "next/font/google";
 import SizeSelector from "@/components/view/order-vest/SizeSelector";
 import QuantitySelector from "@/components/view/order-vest/QuantitySelector";
@@ -47,7 +47,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
               Price:
               <span className="text-yellow-300">{productData.price}</span>
             </div>
-            <SizeSelector />
+            <SizeSelector sizes={productData.sizes} />
             <QuantitySelector />
             <Button
               variant="outline"
