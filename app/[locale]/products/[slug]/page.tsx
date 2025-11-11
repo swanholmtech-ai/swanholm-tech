@@ -33,13 +33,13 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <main className="max-w-7xl mt-32 mx-auto h-[calc(100dvh-8rem)] w-full">
-      <h1 className="text-xl mb-2 text-left text-yellow-300">
+      <h1 className="text-xl mb-2 text-left text-sky-800">
         {productData.name}
       </h1>
       <div className="flex xl:flex-row flex-col w-full">
-        <div className="col-span-2  md:border border-gray-600 p-2 flex flex-col justify-evenly">
+        <div className="col-span-2  md:border border-gray-600 p-2 flex flex-col justify-evenly bg-zinc-500">
           <div
-            className={`prose prose-slate max-w-none text-gray-100 ${poppinsThin.className}`}
+            className={`prose prose-slate max-w-none text-zinc-100 ${poppinsThin.className}`}
             dangerouslySetInnerHTML={{ __html: productData.description }}
           />
           <div className="text-gray-100 text-md font-bold text-gray-400 flex md:flex-row flex-col gap-2  md:items-center  items-start md:justify-between">
