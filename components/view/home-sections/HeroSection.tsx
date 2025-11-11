@@ -1,14 +1,13 @@
 "use client";
 
 import { Nunito_Sans } from "next/font/google";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { slideInLeft } from "@/lib/animations";
 import { staggerContainer } from "@/lib/animations";
 import { listItemVariant } from "@/lib/animations";
-import { ParallaxSection } from "@/components/animations/AnimatedSection";
 import { CircleCheckIcon } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const nunitoBold = Nunito_Sans({
   weight: ["800"],
@@ -27,6 +26,27 @@ const nunitoThin = Nunito_Sans({
 });
 
 export default function HeroSection() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const images = [
+    "/assets/bg/back-1.webp",
+    "/assets/bg/back-2.webp",
+    "/assets/bg/back-3.webp",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }, 7000); // stays 7s per image
+    return () => clearInterval(interval);
+  }, []);
+
+  const gridSize = 3;
+  const tiles = Array.from({ length: gridSize * gridSize }, (_, i) => i);
+
+  const containerW = 500;
+  const containerH = 500;
+
   return (
     <article className="w-full h-[100dvh] flex relative overflow-hidden back-ground-color">
       {/* Content Container - Max Width */}
@@ -114,44 +134,58 @@ export default function HeroSection() {
         </motion.ul>
       </div>
 
-      <div className="flex w-full absolute inset-0">
-        <AnimatedSection
-          variants={{
-            hidden: { opacity: 0, scale: 0.4, x: 150, rotate: 45 },
-            visible: {
-              opacity: 1,
-              scale: 1,
-              x: 0,
-              rotate: 0,
-              transition: {
-                duration: 1.2,
-                ease: [0.16, 1, 0.3, 1],
-                type: "spring",
-                stiffness: 70,
-              },
-            },
-          }}
-          delay={0.4}
-          className="absolute bottom-0 right-0"
-        >
+      <div
+        className="relative flex-shrink-0 overflow-hidden mt-[26vh] mr-[20vw]"
+        style={{
+          width: containerW,
+          height: containerH,
+        }}
+      >
+        <AnimatePresence mode="wait">
           <motion.div
-            whileHover={{
-              scale: 1.08,
-              rotate: -5,
-              transition: { duration: 0.3 },
+            key={images[currentImage]}
+            className="absolute inset-0 grid grid-cols-3 grid-rows-3"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={{
+              visible: { transition: { staggerChildren: 0.08 } },
+              exit: {
+                transition: { staggerChildren: 0.08, staggerDirection: -1 },
+              },
             }}
           >
-            <div className="relative pr-40 pb-[30%] rotate-2">
-              <Image
-                src="/assets/bg/back-1.webp"
-                alt="Solution"
-                width={450}
-                height={450}
-                className="relative"
-              />
-            </div>
+            {tiles.map((i) => {
+              const row = Math.floor(i / gridSize);
+              const col = i % gridSize;
+
+              return (
+                <motion.div
+                  key={i}
+                  className="relative overflow-hidden"
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1 },
+                    exit: { opacity: 0 },
+                  }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage: `url(${images[currentImage]})`,
+                      backgroundSize: `${containerW}px ${containerH}px`,
+                      backgroundPosition: `${(col / (gridSize - 1)) * 100}% ${
+                        (row / (gridSize - 1)) * 100
+                      }%`,
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  />
+                </motion.div>
+              );
+            })}
           </motion.div>
-        </AnimatedSection>
+        </AnimatePresence>
       </div>
     </article>
   );
