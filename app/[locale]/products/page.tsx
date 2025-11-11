@@ -62,7 +62,7 @@ export default function ProductsPage() {
                   },
                 },
               }}
-              className="flex flex-col items-center px-4 py-2 w-full cursor-pointer"
+              className="flex flex-col items-center px-4 py-2 w-full cursor-pointer bg-zinc-500"
               style={{
                 border: "1px solid rgba(88, 88, 88, 0.2)",
               }}
@@ -76,7 +76,7 @@ export default function ProductsPage() {
             >
               <div className="w-full h-[80px] flex justify-center items-center">
                 <h5
-                  className={`${poppinsRegular.className} text-sm text-blue-200 font-bold`}
+                  className={`${poppinsRegular.className} text-sm text-zinc-200 font-bold`}
                 >
                   {item.name}
                 </h5>
@@ -92,7 +92,7 @@ export default function ProductsPage() {
                   <div className="text-white">Price: {item.price} kr </div>
                   {item.quantity > 0 ? (
                     <div>
-                      <span className="text-green-700 hover:text-green-500 font-bold italic">
+                      <span className="text-sky-300 italic">
                         In Stock : {item.quantity}
                       </span>
                     </div>

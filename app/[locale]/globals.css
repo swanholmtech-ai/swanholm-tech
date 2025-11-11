@@ -4,8 +4,9 @@
 body {
   /* background-color: oklch(92.9% 0.013 255.508); */
   overflow-x: hidden;
+  background-color: #f2eded;
   /* background-color: #111c2e; */
-  background: #122c3b;
+  /* background: #122c3b; */
   /* background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 1) 0%,

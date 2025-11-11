@@ -1,0 +1,46 @@
+#shoulder_right:hover {
+  cursor: pointer;
+  background-color: #03121a;
+  opacity: 0.7;
+}
+#shoulder_left:hover {
+  cursor: pointer;
+  background-color: #03121a;
+  opacity: 0.7;
+}
+
+#collar_light:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+#neck:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+#reflex-top:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+#reflex-bottom:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#pocket-top-1:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+#pocket-top-2:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#l_pocket:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+#r_pocket:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
