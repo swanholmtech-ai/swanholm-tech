@@ -28,7 +28,7 @@ const nunitoThin = Nunito_Sans({
 
 export default function HeroSection() {
   return (
-    <article className="w-full h-[100dvh] flex relative overflow-hidden">
+    <article className="w-full h-[100dvh] flex relative overflow-hidden back-ground-color">
       {/* Content Container - Max Width */}
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <AnimatedSection
@@ -49,9 +49,8 @@ export default function HeroSection() {
           }}
         >
           <h4
-            className={`${nunitoBold.className} pt-32 text-xl md:text-2xl lg:text-4xl  overflow-y-hidden pl-12
-            bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 bg-clip-text text-transparent
-            drop-shadow-[0_0_50px_rgba(16,185,129,0.6)]`}
+            className={`${nunitoBold.className} pt-32 text-xl md:text-2xl lg:text-4xl tracking-tight overflow-y-hidden pl-12
+            text-gray-600`}
           >
             What if your Vest could save your life?
           </h4>
@@ -59,8 +58,7 @@ export default function HeroSection() {
 
         <AnimatedSection variants={slideInLeft} delay={0.2}>
           <motion.p
-            className={`${nunitoThin.className} text-xl pt-10 pl-16 text-emerald-100 max-w-3xl`}
-            whileHover={{ x: 10, transition: { duration: 0.2 } }}
+            className={`${nunitoRegular.className} text-xl pt-10 pl-16 text-gray-500 max-w-3xl tracking-tight`}
           >
             Revolutionary smart safety technology that protects workers in
             real-time, combining AI detection with instant holographic alerts to
@@ -69,7 +67,7 @@ export default function HeroSection() {
         </AnimatedSection>
 
         <motion.ul
-          className={`${nunitoRegular.className} text-lg pt-10 pl-16 space-y-4 max-w-3xl`}
+          className={`${nunitoRegular.className} text-lg pt-8 pl-16 space-y-4 max-w-3xl text-gray-600`}
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -78,27 +76,21 @@ export default function HeroSection() {
           {[
             {
               text: "Every worker deserves to come home safe",
-              color: "emerald",
             },
             {
               text: "Your vest technology watches out when no one else can",
-              color: "green",
             },
             {
               text: "You don't just get a notification, you get a saved life",
-              color: "teal",
             },
           ].map((item, index) => (
             <motion.li
               key={index}
               variants={listItemVariant}
-              className={`flex items-center gap-4 p-4 bg-emerald-900/30 rounded-lg backdrop-blur-sm
-              border border-emerald-500/20 text-emerald-100`}
+              className={`flex items-center gap-4`}
               whileHover={{
                 x: 15,
                 scale: 1.03,
-                borderColor: "rgba(16, 185, 129, 0.7)",
-                backgroundColor: "rgba(5, 150, 105, 0.4)",
                 transition: { duration: 0.2 },
               }}
             >
@@ -155,7 +147,7 @@ export default function HeroSection() {
                 alt="Solution"
                 width={450}
                 height={450}
-                className="relative drop-shadow-[0_0_60px_rgba(34,197,94,0.4)]"
+                className="relative"
               />
             </div>
           </motion.div>
