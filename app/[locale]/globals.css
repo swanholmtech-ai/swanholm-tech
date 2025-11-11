@@ -17,6 +17,13 @@ body {
 .back-ground-color {
   background-color: #f2eded;
 }
+
+.bg-paper {
+  background-image: url("/assets/bg/background-paper.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

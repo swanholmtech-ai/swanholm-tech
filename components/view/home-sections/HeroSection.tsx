@@ -20,11 +20,6 @@ const nunitoRegular = Nunito_Sans({
   subsets: ["latin"],
 });
 
-const nunitoThin = Nunito_Sans({
-  weight: ["300"],
-  subsets: ["latin"],
-});
-
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -48,7 +43,7 @@ export default function HeroSection() {
   const containerH = 500;
 
   return (
-    <article className="w-full h-[100dvh] flex relative overflow-hidden back-ground-color">
+    <article className="w-full h-[100dvh] flex relative overflow-hidden bg-paper">
       {/* Content Container - Max Width */}
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <AnimatedSection
