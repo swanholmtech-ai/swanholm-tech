@@ -2,8 +2,8 @@
 
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { motion } from "framer-motion";
+import VestSvg from "../vest-hover-effect/VestSvg";
 import { Poppins } from "next/font/google";
-import Image from "next/image";
 
 const poppinsBold = Poppins({
   weight: ["700"],
@@ -128,35 +128,7 @@ export default function SolutionSection() {
         </div>
         <div className="flex-2 w-[80%]">
           <div className="relative z-10 flex flex-row items-center justify-evenly h-full text-center">
-            <Image
-              src="/assets/svgs/vest.svg"
-              alt="Solution"
-              width={300}
-              height={300}
-              className="relative"
-            />
-            <div className="flex flex-col justify-center h-full text-left p-3 gap-4">
-              <p
-                className={`text-2xl ${poppinsBold.className} text-gray-600 cursor-pointer hover:scale-105 transition-all hover:text-gray-400 hover:rotate-2 hover:translate-y-2`}
-              >
-                AI Fall Detection
-              </p>
-              <p
-                className={`text-2xl ${poppinsBold.className} text-gray-600 cursor-pointer hover:scale-105 transition-all hover:text-gray-400 hover:rotate-2 hover:translate-y-2`}
-              >
-                Three Alarm Types
-              </p>
-              <p
-                className={`text-2xl ${poppinsBold.className} text-gray-600 cursor-pointer hover:scale-105 transition-all hover:text-gray-400 hover:rotate-2 hover:translate-y-2`}
-              >
-                Active Printed Light
-              </p>
-              <p
-                className={`text-2xl ${poppinsBold.className} text-gray-600 cursor-pointer hover:scale-105 transition-all hover:text-gray-400 hover:rotate-2 hover:translate-y-2`}
-              >
-                Swanholm Sense App
-              </p>
-            </div>
+            <VestSvg />
           </div>
         </div>
       </div>
