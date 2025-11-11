@@ -135,7 +135,7 @@ export default function HeroSection() {
       </div>
 
       <div
-        className="relative flex-shrink-0 overflow-hidden mt-[26vh] mr-[20vw]"
+        className="relative flex-shrink-0 overflow-hidden mt-[26vh] mr-[10vw]"
         style={{
           width: containerW,
           height: containerH,
