@@ -13,10 +13,7 @@ const poppinsBold = Poppins({
 
 export default function SolutionSection() {
   return (
-    <article className="w-full h-[100dvh] flex flex-col relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-cyan-900 to-indigo-900" />
-
+    <article className="w-full h-[100dvh] flex flex-col relative overflow-hidden back-ground-color">
       {/* Subtle circuit pattern */}
       <div className="absolute inset-0 opacity-20">
         <svg width="100%" height="100%" className="absolute inset-0">
@@ -30,12 +27,12 @@ export default function SolutionSection() {
               <path
                 d="M 100 50 L 0 50 M 50 0 L 50 100 M 25 25 L 75 25 M 25 75 L 75 75"
                 fill="none"
-                stroke="rgba(6,182,212,0.3)"
+                stroke="rgba(18, 52, 58, 0.3)"
                 strokeWidth="2"
               />
-              <circle cx="50" cy="50" r="4" fill="rgba(6,182,212,0.5)" />
-              <circle cx="25" cy="25" r="2" fill="rgba(168,85,247,0.4)" />
-              <circle cx="75" cy="75" r="2" fill="rgba(168,85,247,0.4)" />
+              <circle cx="50" cy="50" r="4" fill="rgba(35, 53, 56, 0.9)" />
+              <circle cx="25" cy="25" r="2" fill="rgba(3, 1, 5, 0.8)" />
+              <circle cx="75" cy="75" r="2" fill="rgba(0, 0, 0, 0.8)" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#circuit)" />
@@ -43,8 +40,8 @@ export default function SolutionSection() {
       </div>
 
       {/* Holographic overlays */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(6,182,212,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.1),transparent_50%)]" />
+      {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(6,182,212,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.1),transparent_50%)]" /> */}
 
       {/* Floating binary data streams */}
       <div className="absolute inset-0">
@@ -68,11 +65,11 @@ export default function SolutionSection() {
           return (
             <motion.div
               key={i}
-              className="absolute text-cyan-400 font-mono text-sm opacity-60"
+              className="absolute text-cyan-900 font-mono text-sm opacity-100"
               style={{ left, top }}
               animate={{
                 y: [0, -40, 0],
-                opacity: [0.2, 0.4, 0.2],
+                opacity: [0.4, 0.8, 0.4],
               }}
               transition={{
                 duration,
@@ -121,9 +118,7 @@ export default function SolutionSection() {
             }}
           >
             <h4
-              className={`${poppinsBold.className} text-2xl md:text-3xl lg:text-4xl tracking-tight
-    bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent
-    drop-shadow-[0_0_40px_rgba(6,182,212,0.6)]`}
+              className={`${poppinsBold.className} text-2xl md:text-3xl lg:text-4xl tracking-tight text-gray-400`}
             >
               Work Confidently,
               <br />
@@ -142,22 +137,22 @@ export default function SolutionSection() {
             />
             <div className="flex flex-col justify-center h-full text-left p-3 gap-4">
               <p
-                className={`text-2xl ${poppinsBold.className} text-cyan-300 cursor-pointer hover:scale-105 transition-all hover:text-cyan-400 hover:rotate-2 hover:translate-y-2`}
+                className={`text-2xl ${poppinsBold.className} text-gray-600 cursor-pointer hover:scale-105 transition-all hover:text-gray-400 hover:rotate-2 hover:translate-y-2`}
               >
                 AI Fall Detection
               </p>
               <p
-                className={`text-2xl ${poppinsBold.className} text-cyan-300 cursor-pointer hover:scale-105 transition-all hover:text-cyan-400 hover:rotate-2 hover:translate-y-2`}
+                className={`text-2xl ${poppinsBold.className} text-gray-600 cursor-pointer hover:scale-105 transition-all hover:text-gray-400 hover:rotate-2 hover:translate-y-2`}
               >
                 Three Alarm Types
               </p>
               <p
-                className={`text-2xl ${poppinsBold.className} text-cyan-300 cursor-pointer hover:scale-105 transition-all hover:text-cyan-400 hover:rotate-2 hover:translate-y-2`}
+                className={`text-2xl ${poppinsBold.className} text-gray-600 cursor-pointer hover:scale-105 transition-all hover:text-gray-400 hover:rotate-2 hover:translate-y-2`}
               >
                 Active Printed Light
               </p>
               <p
-                className={`text-2xl ${poppinsBold.className} text-cyan-300 cursor-pointer hover:scale-105 transition-all hover:text-cyan-400 hover:rotate-2 hover:translate-y-2`}
+                className={`text-2xl ${poppinsBold.className} text-gray-600 cursor-pointer hover:scale-105 transition-all hover:text-gray-400 hover:rotate-2 hover:translate-y-2`}
               >
                 Swanholm Sense App
               </p>
