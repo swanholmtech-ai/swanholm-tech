@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Sheet,
@@ -13,8 +12,10 @@ import {
 } from "@/components/ui/sheet";
 
 import { ShoppingCart } from "lucide-react";
+import { useShoppingCartStore } from "@/store/useShoppingCartStore";
 
 export function ShoppingSheet() {
+  const { items } = useShoppingCartStore();
   return (
     <Sheet>
       <SheetTrigger
@@ -25,25 +26,24 @@ export function ShoppingSheet() {
           <ShoppingCart />
         </Button>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent style={{ width: "1000px" }}>
         <SheetHeader>
           <SheetTitle>Shopping Cart</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
+          <SheetDescription>Items</SheetDescription>
         </SheetHeader>
         <div className="grid flex-1 auto-rows-min gap-6 px-4">
           <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-name">Name</Label>
-            <Input id="sheet-demo-name" defaultValue="Pedro Duarte" />
-          </div>
-          <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-username">Username</Label>
-            <Input id="sheet-demo-username" defaultValue="@peduarte" />
+            {items.map((item, index) => (
+              <div key={`${index}-${item.id}`}>
+                <p>{item.name}</p>
+                <p>{item.price}</p>
+                <p>{item.quantity}</p>
+              </div>
+            ))}
           </div>
         </div>
         <SheetFooter>
-          <Button type="submit">Save changes</Button>
+          <Button type="submit">Checkout</Button>
           <SheetClose asChild>
             <Button variant="outline">Close</Button>
           </SheetClose>

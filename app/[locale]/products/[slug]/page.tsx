@@ -2,8 +2,8 @@
 import { Poppins } from "next/font/google";
 import SizeSelector from "@/components/view/order-vest/SizeSelector";
 import QuantitySelector from "@/components/view/order-vest/QuantitySelector";
-import { Button } from "@/components/ui/button";
 import ImageSelector from "@/components/view/product/ImageSelector";
+import AddToCart from "@/components/view/shopping-cart/AddToCart";
 // const poppinsRegular = Poppins({
 //   weight: ["400"],
 //   subsets: ["latin"],
@@ -49,12 +49,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
             </div>
             <SizeSelector sizes={productData.sizes} />
             <QuantitySelector />
-            <Button
-              variant="outline"
-              className="bg-yellow-400 text-black cursor-pointer"
-            >
-              Add to Cart
-            </Button>
+            <AddToCart productData={productData} />
           </div>
         </div>
         <ImageSelector imageGallery={imageGallery} />
