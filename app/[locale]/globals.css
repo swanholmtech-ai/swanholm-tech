@@ -14,6 +14,9 @@ body {
   /* min-height: 100svh; */
 }
 
+.back-ground-color {
+  background-color: #f2eded;
+}
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

@@ -1,90 +1,31 @@
 "use client";
 
-import { Poppins } from "next/font/google";
-import { motion } from "framer-motion";
-const poppinsBold = Poppins({
-  weight: ["700"],
+import { Nunito_Sans } from "next/font/google";
+const nunitoBold = Nunito_Sans({
+  weight: ["800"],
   subsets: ["latin"],
   style: ["italic"],
 });
 
-const poppinsRegular = Poppins({
+const nunitoRegular = Nunito_Sans({
   weight: ["500"],
   subsets: ["latin"],
 });
 
-const poppinsThin = Poppins({
+const nunitoThin = Nunito_Sans({
   weight: ["300"],
   subsets: ["latin"],
 });
 
 export default function HeroSection() {
   return (
-    <article className="w-full h-[100dvh] relative overflow-hidden">
-      {/* Animated starfield - keeping the sparkling dots */}
-      <div className="absolute inset-0 z-10">
-        <div className="absolute inset-0">
-          {Array.from({ length: 50 }).map((_, i) => {
-            // Use deterministic positioning based on index
-            const left = `${(i * 7 + i * 3) % 100}%`;
-            const top = `${(i * 11 + i * 5) % 100}%`;
-            const opacity = 0.2 + ((i * 13) % 60) / 100;
-            const duration = 2 + ((i * 17) % 4);
-            const delay = (i * 19) % 3;
-
-            return (
-              <motion.div
-                key={i}
-                className="absolute w-1 h-1 bg-white rounded-full"
-                style={{
-                  left,
-                  top,
-                  opacity,
-                  zIndex: 20,
-                }}
-                animate={{
-                  scale: [0, 1, 0],
-                  opacity: [0, opacity, 0],
-                }}
-                transition={{
-                  duration,
-                  repeat: Infinity,
-                  delay,
-                }}
-              />
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Vest Image */}
-      <div className="absolute inset-0 z-0">
-        <div className="h-[120vh] w-full relative">
-          <div
-            className="h-full w-full bg-[position:right_-180px_top_0] bg-no-repeat bg-cover
-            xl:bg-cover xl:bg-center"
-            style={{
-              backgroundImage: "url('/assets/bg/bg-1.webp')",
-            }}
-          />
-        </div>
-      </div>
-
+    <article className="w-full h-[100dvh] relative overflow-hidden back-ground-color">
       {/* Content */}
       <div className="max-w-7xl mx-auto h-full relative z-10">
         <div className="px-12 pt-40 h-full">
           <div>
             <h4
-              className={`${poppinsBold.className} text-xl md:text-2xl lg:text-4xl font-bold h-content overflow-y-hidden`}
-              style={{
-                background:
-                  "linear-gradient(-45deg, #06b6d4,rgb(181, 255, 203),rgb(255, 255, 255), #06b6d4,rgb(255, 251, 0))",
-                backgroundSize: "400% 400%",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                animation: "gradient-shift 12s ease-in-out infinite",
-              }}
+              className={`${nunitoBold.className} text-xl md:text-2xl lg:text-4xl font-bold h-content overflow-y-hidden tracking-tighter text-gray-600`}
             >
               What if your Vest could save your life?
             </h4>
@@ -105,7 +46,7 @@ export default function HeroSection() {
           </div>
 
           <p
-            className={`${poppinsRegular.className} text-xl pt-8 text-gray-300 max-w-2xl pl-4`}
+            className={`${nunitoRegular.className} text-xl pt-8 text-gray-300 max-w-2xl pl-4`}
           >
             Revolutionary smart safety technology that protects workers in
             real-time, combining AI detection with instant holographic alerts to
@@ -113,7 +54,7 @@ export default function HeroSection() {
           </p>
 
           <ul
-            className={`${poppinsThin.className} text-lg pt-10 pl-6 space-y-3 max-w-2xl`}
+            className={`${nunitoThin.className} text-lg pt-10 pl-6 space-y-3 max-w-2xl`}
           >
             {[
               "Every worker deserves to come home safe.",
