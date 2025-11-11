@@ -122,7 +122,6 @@ export default function HeroSection() {
         </motion.ul>
       </div>
 
-      {/* Images - Full Width positioned absolutely */}
       <div className="flex w-full absolute inset-0">
         <AnimatedSection
           variants={{
