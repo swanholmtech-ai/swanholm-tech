@@ -166,7 +166,7 @@ export default function HeroSection() {
                   transition={{ duration: 0.4 }}
                 >
                   <div
-                    className="absolute inset-0"
+                    className="absolute inset-0 opacity-90"
                     style={{
                       backgroundImage: `url(${images[currentImage]})`,
                       backgroundSize: `${containerW}px ${containerH}px`,
