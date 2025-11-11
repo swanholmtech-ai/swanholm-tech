@@ -141,7 +141,7 @@ export default function HeroSection() {
               transition: { duration: 0.3 },
             }}
           >
-            <div className="relative pr-20 pb-[10%]">
+            <div className="relative pr-40 pb-[30%] rotate-2">
               <Image
                 src="/assets/bg/back-1.webp"
                 alt="Solution"
