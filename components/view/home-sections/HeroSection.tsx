@@ -8,6 +8,7 @@ import { slideInLeft } from "@/lib/animations";
 import { staggerContainer } from "@/lib/animations";
 import { listItemVariant } from "@/lib/animations";
 import { ParallaxSection } from "@/components/animations/AnimatedSection";
+import { CircleCheckIcon } from "lucide-react";
 
 const nunitoBold = Nunito_Sans({
   weight: ["800"],
@@ -61,8 +62,9 @@ export default function HeroSection() {
             className={`${nunitoThin.className} text-xl pt-10 pl-16 text-emerald-100 max-w-3xl`}
             whileHover={{ x: 10, transition: { duration: 0.2 } }}
           >
-            Swanholm Technology&apos;s smart vest reduces cost of incidents,
-            production stops, and sick leave{" "}
+            Revolutionary smart safety technology that protects workers in
+            real-time, combining AI detection with instant holographic alerts to
+            save lives.
           </motion.p>
         </AnimatedSection>
 
@@ -75,23 +77,15 @@ export default function HeroSection() {
         >
           {[
             {
-              icon: "🤸🏽‍♂️",
-              text: "3% of incident involves a fall or a slip",
+              text: "Every worker deserves to come home safe",
               color: "emerald",
             },
             {
-              icon: "📊",
-              text: "Up to 20% of all accidents happen when the worker is alone",
+              text: "Your vest technology watches out when no one else can",
               color: "green",
             },
             {
-              icon: "⏰",
-              text: "Every minute faster help arrives, the risk of serious injury decreases",
-              color: "teal",
-            },
-            {
-              icon: "🌤️",
-              text: "A day less sick leave saves at least 20% of a monthly salary cost",
+              text: "You don't just get a notification, you get a saved life",
               color: "teal",
             },
           ].map((item, index) => (
@@ -120,7 +114,7 @@ export default function HeroSection() {
                   delay: index * 0.5,
                 }}
               >
-                {item.icon}
+                <CircleCheckIcon className="w-6 h-6" />
               </motion.span>
               <span className="text-lg">{item.text}</span>
             </motion.li>
@@ -130,25 +124,6 @@ export default function HeroSection() {
 
       {/* Images - Full Width positioned absolutely */}
       <div className="flex w-full absolute inset-0">
-        <ParallaxSection speed={-30} className="absolute bottom-0 left-0">
-          <motion.div
-            whileHover={{ scale: 1.15, rotate: 8 }}
-            transition={{ type: "spring", stiffness: 200 }}
-          >
-            <div className="relative pl-10 pb-6">
-              {/* <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-green-500/30 rounded-full blur-3xl animate-pulse" /> */}
-              <Image
-                src="/assets/svgs/chart.svg"
-                alt="Vest"
-                width={550}
-                height={550}
-                priority={true}
-                className="relative drop-shadow-[0_0_50px_rgba(16,185,129,0.5)] opacity-44"
-              />
-            </div>
-          </motion.div>
-        </ParallaxSection>
-
         <AnimatedSection
           variants={{
             hidden: { opacity: 0, scale: 0.4, x: 150, rotate: 45 },
