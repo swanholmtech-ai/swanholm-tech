@@ -11,6 +11,7 @@ const AddToCart = ({ productData }: { productData: any }) => {
       toast.error("Please select a size", {
         duration: 2000,
         position: "top-center",
+        style: { color: "red" },
       });
 
       return;
@@ -26,6 +27,7 @@ const AddToCart = ({ productData }: { productData: any }) => {
     toast.success("Product added to cart", {
       duration: 2000,
       position: "top-center",
+      style: { color: "green" },
     });
   };
 
