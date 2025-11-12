@@ -31,19 +31,35 @@ export function ShoppingSheet() {
           <SheetTitle>Shopping Cart</SheetTitle>
           <SheetDescription>Items</SheetDescription>
         </SheetHeader>
-        <div className="grid flex-1 auto-rows-min gap-6 px-4">
-          <div className="grid gap-3">
+        <div className="grid flex-1 auto-rows-min px-1">
+          <div className="grid gap-1">
             {items.map((item, index) => (
-              <div key={`${index}-${item.id}`}>
-                <p>{item.name}</p>
-                <p>{item.price}</p>
-                <p>{item.quantity}</p>
-                <p>{item.size}</p>
-                <Trash2
-                  size={20}
-                  onClick={() => removeFromCart(item)}
-                  className="cursor-pointer"
-                />
+              <div
+                key={`${index}-${item.id}`}
+                className="flex flex-col bg-sky-100 p-1 rounded-sm"
+              >
+                <div>
+                  <p>{item.name}</p>
+                </div>
+                <div className="flex gap-2 items-center justify-between">
+                  <p>
+                    <span className="font-bold text-sky-700">S:</span>{" "}
+                    {item.size}
+                  </p>
+                  <p>
+                    <span className="font-bold text-sky-700">Q:</span>{" "}
+                    {item.quantity}
+                  </p>
+                  <p>
+                    <span className="font-bold text-sky-700">P:</span>{" "}
+                    {item.price}
+                  </p>
+                  <Trash2
+                    size={20}
+                    onClick={() => removeFromCart(item)}
+                    className="cursor-pointer"
+                  />
+                </div>
               </div>
             ))}
           </div>
