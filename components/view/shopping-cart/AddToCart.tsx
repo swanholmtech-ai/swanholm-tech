@@ -8,7 +8,7 @@ const AddToCart = ({ productData }: { productData: any }) => {
   const { addToCart, selectedSize, selectedQuantity } = useShoppingCartStore();
   const addToCartHandler = () => {
     if (!selectedSize) {
-      toast("Please select a size", {
+      toast.error("Please select a size", {
         duration: 2000,
         position: "top-center",
       });
@@ -22,6 +22,10 @@ const AddToCart = ({ productData }: { productData: any }) => {
       price: productData.price,
       quantity: selectedQuantity,
       size: selectedSize,
+    });
+    toast.success("Product added to cart", {
+      duration: 2000,
+      position: "top-center",
     });
   };
 
