@@ -26,7 +26,7 @@ export function ShoppingSheet() {
           <ShoppingCart />
         </Button>
       </SheetTrigger>
-      <SheetContent style={{ width: "1000px" }}>
+      <SheetContent>
         <SheetHeader>
           <SheetTitle>Shopping Cart</SheetTitle>
           <SheetDescription>Items</SheetDescription>
