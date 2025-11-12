@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link, useRouter } from "@/i18n/navigation";
 import { FormEvent } from "react";
-import { toast } from "sonner";
 import { useAuthStore } from "@/store/useAuthStore";
+import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 
 export default function LoginPage() {
