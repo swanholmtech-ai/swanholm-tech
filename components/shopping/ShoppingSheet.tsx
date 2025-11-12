@@ -15,7 +15,7 @@ import { ShoppingCart } from "lucide-react";
 import { useShoppingCartStore } from "@/store/useShoppingCartStore";
 
 export function ShoppingSheet() {
-  const { items } = useShoppingCartStore();
+  const { items, totalPrice } = useShoppingCartStore();
   return (
     <Sheet>
       <SheetTrigger
@@ -44,6 +44,7 @@ export function ShoppingSheet() {
           </div>
         </div>
         <SheetFooter>
+          <>Total Price: {totalPrice}</>
           <Button type="submit">Checkout</Button>
           <SheetClose asChild>
             <Button variant="outline">Close</Button>
