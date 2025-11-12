@@ -38,6 +38,7 @@ export function ShoppingSheet() {
                 <p>{item.name}</p>
                 <p>{item.price}</p>
                 <p>{item.quantity}</p>
+                <p>{item.size}</p>
               </div>
             ))}
           </div>

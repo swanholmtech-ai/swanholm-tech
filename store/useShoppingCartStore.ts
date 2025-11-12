@@ -13,15 +13,18 @@ interface CartItemType {
 interface CartItemsType {
   items: CartItemType[];
   totalPrice: number;
+  selectedSize: string;
   addToCart: (item: CartItemType) => void;
   removeFromCart: (item: CartItemType) => void;
   clearCart: () => void;
+  setSelectedSize: (size: string) => void;
 }
 
 export const useShoppingCartStore = create<CartItemsType>()(
   devtools((set) => ({
     items: [],
     totalPrice: 0,
+    selectedSize: "",
     addToCart: (item: CartItemType) =>
       set((state) => ({
         items: [...state.items, item],
@@ -33,5 +36,6 @@ export const useShoppingCartStore = create<CartItemsType>()(
         totalPrice: state.totalPrice - item.price * item.quantity,
       })),
     clearCart: () => set({ items: [], totalPrice: 0 }),
+    setSelectedSize: (size: string) => set({ selectedSize: size }),
   }))
 );

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useShoppingCartStore } from "@/store/useShoppingCartStore";
 
 const AddToCart = ({ productData }: { productData: any }) => {
-  const { addToCart } = useShoppingCartStore();
+  const { addToCart, selectedSize } = useShoppingCartStore();
   const addToCartHandler = () => {
     console.log("ADD TO CART PRODUCT DATA", productData);
     addToCart({
@@ -12,7 +12,7 @@ const AddToCart = ({ productData }: { productData: any }) => {
       slug: productData.slug,
       price: productData.price,
       quantity: 1,
-      size: "S",
+      size: selectedSize || "",
     });
   };
 
