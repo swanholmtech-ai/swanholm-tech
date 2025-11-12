@@ -26,15 +26,42 @@ export const useShoppingCartStore = create<CartItemsType>()(
     totalPrice: 0,
     selectedSize: "",
     addToCart: (item: CartItemType) =>
-      set((state) => ({
-        items: [...state.items, item],
-        totalPrice: state.totalPrice + item.price * item.quantity,
-      })),
+      set((state) => {
+        const existingItemIndex = state.items.findIndex(
+          (i) => i.id === item.id && i.size === item.size
+        );
+
+        if (existingItemIndex !== -1) {
+          const updatedItems = [...state.items];
+          updatedItems[existingItemIndex].quantity += item.quantity;
+
+          return {
+            items: updatedItems,
+            totalPrice: state.totalPrice + item.price * item.quantity,
+          };
+        }
+
+        return {
+          items: [...state.items, item],
+          totalPrice: state.totalPrice + item.price * item.quantity,
+        };
+      }),
     removeFromCart: (item: CartItemType) =>
-      set((state) => ({
-        items: state.items.filter((i: CartItemType) => i.id !== item.id),
-        totalPrice: state.totalPrice - item.price * item.quantity,
-      })),
+      set((state) => {
+        const updatedItems = [...state.items];
+        const itemIndex = updatedItems.findIndex(
+          (i) => i.id === item.id && i.size === item.size
+        );
+
+        if (itemIndex !== -1) {
+          updatedItems.splice(itemIndex, 1);
+        }
+
+        return {
+          items: updatedItems,
+          totalPrice: state.totalPrice - item.price * item.quantity,
+        };
+      }),
     clearCart: () => set({ items: [], totalPrice: 0 }),
     setSelectedSize: (size: string) => set({ selectedSize: size }),
   }))

@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 import {
   Sheet,
   SheetClose,
@@ -10,12 +9,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Trash2 } from "lucide-react";
 
 import { ShoppingCart } from "lucide-react";
 import { useShoppingCartStore } from "@/store/useShoppingCartStore";
 
 export function ShoppingSheet() {
-  const { items, totalPrice } = useShoppingCartStore();
+  const { items, totalPrice, removeFromCart } = useShoppingCartStore();
   return (
     <Sheet>
       <SheetTrigger
@@ -39,6 +39,11 @@ export function ShoppingSheet() {
                 <p>{item.price}</p>
                 <p>{item.quantity}</p>
                 <p>{item.size}</p>
+                <Trash2
+                  size={20}
+                  onClick={() => removeFromCart(item)}
+                  className="cursor-pointer"
+                />
               </div>
             ))}
           </div>
