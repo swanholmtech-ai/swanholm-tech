@@ -14,10 +14,12 @@ interface CartItemsType {
   items: CartItemType[];
   totalPrice: number;
   selectedSize: string;
+  selectedQuantity: number;
   addToCart: (item: CartItemType) => void;
   removeFromCart: (item: CartItemType) => void;
   clearCart: () => void;
   setSelectedSize: (size: string) => void;
+  setSelectedQuantity: (quantity: number) => void;
 }
 
 export const useShoppingCartStore = create<CartItemsType>()(
@@ -25,6 +27,7 @@ export const useShoppingCartStore = create<CartItemsType>()(
     items: [],
     totalPrice: 0,
     selectedSize: "",
+    selectedQuantity: 1,
     addToCart: (item: CartItemType) =>
       set((state) => {
         const existingItemIndex = state.items.findIndex(
@@ -64,5 +67,7 @@ export const useShoppingCartStore = create<CartItemsType>()(
       }),
     clearCart: () => set({ items: [], totalPrice: 0 }),
     setSelectedSize: (size: string) => set({ selectedSize: size }),
+    setSelectedQuantity: (quantity: number) =>
+      set({ selectedQuantity: quantity }),
   }))
 );

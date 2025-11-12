@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 
 const AddToCart = ({ productData }: { productData: any }) => {
-  const { addToCart, selectedSize } = useShoppingCartStore();
+  const { addToCart, selectedSize, selectedQuantity } = useShoppingCartStore();
   const addToCartHandler = () => {
     if (!selectedSize) {
       toast("Please select a size", {
@@ -15,13 +15,12 @@ const AddToCart = ({ productData }: { productData: any }) => {
 
       return;
     }
-    console.log("ADD TO CART PRODUCT DATA", productData);
     addToCart({
       id: productData.id,
       name: productData.name,
       slug: productData.slug,
       price: productData.price,
-      quantity: 1,
+      quantity: selectedQuantity,
       size: selectedSize,
     });
   };
