@@ -24,6 +24,13 @@ export function ShoppingSheet() {
       >
         <Button variant="outline">
           <ShoppingCart />
+          <div
+            className={`absolute top-0 right-0 ${
+              items.length > 0 ? "" : "hidden"
+            } bg-red-400 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center mt-[-5px] mr-[-5px]`}
+          >
+            {items.length}
+          </div>
         </Button>
       </SheetTrigger>
       <SheetContent>
